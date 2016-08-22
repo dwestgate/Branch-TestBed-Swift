@@ -1,5 +1,5 @@
 //
-//  BranchLinkTableViewController.swift
+//  LinkPropertiesTableViewController.swift
 //  TestBed-Swift
 //
 //  Created by David Westgate on 8/7/16.
@@ -8,17 +8,61 @@
 
 import UIKit
 
-class BranchLinkTableViewController: UITableViewController {
-
+class LinkPropertiesTableViewController: UITableViewController {
+    
+    @IBOutlet weak var aliasTextField: UITextField!
+    @IBOutlet weak var channelTextField: UITextField!
+    @IBOutlet weak var featureTextField: UITextField!
+    @IBOutlet weak var stageTextField: UITextField!
+    @IBOutlet weak var tagsTextField: UITextView!
+    @IBOutlet weak var fallbackURLTextField: UITextField!
+    @IBOutlet weak var desktopURLTextField: UITextField!
+    @IBOutlet weak var androidURLTextField: UITextField!
+    @IBOutlet weak var iosURLTextField: UITextField!
+    @IBOutlet weak var ipadURLTextField: UITextField!
+    @IBOutlet weak var fireURLTextField: UITextField!
+    @IBOutlet weak var blackberryURLTextField: UITextField!
+    @IBOutlet weak var windowsPhoneURLTextField: UITextField!
+    @IBOutlet weak var afterClickURLTextField: UITextField!
+    @IBOutlet weak var deeplinkPathTextField: UITextField!
+    @IBOutlet weak var alwaysDeeplinkSwitch: UISwitch!
+    @IBOutlet weak var matchDurationTextField: UITextField!
+    
+    var linkProperties = [String: AnyObject]()
+    var tags = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UITableViewCell.appearance().backgroundColor = UIColor.clearColor()
+        UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        refreshControls()
+        
+    }
+    
+    func refreshControls() {
+        aliasTextField.text = linkProperties["alias"] as? String
+        channelTextField.text = linkProperties["channel"] as? String
+        featureTextField.text = linkProperties["feature"] as? String
+        stageTextField.text = linkProperties["stage"] as? String
+        // linkProperties["tags"] as! String tags
+        fallbackURLTextField.text = linkProperties["fallbackURL"] as? String
+        desktopURLTextField.text = linkProperties["desktopURL"] as? String
+        androidURLTextField.text = linkProperties["androidURL"] as? String
+        iosURLTextField.text = linkProperties["iosURL"] as? String
+        ipadURLTextField.text = linkProperties["ipadURl"] as? String
+        fireURLTextField.text = linkProperties["fireURL"] as? String
+        blackberryURLTextField.text = linkProperties["blackberryURL"] as? String
+        windowsPhoneURLTextField.text = linkProperties["windowsPhoneURL"] as? String
+        afterClickURLTextField.text = linkProperties["afterClickURL"] as? String
+        deeplinkPathTextField.text = linkProperties["deeplinkPath"] as? String
+        // alwaysDeeplinkSwitch.on = linkProperties["alwaysDeeplink"] as! Bool
+        matchDurationTextField.text = linkProperties["matchDuration"] as? String
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,11 +73,9 @@ class BranchLinkTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch(indexPath.row) {
-            case 4 :
+        switch(indexPath.section,indexPath.row) {
+            case (4,0) :
                 self.performSegueWithIdentifier("ShowBranchLinkTagsViewController", sender: self)
-            case 5 :
-                self.performSegueWithIdentifier("ShowBranchLinkData", sender: self)
             default : break
         }
         

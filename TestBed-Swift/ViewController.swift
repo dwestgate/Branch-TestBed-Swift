@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var userIDTextField: UITextField!
     @IBOutlet weak var linkTextField: UITextField!
+    @IBOutlet weak var linkPropertiesTextView: UITextView!
     @IBOutlet weak var rewardsBucketTextField: UITextField!
     @IBOutlet weak var rewardsBalanceOfBucketTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -19,8 +20,8 @@ class ViewController: UITableViewController {
     @IBOutlet weak var customEventNameTextField: UITextField!
     @IBOutlet weak var customEventMetadataTextView: UITextView!
     
-    let defaultContainer = NSUserDefaults.standardUserDefaults()
-    
+    // let defaultContainer = NSUserDefaults.standardUserDefaults()
+    var linkProperties = [String: AnyObject]()
     var creditHistory: Array<AnyObject>?
     var customEventMetadata = [String: AnyObject]()
     
@@ -42,7 +43,7 @@ class ViewController: UITableViewController {
         
         UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
         
-        // self.refreshControlValues()
+        self.refreshControlValues()
         
         // let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
         // self.tableView.addGestureRecognizer(gestureRecognizer)
@@ -55,21 +56,31 @@ class ViewController: UITableViewController {
         branchUniversalObject.addMetadataKey("deeplink_text", value: String(format: "This text was embedded as data in a Branch link with the following characteristics:\n\n  canonicalUrl: %@\n  title: %@\n  contentDescription: %@\n  imageUrl: %@\n", canonicalUrl, contentTitle, contentDescription, imageUrl))
 
         
-        if let userID = defaultContainer.valueForKey("userID") as! String? {
+        /* if let userID = defaultContainer.valueForKey("userID") as! String? {
             self.userIDTextField.text = userID
-        }
-        self.refreshRewardsBalanceOfBucket()
-        self.customEventMetadataTextView.text = customEventMetadata.description
+        }*/
+
+
         
     }
     
     
     func refreshControlValues() {
+        // First load the three values required to refresh the rewards balance
         userIDTextField.text = TestData.getUserID()
         rewardsBucketTextField.text = TestData.getRewardsBucket()
         rewardsBalanceOfBucketTextField.text = TestData.getRewardsBalanceOfBucket()
+        
+        // Then initiate a refresh of the rewards balance
+        refreshRewardsBalanceOfBucket()
+        
+        // Now get about populating the other controls
+        linkProperties = TestData.getLinkProperties()
+        linkPropertiesTextView.text = linkProperties.description
         rewardPointsToRedeemTextField.text = TestData.getRewardPointsToRedeem()
         customEventNameTextField.text = TestData.getCustomEventName()
+        customEventMetadata = TestData.getCustomEventMetadata()
+        customEventMetadataTextView.text = customEventMetadata.description
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -95,7 +106,9 @@ class ViewController: UITableViewController {
             UIPasteboard.generalPasteboard().string = linkTextField.text
             showAlert("Link copied to clipboard", withDescription: linkTextField.text!)
         case (1,1) :
-            self.performSegueWithIdentifier("ShowBranchLinkViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowLinkPropertiesTableViewController", sender: nil)
+        case (1,2) :
+            self.performSegueWithIdentifier("ShowBranchUniversalObjectPropertiesTableViewController", sender: nil)
         case (2,0) :
             self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: nil)
         case (2,3) :
@@ -136,15 +149,35 @@ class ViewController: UITableViewController {
 
     
     @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
-        let linkProperties = BranchLinkProperties()
-        linkProperties.feature = feature
-        linkProperties.channel = channel
-        linkProperties.addControlParam("$desktop_url", withValue: desktop_url)
-        linkProperties.addControlParam("$ios_url", withValue: channel)
-        linkProperties.addControlParam("$deeplink_path", withValue: "#/nominate/579295cee4b0a9209267540a?referralCode=28199b17-620b-4329-af2e-5535b2f48d7d")
-        print(linkProperties.description())
+        let branchLinkProperties = BranchLinkProperties()
+        
+        branchLinkProperties.alias = linkProperties["alias"] as! String
+        branchLinkProperties.channel = linkProperties["channel"] as! String
+        branchLinkProperties.feature = linkProperties["feature"] as! String
+        branchLinkProperties.stage = linkProperties["stage"] as! String
+        branchLinkProperties.tags = linkProperties["tags"] as! [AnyObject]
+        branchLinkProperties.addControlParam("$fallback_url", withValue: linkProperties["fallbackURL"] as! String)
+        branchLinkProperties.addControlParam("$desktop_url", withValue: linkProperties["desktopURL"] as! String)
+        branchLinkProperties.addControlParam("$android_url", withValue: linkProperties["androidURL"] as! String)
+        branchLinkProperties.addControlParam("$ios_url", withValue: linkProperties["iosURL"] as! String)
+        branchLinkProperties.addControlParam("$ipad_url", withValue: linkProperties["ipadURl"] as! String)
+        branchLinkProperties.addControlParam("$fire_url", withValue: linkProperties["fireURL"] as! String)
+        branchLinkProperties.addControlParam("$blackberry_url", withValue: linkProperties["blackberryURL"] as! String)
+        branchLinkProperties.addControlParam("$windows_phone_url", withValue: linkProperties["windowsPhoneURL"] as! String)
+        branchLinkProperties.addControlParam("$after_click_url", withValue: linkProperties["afterClickURL"] as! String)
+        branchLinkProperties.addControlParam("$deeplink_path", withValue: linkProperties["deeplinkPath"] as! String)
+        if (linkProperties["alwaysDeeplink"] as! Bool) {
+            branchLinkProperties.addControlParam("$always_deeplink", withValue: "true")
+        } else {
+            branchLinkProperties.addControlParam("$always_deeplink", withValue: "0")
+        }
+        branchLinkProperties.addControlParam("matchDuration", withValue: linkProperties["matchDuration"] as! String)
+        
+        
+        
+        print(branchLinkProperties.description())
         print(branchUniversalObject.description())
-        branchUniversalObject.getShortUrlWithLinkProperties(linkProperties) { (url, error) in
+        branchUniversalObject.getShortUrlWithLinkProperties(branchLinkProperties) { (url, error) in
             if (error == nil) {
                 print(url)
                 self.linkTextField.text = url
@@ -183,7 +216,7 @@ class ViewController: UITableViewController {
         refreshRewardsBalanceOfBucket()
     }
     
-    @IBAction func simulateLogoutButtonTouchUpInside(sender: AnyObject) {
+    /*@IBAction func simulateLogoutButtonTouchUpInside(sender: AnyObject) {
         let branch = Branch.getInstance()
         branch.logoutWithCallback { (changed, error) in
             if (error != nil || !changed) {
@@ -196,7 +229,7 @@ class ViewController: UITableViewController {
             }
         }
 
-    }
+    }*/
     
     @IBAction func sendEventButtonTouchUpInside(sender: AnyObject) {
         var customEventName = "buy"
@@ -215,17 +248,17 @@ class ViewController: UITableViewController {
         self.showAlert(String(format: "Custom event '%@' dispatched", customEventName), withDescription: "")
     }
     
+    /*
     @IBAction func sendComplexEventButtonTouchUpInside(sender: AnyObject) {
         self.performSegueWithIdentifier("ShowBranchLink", sender: nil)
-        /*
+        
         let eventDetails = ["name": user_id1, "integer": 1, "boolean": true, "float": 3.14159265359, "test_key": test_key]
         let branch = Branch.getInstance()
         branch.userCompletedAction("buy", withState: eventDetails as [NSObject : AnyObject])
         let logOutput = String(format: "Branch Link Details:\n\n%@", eventDetails.description)
         self.performSegueWithIdentifier("ShowLogOutputViewController", sender: logOutput)
-        */
-    }
-    
+        
+    }*/
     
     @IBAction func showRewardsHistoryButtonTouchUpInside(sender: AnyObject) {
         let branch = Branch.getInstance()
@@ -347,7 +380,10 @@ class ViewController: UITableViewController {
             case "ShowUserIDViewController":
                 let vc = (segue.destinationViewController as! UserIDViewController)
                 vc.incumbantUserID = userIDTextField.text
-            case "ShowBranchLinkViewController":
+            case "ShowLinkPropertiesTableViewController":
+                let vc = (segue.destinationViewController as! LinkPropertiesTableViewController)
+                vc.linkProperties = self.linkProperties
+            case "ShowBranchUniversalObjectPropertiesTableViewController":
                 break
             case "ShowCreditHistoryViewController":
                 let vc = (segue.destinationViewController as! CreditHistoryViewController)
@@ -468,6 +504,30 @@ class ViewController: UITableViewController {
         if let viewController = segue.sourceViewController as? CustomEventMetadataTableViewController {
             customEventMetadata = viewController.customEventMetadata
             self.customEventMetadataTextView.text = customEventMetadata.description
+        }
+    }
+    
+    @IBAction func unwindLinkPropertiesTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? LinkPropertiesTableViewController {
+            linkProperties["alias"] = vc.aliasTextField.text
+            linkProperties["channel"] = vc.channelTextField.text
+            linkProperties["feature"] = vc.featureTextField.text
+            linkProperties["stage"] = vc.stageTextField.text
+            linkProperties["tags"] = vc.tags
+            linkProperties["fallbackURL"] = vc.fallbackURLTextField.text
+            linkProperties["desktopURL"] = vc.desktopURLTextField.text
+            linkProperties["androidURL"] = vc.androidURLTextField.text
+            linkProperties["iosURL"] = vc.iosURLTextField.text
+            linkProperties["ipadURl"] = vc.ipadURLTextField.text
+            linkProperties["fireURL"] = vc.fireURLTextField.text
+            linkProperties["blackberryURL"] = vc.blackberryURLTextField.text
+            linkProperties["windowsPhoneURL"] = vc.windowsPhoneURLTextField.text
+            linkProperties["afterClickURL"] = vc.afterClickURLTextField.text
+            linkProperties["deeplinkPath"] = vc.deeplinkPathTextField.text
+            linkProperties["alwaysDeeplink"] = vc.alwaysDeeplinkSwitch.on
+            linkProperties["matchDuration"] = vc.matchDurationTextField.text
+            TestData.setLinkProperties(linkProperties)
+            self.linkPropertiesTextView.text = linkProperties.description
         }
     }
     

@@ -26,6 +26,20 @@ struct TestData {
         userDefaults.setValue(value, forKey: "userID")
     }
     
+    static func getLinkProperties() -> Dictionary<String,AnyObject> {
+        if let value = userDefaults.dictionaryForKey("linkProperties") {
+            return value
+        } else {
+            let value = [String: AnyObject]()
+            userDefaults.setObject(value, forKey: "linkProperties")
+            return value
+        }
+    }
+    
+    static func setLinkProperties(value: Dictionary<String,AnyObject>) {
+        userDefaults.setObject(value, forKey: "linkProperties")
+    }
+    
     static func getRewardsBucket() -> String {
         if let value = userDefaults.stringForKey("rewardsBucket") {
             return value
