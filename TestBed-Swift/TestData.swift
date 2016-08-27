@@ -95,6 +95,8 @@ struct TestData {
     static func setRewardPointsToRedeem(value: String) {
         if Int(value) != nil {
             userDefaults.setValue(value, forKey: "rewardPointsToRedeem")
+        } else {
+            userDefaults.setValue("", forKey: "rewardPointsToRedeem")
         }
     }
     

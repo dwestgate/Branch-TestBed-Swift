@@ -34,7 +34,7 @@ class LinkPropertiesTableViewController: UITableViewController {
     @IBOutlet weak var windowsPhoneURLTextField: UITextField!
     
     var linkProperties = [String: AnyObject]()
-    var tags = [String]()
+    var tags = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +57,8 @@ class LinkPropertiesTableViewController: UITableViewController {
         featureTextField.text = linkProperties["feature"] as? String
         stageTextField.text = linkProperties["stage"] as? String
         
-        let tags = linkProperties["tags"] as? [String]
-        tagsTextView.text = tags?.description
+        tags = linkProperties["tags"] as! [String]
+        tagsTextView.text = tags.description
         
         deeplinkPathTextField.text = linkProperties["deeplinkPath"] as? String
         androidDeeplinkPathTextField.text = linkProperties["androidDeeplinkPath"] as? String
@@ -66,9 +66,12 @@ class LinkPropertiesTableViewController: UITableViewController {
         iosWeChatURLTextField.text = linkProperties["iosWeChatURL"] as? String
         iosWeiboURLTextField.text = linkProperties["iosWeiboURL"] as? String
 
-        let alwaysDeeplink = linkProperties["alwaysDeeplink"] as! Int
-        if (alwaysDeeplink == 1) {
-            alwaysDeeplinkSwitch.on = true
+        if let alwaysDeeplink = linkProperties["alwaysDeeplink"] as? Int {
+            if (alwaysDeeplink == 1) {
+                alwaysDeeplinkSwitch.on = true
+            } else {
+                alwaysDeeplinkSwitch.on = false
+            }
         } else {
             alwaysDeeplinkSwitch.on = false
         }
@@ -93,15 +96,13 @@ class LinkPropertiesTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch(indexPath.section,indexPath.row) {
-            case (4,0) :
-                self.performSegueWithIdentifier("ShowLinkTagsViewController", sender: self)
+        switch(indexPath.section) {
+            case 5 :
+                self.performSegueWithIdentifier("ShowLinkTagsViewController", sender: "Tags")
             default : break
         }
         
     }
-    
-    
     
     @IBAction func unwindLinkTagsTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? LinkTagsTableViewController {
@@ -189,6 +190,12 @@ class LinkPropertiesTableViewController: UITableViewController {
         linkProperties["fireURL"] = fireURLTextField.text
         linkProperties["blackberryURL"] = blackberryURLTextField.text
         linkProperties["windowsPhoneURL"] = windowsPhoneURLTextField.text
+        
+        if let _  = sender as? String {
+            let vc = segue.destinationViewController as! LinkTagsTableViewController
+            vc.tags = tags
+        }
+
     }
     
 

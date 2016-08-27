@@ -1,5 +1,5 @@
 //
-//  EnterLinkTagViewController.swift
+//  TextFieldFormTableViewController.swift
 //  AdScrubber
 //
 //  Created by David Westgate on 12/31/15.
@@ -26,22 +26,22 @@ import UIKit
 
 /// Manages the user interface for updating the
 /// valueTextView field of ViewController
-class EnterLinkTagViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+class TextFieldFormTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: -
     // MARK: Control Outlets
-    @IBOutlet weak var tagTextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     // MARK: Variables
-    var incumbantTag: String!
+    var incumbantValue: String!
     
     // MARK: Overridden functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tagTextField.text = incumbantTag
+        textField.text = incumbantValue
     }
     
     
@@ -59,7 +59,7 @@ class EnterLinkTagViewController: UITableViewController, UITextFieldDelegate, UI
     
     // MARK: Control Functions
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if ((saveButton === sender) && (tagTextField != "")) {
+        if ((saveButton === sender) && (textField != "")) {
             // don't need this if using unwind
         }
     }

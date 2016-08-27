@@ -1,5 +1,5 @@
 //
-//  RewardsBucketViewController.swift
+//  TextViewFormTableViewController.swift
 //  AdScrubber
 //
 //  Created by David Westgate on 12/31/15.
@@ -25,16 +25,17 @@
 import UIKit
 
 /// Manages the user interface for updating the
-/// rewardsBucketTextView field of ViewController
-class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
+/// textView field of ViewController
+class TextViewFormTableViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: -
     // MARK: Control Outlets
-    @IBOutlet weak var rewardsBucketTextView: UITextView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var clearButton: UIButton!
     
     // MARK: Variables
-    var incumbantRewardsBucket: String!
+    var sender = ""
+    var incumbantValue = ""
     var header = "Default Header"
     var footer = "Default Footer"
     var keyboardType = UIKeyboardType.Default
@@ -43,10 +44,10 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rewardsBucketTextView.delegate = self
-        rewardsBucketTextView.keyboardType = keyboardType
-        rewardsBucketTextView.text = incumbantRewardsBucket
-        rewardsBucketTextView.becomeFirstResponder()
+        textView.delegate = self
+        textView.keyboardType = keyboardType
+        textView.text = incumbantValue
+        textView.becomeFirstResponder()
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -70,10 +71,10 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: Control Actions
     @IBAction func clearButtonTouchUpInside(sender: AnyObject) {
-        rewardsBucketTextView.text = incumbantRewardsBucket
-        rewardsBucketTextView.textColor = UIColor.lightGrayColor()
-        rewardsBucketTextView.becomeFirstResponder()
-        rewardsBucketTextView.selectedTextRange = rewardsBucketTextView.textRangeFromPosition(rewardsBucketTextView.beginningOfDocument, toPosition: rewardsBucketTextView.beginningOfDocument)
+        textView.text = incumbantValue
+        textView.textColor = UIColor.lightGrayColor()
+        textView.becomeFirstResponder()
+        textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
     }
     
     // MARK: Control Functions
@@ -89,7 +90,7 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
         guard (text != "\n") else {
-            performSegueWithIdentifier("UnwindRewardsBucketViewController", sender: self)
+            performSegueWithIdentifier("UnwindTextViewFormTableViewController", sender: self)
             return false
         }
         
@@ -97,7 +98,7 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
         let updatedText = t.stringByReplacingCharactersInRange(range, withString:text)
         
         guard (updatedText != "") else {
-            textView.text = incumbantRewardsBucket
+            textView.text = incumbantValue
             textView.textColor = UIColor.lightGrayColor()
             textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
             return false

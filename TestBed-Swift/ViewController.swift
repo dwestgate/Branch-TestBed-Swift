@@ -65,7 +65,6 @@ class ViewController: UITableViewController {
         
     }
     
-    
     func refreshControlValues() {
         // First load the three values required to refresh the rewards balance
         userIDTextField.text = TestData.getUserID()
@@ -99,7 +98,7 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.section, indexPath.row) {
         case (0,0) :
-            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "userID")
+            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "userID")
         case (1,0) :
             guard linkTextField.text?.characters.count > 0 else {
                 break
@@ -111,9 +110,9 @@ class ViewController: UITableViewController {
         case (1,2) :
             self.performSegueWithIdentifier("ShowBranchUniversalObjectPropertiesTableViewController", sender: "BranchUniversalObjectProperties")
         case (2,0) :
-            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "RewardsBucket")
+            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "RewardsBucket")
         case (2,3) :
-            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "RewardPointsToRedeem")
+            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "RewardPointsToRedeem")
         case (2,5) :
             let branch = Branch.getInstance()
             branch.getCreditHistoryWithCallback { (creditHistory, error) in
@@ -126,7 +125,7 @@ class ViewController: UITableViewController {
                 }
             }
         case (3,0) :
-            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "CustomEventName")
+            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "CustomEventName")
         case (3,1) :
             self.performSegueWithIdentifier("ShowCustomEventMetadataViewController", sender: "CustomEventMetadata")
         case (4,0) :
@@ -386,11 +385,12 @@ class ViewController: UITableViewController {
         switch sender as! String {
         case "userID":
             let nc = segue.destinationViewController as! UINavigationController
-            let vc = nc.topViewController as! RewardsBucketViewController
+            let vc = nc.topViewController as! TextViewFormTableViewController
+            vc.sender = sender as! String
             vc.header = "User ID"
             vc.footer = "This User ID (or developer_id) is the application-assigned ID of the user. If not assigned, referrals from links created by the user will show up as 'anonymous' in reporting."
             vc.keyboardType = UIKeyboardType.Alphabet
-            vc.incumbantRewardsBucket = userIDTextField.text
+            vc.incumbantValue = userIDTextField.text!
         case "LinkProperties":
             let vc = (segue.destinationViewController as! LinkPropertiesTableViewController)
             vc.linkProperties = self.linkProperties
@@ -402,25 +402,28 @@ class ViewController: UITableViewController {
             vc.creditTransactions = creditHistory
         case "RewardsBucket":
             let nc = segue.destinationViewController as! UINavigationController
-            let vc = nc.topViewController as! RewardsBucketViewController
+            let vc = nc.topViewController as! TextViewFormTableViewController
+            vc.sender = sender as! String
             vc.header = "Rewards Bucket"
             vc.footer = "Rewards are granted via rules configured in the Rewards Rules section of the dashboard. Rewards are normally accumulated in a 'default' bucket, however any bucket name can be specified in rewards rules. Use this setting to specify the name of a non-default rewards bucket."
             vc.keyboardType = UIKeyboardType.Alphabet
-            vc.incumbantRewardsBucket = rewardsBucketTextField.text
+            vc.incumbantValue = rewardsBucketTextField.text!
         case "RewardPointsToRedeem":
             let nc = segue.destinationViewController as! UINavigationController
-            let vc = nc.topViewController as! RewardsBucketViewController
+            let vc = nc.topViewController as! TextViewFormTableViewController
+            vc.sender = sender as! String
             vc.header = "Number of Reward Points to Redeem"
             vc.footer = "This is the quantity of points to subtract from the selected bucket's balance."
-            vc.keyboardType = UIKeyboardType.DecimalPad
-            vc.incumbantRewardsBucket = rewardPointsToRedeemTextField.text
+            vc.keyboardType = UIKeyboardType.NumberPad
+            vc.incumbantValue = rewardPointsToRedeemTextField.text!
         case "CustomEventName":
             let nc = segue.destinationViewController as! UINavigationController
-            let vc = nc.topViewController as! RewardsBucketViewController
+            let vc = nc.topViewController as! TextViewFormTableViewController
+            vc.sender = sender as! String
             vc.header = "Custom Event Name"
             vc.footer = "This is the name of the event that is referenced when creating rewards rules and webhooks."
             vc.keyboardType = UIKeyboardType.Alphabet
-            vc.incumbantRewardsBucket = customEventNameTextField.text
+            vc.incumbantValue = customEventNameTextField.text!
         case "CustomEventMetadata":
             let vc = (segue.destinationViewController as! CustomEventMetadataTableViewController)
             vc.parameterName = "CustomEventMetadata"
@@ -433,58 +436,14 @@ class ViewController: UITableViewController {
     }
     
     // This is where we call setIdentity
-    @IBAction func unwindUserIDViewController(segue:UIStoryboardSegue) {
-        if let viewController = segue.sourceViewController as? UserIDViewController {
-            
-            if let userID = viewController.userIDTextView.text {
-                
-                guard self.userIDTextField.text != userID else {
-                    return
-                }
-                
-                let branch = Branch.getInstance()
+    @IBAction func unwindTextViewFormTableViewController(segue:UIStoryboardSegue) {
 
-                guard userID != "" else {
-                    
-                    branch.logoutWithCallback { (changed, error) in
-                        if (error != nil || !changed) {
-                            print(String(format: "Branch TestBed: Unable to clear User ID: %@", error))
-                            self.showAlert("Error simulating logout", withDescription: error.localizedDescription)
-                        } else {
-                            print("Branch TestBed: User ID cleared")
-                            self.userIDTextField.text = userID
-                            self.refreshRewardsBalanceOfBucket()
-                        }
-                    }
-                    return
-                }
-                    
-                branch.setIdentity(userID) { (params, error) in
-                    if (error == nil) {
-                        print(String(format: "Branch TestBed: Identity set: %@", userID))
-                        self.userIDTextField.text = userID
-                        self.refreshRewardsBalanceOfBucket()
-                        
-                        let defaultContainer = NSUserDefaults.standardUserDefaults()
-                        defaultContainer.setValue(userID, forKey: "userID")
-                        
-                    } else {
-                        print(String(format: "Branch TestBed: Error setting identity: %@", error))
-                        self.showAlert("Unable to Set Identity", withDescription:error.localizedDescription)
-                    }
-                }
-                
-            }
-        }
-    }
-
-    @IBAction func unwindRewardsBucketViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? RewardsBucketViewController {
+        if let vc = segue.sourceViewController as? TextViewFormTableViewController {
             
-            switch vc.header {
-            case "User ID":
+            switch vc.sender {
+            case "userID":
                     
-                if let userID = vc.rewardsBucketTextView.text {
+                if let userID = vc.textView.text {
                     
                     guard self.userIDTextField.text != userID else {
                         return
@@ -523,8 +482,8 @@ class ViewController: UITableViewController {
                     }
                     
                 }
-            case "Rewards Bucket":
-                if let rewardsBucket = vc.rewardsBucketTextView.text {
+            case "RewardsBucket":
+                if let rewardsBucket = vc.textView.text {
                     
                     guard self.rewardsBucketTextField.text != rewardsBucket else {
                         return
@@ -534,8 +493,8 @@ class ViewController: UITableViewController {
                     self.refreshRewardsBalanceOfBucket()
                     
                 }
-            case "Reward Points to Redeem":
-                if let rewardPointsToRedeem = vc.rewardsBucketTextView.text {
+            case "RewardPointsToRedeem":
+                if let rewardPointsToRedeem = vc.textView.text {
                     
                     guard self.rewardPointsToRedeemTextField.text != rewardPointsToRedeem else {
                         return
@@ -543,8 +502,8 @@ class ViewController: UITableViewController {
                     TestData.setRewardPointsToRedeem(rewardPointsToRedeem)
                     self.rewardPointsToRedeemTextField.text = rewardPointsToRedeem
                 }
-            case "Custom Event Name":
-                if let customEventName = vc.rewardsBucketTextView.text {
+            case "CustomEventName":
+                if let customEventName = vc.textView.text {
                     
                     guard self.customEventNameTextField.text != customEventName else {
                         return
@@ -558,6 +517,8 @@ class ViewController: UITableViewController {
             
         }
     }
+    
+    @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
     
     @IBAction func unwindCustomEventMetadataTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? CustomEventMetadataTableViewController {

@@ -10,7 +10,7 @@ import UIKit
 
 class LinkTagsTableViewController: UITableViewController {
     
-    var tags = [String]()
+    var tags = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,28 +101,28 @@ class LinkTagsTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showEnterParameter" {
-            let vc = segue.destinationViewController as! EnterLinkTagViewController
+            let vc = segue.destinationViewController as! TextFieldFormTableViewController
             
             // Get the cell that generated this segue.
             if let selectedCell = sender as? LinkTagTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedCell)!
                 
                 let selectedParameterTag = self.tags[indexPath.row]
-                vc.incumbantTag = selectedParameterTag
+                vc.incumbantValue = selectedParameterTag
             }
         } else if segue.identifier == "AddItem" {
             print("Adding new key-value pair.")
         }
     }
     // TODO be sure Cancel does not = Save
-    @IBAction func unwindEnterLinkTagViewController(sender: UIStoryboardSegue) {
-        if let vc = sender.sourceViewController as? EnterLinkTagViewController {
+    @IBAction func unwindTextFieldFormTableViewController(sender: UIStoryboardSegue) {
+        if let vc = sender.sourceViewController as? TextFieldFormTableViewController {
             
-            guard vc.tagTextField.text!.characters.count > 0 else {
+            guard vc.textField.text!.characters.count > 0 else {
                 return
             }
             
-            tags.append(vc.tagTextField.text!)
+            tags.append(vc.textField.text!)
             tableView.reloadData()
         }
     }
