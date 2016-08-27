@@ -40,6 +40,20 @@ struct TestData {
         userDefaults.setObject(value, forKey: "linkProperties")
     }
     
+    static func getUniversalObjectProperties() -> Dictionary<String,AnyObject> {
+        if let value = userDefaults.dictionaryForKey("UniversalObjectProperties") {
+            return value
+        } else {
+            let value = [String: AnyObject]()
+            userDefaults.setObject(value, forKey: "UniversalObjectProperties")
+            return value
+        }
+    }
+    
+    static func setUniversalObjectProperties(value: Dictionary<String,AnyObject>) {
+        userDefaults.setObject(value, forKey: "UniversalObjectProperties")
+    }
+    
     static func getRewardsBucket() -> String {
         if let value = userDefaults.stringForKey("rewardsBucket") {
             return value

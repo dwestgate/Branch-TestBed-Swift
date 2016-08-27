@@ -10,11 +10,20 @@ import UIKit
 
 class LinkPropertiesTableViewController: UITableViewController {
     
+    @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var aliasTextField: UITextField!
     @IBOutlet weak var channelTextField: UITextField!
     @IBOutlet weak var featureTextField: UITextField!
     @IBOutlet weak var stageTextField: UITextField!
-    @IBOutlet weak var tagsTextField: UITextView!
+    @IBOutlet weak var tagsTextView: UITextView!
+    @IBOutlet weak var deeplinkPathTextField: UITextField!
+    @IBOutlet weak var androidDeeplinkPathTextField: UITextField!
+    @IBOutlet weak var iosDeeplinkPathTextField: UITextField!
+    @IBOutlet weak var iosWeChatURLTextField: UITextField!
+    @IBOutlet weak var iosWeiboURLTextField: UITextField!
+    @IBOutlet weak var alwaysDeeplinkSwitch: UISwitch!
+    @IBOutlet weak var afterClickURLTextField: UITextField!
+    @IBOutlet weak var matchDurationTextField: UITextField!
     @IBOutlet weak var fallbackURLTextField: UITextField!
     @IBOutlet weak var desktopURLTextField: UITextField!
     @IBOutlet weak var androidURLTextField: UITextField!
@@ -23,10 +32,6 @@ class LinkPropertiesTableViewController: UITableViewController {
     @IBOutlet weak var fireURLTextField: UITextField!
     @IBOutlet weak var blackberryURLTextField: UITextField!
     @IBOutlet weak var windowsPhoneURLTextField: UITextField!
-    @IBOutlet weak var afterClickURLTextField: UITextField!
-    @IBOutlet weak var deeplinkPathTextField: UITextField!
-    @IBOutlet weak var alwaysDeeplinkSwitch: UISwitch!
-    @IBOutlet weak var matchDurationTextField: UITextField!
     
     var linkProperties = [String: AnyObject]()
     var tags = [String]()
@@ -46,11 +51,30 @@ class LinkPropertiesTableViewController: UITableViewController {
     }
     
     func refreshControls() {
+        typeTextField.text = linkProperties["type"] as? String
         aliasTextField.text = linkProperties["alias"] as? String
         channelTextField.text = linkProperties["channel"] as? String
         featureTextField.text = linkProperties["feature"] as? String
         stageTextField.text = linkProperties["stage"] as? String
-        // linkProperties["tags"] as! String tags
+        
+        let tags = linkProperties["tags"] as? [String]
+        tagsTextView.text = tags?.description
+        
+        deeplinkPathTextField.text = linkProperties["deeplinkPath"] as? String
+        androidDeeplinkPathTextField.text = linkProperties["androidDeeplinkPath"] as? String
+        iosDeeplinkPathTextField.text = linkProperties["iosDeeplinkPath"] as? String
+        iosWeChatURLTextField.text = linkProperties["iosWeChatURL"] as? String
+        iosWeiboURLTextField.text = linkProperties["iosWeiboURL"] as? String
+
+        let alwaysDeeplink = linkProperties["alwaysDeeplink"] as! Int
+        if (alwaysDeeplink == 1) {
+            alwaysDeeplinkSwitch.on = true
+        } else {
+            alwaysDeeplinkSwitch.on = false
+        }
+
+        afterClickURLTextField.text = linkProperties["afterClickURL"] as? String
+        matchDurationTextField.text = linkProperties["matchDuration"] as? String
         fallbackURLTextField.text = linkProperties["fallbackURL"] as? String
         desktopURLTextField.text = linkProperties["desktopURL"] as? String
         androidURLTextField.text = linkProperties["androidURL"] as? String
@@ -59,10 +83,6 @@ class LinkPropertiesTableViewController: UITableViewController {
         fireURLTextField.text = linkProperties["fireURL"] as? String
         blackberryURLTextField.text = linkProperties["blackberryURL"] as? String
         windowsPhoneURLTextField.text = linkProperties["windowsPhoneURL"] as? String
-        afterClickURLTextField.text = linkProperties["afterClickURL"] as? String
-        deeplinkPathTextField.text = linkProperties["deeplinkPath"] as? String
-        // alwaysDeeplinkSwitch.on = linkProperties["alwaysDeeplink"] as! Bool
-        matchDurationTextField.text = linkProperties["matchDuration"] as? String
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,12 +95,20 @@ class LinkPropertiesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.section,indexPath.row) {
             case (4,0) :
-                self.performSegueWithIdentifier("ShowBranchLinkTagsViewController", sender: self)
+                self.performSegueWithIdentifier("ShowLinkTagsViewController", sender: self)
             default : break
         }
         
     }
     
+    
+    
+    @IBAction func unwindLinkTagsTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? LinkTagsTableViewController {
+            tags = vc.tags
+            self.tagsTextView.text = tags.description
+        }
+    }
     
 
     /*
@@ -128,14 +156,40 @@ class LinkPropertiesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        linkProperties["type"] = typeTextField.text
+        linkProperties["alias"] = aliasTextField.text
+        linkProperties["channel"] = channelTextField.text
+        linkProperties["feature"] = featureTextField.text
+        linkProperties["stage"] = stageTextField.text
+        linkProperties["tags"] = tags
+        linkProperties["deeplinkPath"] = deeplinkPathTextField.text
+        linkProperties["androidDeeplinkPath"] = androidDeeplinkPathTextField.text
+        linkProperties["iosDeeplinkPath"] = iosDeeplinkPathTextField.text
+        linkProperties["iosWeChatURL"] = iosWeChatURLTextField.text
+        linkProperties["iosWeiboURL"] = iosWeiboURLTextField.text
+        
+        if alwaysDeeplinkSwitch.on {
+            linkProperties["alwaysDeeplink"] = 1
+        } else {
+            linkProperties["alwaysDeeplink"] = 0
+        }
+        
+        linkProperties["afterClickURL"] = afterClickURLTextField.text
+        linkProperties["matchDuration"] = matchDurationTextField.text
+        linkProperties["fallbackURL"] = fallbackURLTextField.text
+        linkProperties["desktopURL"] = desktopURLTextField.text
+        linkProperties["androidURL"] = androidURLTextField.text
+        linkProperties["iosURL"] = iosURLTextField.text
+        linkProperties["ipadURl"] = ipadURLTextField.text
+        linkProperties["fireURL"] = fireURLTextField.text
+        linkProperties["blackberryURL"] = blackberryURLTextField.text
+        linkProperties["windowsPhoneURL"] = windowsPhoneURLTextField.text
     }
-    */
+    
 
 }

@@ -10,12 +10,34 @@ import UIKit
 
 class BranchUniversalObjectPropertiesTableViewController: UITableViewController {
     
-    @IBOutlet weak var channelTextField: UITextField!
-    @IBOutlet weak var featureTextField: UITextField!
-    @IBOutlet weak var stageTextField: UITextField!
-    @IBOutlet weak var aliasTextField: UITextField!
-    @IBOutlet weak var tagsTextView: UITextView!
-    @IBOutlet weak var dataTextView: UITextView!
+    @IBOutlet weak var canonicalIdentifierTextField: UITextField!
+    @IBOutlet weak var canonicalURLTextField: UITextField!
+    @IBOutlet weak var customDataTextView: UITextView!
+    @IBOutlet weak var keywordsTextView: UITextView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var contentDescriptionTextView: UITextView!
+    @IBOutlet weak var imageURLTextField: UITextField!
+    @IBOutlet weak var ogImageWidth: UITextField!
+    @IBOutlet weak var ogImageHeight: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var ogVideoTextField: UITextField!
+    @IBOutlet weak var ogURLTextField: UITextField!
+    @IBOutlet weak var ogTypeTextField: UITextField!
+    @IBOutlet weak var ogRedirectTextField: UITextField!
+    @IBOutlet weak var ogAppIDTextField: UITextField!
+    @IBOutlet weak var twitterCardTextField: UITextField!
+    @IBOutlet weak var twitterTitleTextField: UITextField!
+    @IBOutlet weak var twitterDescriptionTextField: UITextField!
+    @IBOutlet weak var twitterSiteTextField: UITextField!
+    @IBOutlet weak var twitterAppTextField: UITextField!
+    @IBOutlet weak var twitterPlayerTextField: UITextField!
+    @IBOutlet weak var twitterPlayerWidthTextField: UITextField!
+    @IBOutlet weak var twitterPlayerHeightTextField: UITextField!
+    @IBOutlet weak var publiclyIndexableSwitch: UISwitch!
+    @IBOutlet weak var expirationDateTextField: UITextField!
+    
+    var universalObjectProperties = [String: AnyObject]()
+    var customData = [String: AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +58,43 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController 
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch(indexPath.row) {
-        case 4 :
-            self.performSegueWithIdentifier("ShowBranchLinkTagsViewController", sender: self)
-        case 5 :
-            self.performSegueWithIdentifier("ShowBranchLinkData", sender: self)
+        switch(indexPath.section) {
+        case 2 :
+            self.performSegueWithIdentifier("ShowCustomData", sender: self)
+        case 3 :
+            self.performSegueWithIdentifier("ShowKeywordsViewController", sender: self)
         default : break
         }
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+            case "ShowCustomData":
+                let vc = (segue.destinationViewController as! CustomEventMetadataTableViewController)
+                vc.parameterName = "CustomData"
+            default:
+                let vc = (segue.destinationViewController as! LogOutputViewController)
+                vc.logOutput = sender as! String
+            
+        }
+        
+    }
+    
+    @IBAction func unwindCustomEventMetadataTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? CustomEventMetadataTableViewController {
+            if (vc.parameterName == "CustomData") {
+                customData = vc.customEventMetadata
+                self.customDataTextView.text = customData.description
+            }
+        }
+    }
+    
+    @IBAction func unwindCustomDataTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? CustomDataTableViewController {
+            customData = vc.keyValuePairs
+        }
+    }
     
     
     /*

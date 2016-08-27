@@ -22,6 +22,7 @@ class ViewController: UITableViewController {
     
     // let defaultContainer = NSUserDefaults.standardUserDefaults()
     var linkProperties = [String: AnyObject]()
+    var universalObjectProperties = [String: AnyObject]()
     var creditHistory: Array<AnyObject>?
     var customEventMetadata = [String: AnyObject]()
     
@@ -98,7 +99,7 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.section, indexPath.row) {
         case (0,0) :
-            self.performSegueWithIdentifier("ShowUserIDViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "userID")
         case (1,0) :
             guard linkTextField.text?.characters.count > 0 else {
                 break
@@ -106,28 +107,28 @@ class ViewController: UITableViewController {
             UIPasteboard.generalPasteboard().string = linkTextField.text
             showAlert("Link copied to clipboard", withDescription: linkTextField.text!)
         case (1,1) :
-            self.performSegueWithIdentifier("ShowLinkPropertiesTableViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowLinkPropertiesTableViewController", sender: "LinkProperties")
         case (1,2) :
-            self.performSegueWithIdentifier("ShowBranchUniversalObjectPropertiesTableViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowBranchUniversalObjectPropertiesTableViewController", sender: "BranchUniversalObjectProperties")
         case (2,0) :
-            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "RewardsBucket")
         case (2,3) :
-            self.performSegueWithIdentifier("ShowRewardPointsToRedeemViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "RewardPointsToRedeem")
         case (2,5) :
             let branch = Branch.getInstance()
             branch.getCreditHistoryWithCallback { (creditHistory, error) in
                 if (error == nil) {
                     self.creditHistory = creditHistory as Array?
-                    self.performSegueWithIdentifier("ShowCreditHistoryViewController", sender: nil)
+                    self.performSegueWithIdentifier("ShowCreditHistoryViewController", sender: "CreditHistory")
                 } else {
                     print(String(format: "Branch TestBed: Error retrieving credit history: %@", error.localizedDescription))
                     self.showAlert("Error retrieving credit history", withDescription:error.localizedDescription)
                 }
             }
         case (3,0) :
-            self.performSegueWithIdentifier("ShowCustomEventNameViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowRewardsBucketViewController", sender: "CustomEventName")
         case (3,1) :
-            self.performSegueWithIdentifier("ShowCustomEventMetadataViewController", sender: nil)
+            self.performSegueWithIdentifier("ShowCustomEventMetadataViewController", sender: "CustomEventMetadata")
         case (4,0) :
             let branch = Branch.getInstance()
             let params = branch.getFirstReferringParams()
@@ -150,12 +151,20 @@ class ViewController: UITableViewController {
     
     @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
         let branchLinkProperties = BranchLinkProperties()
-        
+
+        branchLinkProperties.addControlParam("type", withValue: linkProperties["type"] as! String)
         branchLinkProperties.alias = linkProperties["alias"] as! String
         branchLinkProperties.channel = linkProperties["channel"] as! String
         branchLinkProperties.feature = linkProperties["feature"] as! String
         branchLinkProperties.stage = linkProperties["stage"] as! String
         branchLinkProperties.tags = linkProperties["tags"] as! [AnyObject]
+        branchLinkProperties.addControlParam("$deeplink_path", withValue: linkProperties["deeplinkPath"] as! String)
+        branchLinkProperties.addControlParam("$android_deeplink_path", withValue: linkProperties["androidDeeplinkPath"] as! String)
+        branchLinkProperties.addControlParam("$ios_deeplink_path", withValue: linkProperties["iosDeeplinkPath"] as! String)
+        branchLinkProperties.addControlParam("$ios_wechat_url", withValue: linkProperties["iosWeChatURL"] as! String)
+        branchLinkProperties.addControlParam("$ios_weibo_url", withValue: linkProperties["iosWeiboURL"] as! String)
+        
+        
         branchLinkProperties.addControlParam("$fallback_url", withValue: linkProperties["fallbackURL"] as! String)
         branchLinkProperties.addControlParam("$desktop_url", withValue: linkProperties["desktopURL"] as! String)
         branchLinkProperties.addControlParam("$android_url", withValue: linkProperties["androidURL"] as! String)
@@ -165,14 +174,12 @@ class ViewController: UITableViewController {
         branchLinkProperties.addControlParam("$blackberry_url", withValue: linkProperties["blackberryURL"] as! String)
         branchLinkProperties.addControlParam("$windows_phone_url", withValue: linkProperties["windowsPhoneURL"] as! String)
         branchLinkProperties.addControlParam("$after_click_url", withValue: linkProperties["afterClickURL"] as! String)
-        branchLinkProperties.addControlParam("$deeplink_path", withValue: linkProperties["deeplinkPath"] as! String)
         if (linkProperties["alwaysDeeplink"] as! Bool) {
             branchLinkProperties.addControlParam("$always_deeplink", withValue: "true")
         } else {
             branchLinkProperties.addControlParam("$always_deeplink", withValue: "0")
         }
-        branchLinkProperties.addControlParam("matchDuration", withValue: linkProperties["matchDuration"] as! String)
-        
+        branchLinkProperties.matchDuration = linkProperties["matchDuration"] as! UInt
         
         
         print(branchLinkProperties.description())
@@ -376,33 +383,50 @@ class ViewController: UITableViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segue.identifier! {
-            case "ShowUserIDViewController":
-                let vc = (segue.destinationViewController as! UserIDViewController)
-                vc.incumbantUserID = userIDTextField.text
-            case "ShowLinkPropertiesTableViewController":
-                let vc = (segue.destinationViewController as! LinkPropertiesTableViewController)
-                vc.linkProperties = self.linkProperties
-            case "ShowBranchUniversalObjectPropertiesTableViewController":
-                break
-            case "ShowCreditHistoryViewController":
-                let vc = (segue.destinationViewController as! CreditHistoryViewController)
-                vc.creditTransactions = creditHistory
-            case "ShowRewardsBucketViewController":
-                let vc = (segue.destinationViewController as! RewardsBucketViewController)
-                vc.incumbantRewardsBucket = rewardsBucketTextField.text
-            case "ShowRewardPointsToRedeemViewController":
-                let vc = (segue.destinationViewController as! RewardPointsToRedeemViewController)
-                vc.incumbantRewardPointsToRedeem = rewardPointsToRedeemTextField.text
-            case "ShowCustomEventNameViewController":
-                let vc = (segue.destinationViewController as! CustomEventNameViewController)
-                vc.incumbantCustomEventName = customEventNameTextField.text
-            case "ShowCustomEventMetadataViewController":
-                let vc = (segue.destinationViewController as! CustomEventMetadataTableViewController)
-                // vc.customEventMetadata = customEventMetadata
-            default:
-                let vc = (segue.destinationViewController as! LogOutputViewController)
-                vc.logOutput = sender as! String
+        switch sender as! String {
+        case "userID":
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.topViewController as! RewardsBucketViewController
+            vc.header = "User ID"
+            vc.footer = "This User ID (or developer_id) is the application-assigned ID of the user. If not assigned, referrals from links created by the user will show up as 'anonymous' in reporting."
+            vc.keyboardType = UIKeyboardType.Alphabet
+            vc.incumbantRewardsBucket = userIDTextField.text
+        case "LinkProperties":
+            let vc = (segue.destinationViewController as! LinkPropertiesTableViewController)
+            vc.linkProperties = self.linkProperties
+        case "BranchUniversalObjectProperties":
+            let vc = (segue.destinationViewController as! BranchUniversalObjectPropertiesTableViewController)
+            vc.universalObjectProperties = self.universalObjectProperties
+        case "CreditHistory":
+            let vc = (segue.destinationViewController as! CreditHistoryViewController)
+            vc.creditTransactions = creditHistory
+        case "RewardsBucket":
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.topViewController as! RewardsBucketViewController
+            vc.header = "Rewards Bucket"
+            vc.footer = "Rewards are granted via rules configured in the Rewards Rules section of the dashboard. Rewards are normally accumulated in a 'default' bucket, however any bucket name can be specified in rewards rules. Use this setting to specify the name of a non-default rewards bucket."
+            vc.keyboardType = UIKeyboardType.Alphabet
+            vc.incumbantRewardsBucket = rewardsBucketTextField.text
+        case "RewardPointsToRedeem":
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.topViewController as! RewardsBucketViewController
+            vc.header = "Number of Reward Points to Redeem"
+            vc.footer = "This is the quantity of points to subtract from the selected bucket's balance."
+            vc.keyboardType = UIKeyboardType.DecimalPad
+            vc.incumbantRewardsBucket = rewardPointsToRedeemTextField.text
+        case "CustomEventName":
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.topViewController as! RewardsBucketViewController
+            vc.header = "Custom Event Name"
+            vc.footer = "This is the name of the event that is referenced when creating rewards rules and webhooks."
+            vc.keyboardType = UIKeyboardType.Alphabet
+            vc.incumbantRewardsBucket = customEventNameTextField.text
+        case "CustomEventMetadata":
+            let vc = (segue.destinationViewController as! CustomEventMetadataTableViewController)
+            vc.parameterName = "CustomEventMetadata"
+        default:
+            let vc = (segue.destinationViewController as! LogOutputViewController)
+            vc.logOutput = sender as! String
             
         }
         
@@ -455,77 +479,99 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func unwindRewardsBucketViewController(segue:UIStoryboardSegue) {
-        if let viewController = segue.sourceViewController as? RewardsBucketViewController {
+        if let vc = segue.sourceViewController as? RewardsBucketViewController {
             
-            if let rewardsBucket = viewController.rewardsBucketTextView.text {
-                
-                guard self.rewardsBucketTextField.text != rewardsBucket else {
-                    return
+            switch vc.header {
+            case "User ID":
+                    
+                if let userID = vc.rewardsBucketTextView.text {
+                    
+                    guard self.userIDTextField.text != userID else {
+                        return
+                    }
+                    
+                    let branch = Branch.getInstance()
+                    
+                    guard userID != "" else {
+                        
+                        branch.logoutWithCallback { (changed, error) in
+                            if (error != nil || !changed) {
+                                print(String(format: "Branch TestBed: Unable to clear User ID: %@", error))
+                                self.showAlert("Error simulating logout", withDescription: error.localizedDescription)
+                            } else {
+                                print("Branch TestBed: User ID cleared")
+                                self.userIDTextField.text = userID
+                                self.refreshRewardsBalanceOfBucket()
+                            }
+                        }
+                        return
+                    }
+                    
+                    branch.setIdentity(userID) { (params, error) in
+                        if (error == nil) {
+                            print(String(format: "Branch TestBed: Identity set: %@", userID))
+                            self.userIDTextField.text = userID
+                            self.refreshRewardsBalanceOfBucket()
+                            
+                            let defaultContainer = NSUserDefaults.standardUserDefaults()
+                            defaultContainer.setValue(userID, forKey: "userID")
+                            
+                        } else {
+                            print(String(format: "Branch TestBed: Error setting identity: %@", error))
+                            self.showAlert("Unable to Set Identity", withDescription:error.localizedDescription)
+                        }
+                    }
+                    
                 }
-                
-                self.rewardsBucketTextField.text = rewardsBucket
-                self.refreshRewardsBalanceOfBucket()
-                
+            case "Rewards Bucket":
+                if let rewardsBucket = vc.rewardsBucketTextView.text {
+                    
+                    guard self.rewardsBucketTextField.text != rewardsBucket else {
+                        return
+                    }
+                    TestData.setRewardsBucket(rewardsBucket)
+                    self.rewardsBucketTextField.text = rewardsBucket
+                    self.refreshRewardsBalanceOfBucket()
+                    
+                }
+            case "Reward Points to Redeem":
+                if let rewardPointsToRedeem = vc.rewardsBucketTextView.text {
+                    
+                    guard self.rewardPointsToRedeemTextField.text != rewardPointsToRedeem else {
+                        return
+                    }
+                    TestData.setRewardPointsToRedeem(rewardPointsToRedeem)
+                    self.rewardPointsToRedeemTextField.text = rewardPointsToRedeem
+                }
+            case "Custom Event Name":
+                if let customEventName = vc.rewardsBucketTextView.text {
+                    
+                    guard self.customEventNameTextField.text != customEventName else {
+                        return
+                    }
+                    TestData.setCustomEventName(customEventName)
+                    self.customEventNameTextField.text = customEventName
+                }
+            default: break
             }
-        }
-    }
-    
-    @IBAction func unwindRewardPointsToRedeemViewController(segue:UIStoryboardSegue) {
-        if let viewController = segue.sourceViewController as? RewardPointsToRedeemViewController {
             
-            if let rewardPointsToRedeem = viewController.rewardPointsToRedeemTextView.text {
-                
-                guard self.rewardPointsToRedeemTextField.text != rewardPointsToRedeem else {
-                    return
-                }
-                
-                self.rewardPointsToRedeemTextField.text = rewardPointsToRedeem
-                
-            }
-        }
-    }
-    
-    @IBAction func unwindCustomEventNameViewController(segue:UIStoryboardSegue) {
-        if let viewController = segue.sourceViewController as? CustomEventNameViewController {
             
-            if let customEventName = viewController.customEventNameTextView.text {
-                
-                guard self.customEventNameTextField.text != customEventName else {
-                    return
-                }
-                
-                self.customEventNameTextField.text = customEventName
-                
-            }
         }
     }
     
     @IBAction func unwindCustomEventMetadataTableViewController(segue:UIStoryboardSegue) {
-        if let viewController = segue.sourceViewController as? CustomEventMetadataTableViewController {
-            customEventMetadata = viewController.customEventMetadata
-            self.customEventMetadataTextView.text = customEventMetadata.description
+        if let vc = segue.sourceViewController as? CustomEventMetadataTableViewController {
+            if (vc.parameterName == "CustomEventMetadata") {
+                customEventMetadata = vc.customEventMetadata
+                self.customEventMetadataTextView.text = customEventMetadata.description
+            }
         }
     }
     
     @IBAction func unwindLinkPropertiesTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? LinkPropertiesTableViewController {
-            linkProperties["alias"] = vc.aliasTextField.text
-            linkProperties["channel"] = vc.channelTextField.text
-            linkProperties["feature"] = vc.featureTextField.text
-            linkProperties["stage"] = vc.stageTextField.text
-            linkProperties["tags"] = vc.tags
-            linkProperties["fallbackURL"] = vc.fallbackURLTextField.text
-            linkProperties["desktopURL"] = vc.desktopURLTextField.text
-            linkProperties["androidURL"] = vc.androidURLTextField.text
-            linkProperties["iosURL"] = vc.iosURLTextField.text
-            linkProperties["ipadURl"] = vc.ipadURLTextField.text
-            linkProperties["fireURL"] = vc.fireURLTextField.text
-            linkProperties["blackberryURL"] = vc.blackberryURLTextField.text
-            linkProperties["windowsPhoneURL"] = vc.windowsPhoneURLTextField.text
-            linkProperties["afterClickURL"] = vc.afterClickURLTextField.text
-            linkProperties["deeplinkPath"] = vc.deeplinkPathTextField.text
-            linkProperties["alwaysDeeplink"] = vc.alwaysDeeplinkSwitch.on
-            linkProperties["matchDuration"] = vc.matchDurationTextField.text
+            linkProperties = vc.linkProperties
+            
             TestData.setLinkProperties(linkProperties)
             self.linkPropertiesTextView.text = linkProperties.description
         }

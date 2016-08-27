@@ -1,5 +1,5 @@
 //
-//  RewardsBucketViewController.swift
+//  EnterCustomDataViewController.swift
 //  AdScrubber
 //
 //  Created by David Westgate on 12/31/15.
@@ -25,37 +25,28 @@
 import UIKit
 
 /// Manages the user interface for updating the
-/// rewardsBucketTextView field of ViewController
-class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
+/// valueTextView field of ViewController
+class EnterCustomDataViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     
     // MARK: -
     // MARK: Control Outlets
-    @IBOutlet weak var rewardsBucketTextView: UITextView!
-    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var keyTextField: UITextField!
+    @IBOutlet weak var valueTextView: UITextView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     // MARK: Variables
-    var incumbantRewardsBucket: String!
-    var header = "Default Header"
-    var footer = "Default Footer"
-    var keyboardType = UIKeyboardType.Default
+    var incumbantKey: String!
+    var incumbantValue: String!
     
     // MARK: Overridden functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rewardsBucketTextView.delegate = self
-        rewardsBucketTextView.keyboardType = keyboardType
-        rewardsBucketTextView.text = incumbantRewardsBucket
-        rewardsBucketTextView.becomeFirstResponder()
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return header
-    }
-    
-    
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return footer
+        keyTextField.text = incumbantKey
+        valueTextView.delegate = self
+        valueTextView.text = incumbantValue
+        setFirstResponder()
     }
     
     
@@ -66,14 +57,17 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        // TestData.setEnterCustomData(valueTextView.text)
+        
     }
     
     // MARK: Control Actions
-    @IBAction func clearButtonTouchUpInside(sender: AnyObject) {
-        rewardsBucketTextView.text = incumbantRewardsBucket
-        rewardsBucketTextView.textColor = UIColor.lightGrayColor()
-        rewardsBucketTextView.becomeFirstResponder()
-        rewardsBucketTextView.selectedTextRange = rewardsBucketTextView.textRangeFromPosition(rewardsBucketTextView.beginningOfDocument, toPosition: rewardsBucketTextView.beginningOfDocument)
+    @IBAction func cancelButtonTouchUpInside(sender: AnyObject) {
+        valueTextView.text = incumbantValue
+        valueTextView.textColor = UIColor.lightGrayColor()
+        valueTextView.becomeFirstResponder()
+        valueTextView.selectedTextRange = valueTextView.textRangeFromPosition(valueTextView.beginningOfDocument, toPosition: valueTextView.beginningOfDocument)
     }
     
     // MARK: Control Functions
@@ -85,19 +79,13 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
         }
     }
     
-    
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        
-        guard (text != "\n") else {
-            performSegueWithIdentifier("UnwindRewardsBucketViewController", sender: self)
-            return false
-        }
         
         let t: NSString = textView.text
         let updatedText = t.stringByReplacingCharactersInRange(range, withString:text)
         
         guard (updatedText != "") else {
-            textView.text = incumbantRewardsBucket
+            textView.text = incumbantValue
             textView.textColor = UIColor.lightGrayColor()
             textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
             return false
@@ -109,6 +97,31 @@ class RewardsBucketViewController: UITableViewController, UITextViewDelegate {
         }
         
         return true
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        cancelButton.hidden = false
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        cancelButton.hidden = true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if ((saveButton === sender) && (keyTextField != "")) {
+            // don't need this if using unwind
+        }
+    }
+    
+    func setFirstResponder() {
+        if (incumbantKey == nil) {
+            keyTextField.becomeFirstResponder()
+        } else {
+            keyTextField.enabled = false
+            valueTextView.becomeFirstResponder()
+        }
+        // if there is no value in either control, only enable key
+        // if there is a value in key allow editing of either control
     }
     
 }

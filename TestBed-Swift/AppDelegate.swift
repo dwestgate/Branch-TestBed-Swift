@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Branch TestBed: Initialization failed\n%@", error.localizedDescription)
             }
         })
-        
+
         return true
     }
     
