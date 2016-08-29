@@ -111,72 +111,52 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="98" id="CK1-FW-dDc">
-                                        <rect key="frame" x="0.0" y="253" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="CK1-FW-dDc">
+                                        <rect key="frame" x="0.0" y="253" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CK1-FW-dDc" id="6oC-U9-o3e">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Properties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85Q-J4-YOW" userLabel="linkPropertiesLabel">
-                                                    <rect key="frame" x="14" y="8" width="359" height="21"/>
+                                                    <rect key="frame" x="14" y="11" width="365" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eYF-je-F9O" userLabel="linkPropertiesTextView">
-                                                    <rect key="frame" x="14" y="29" width="359" height="60"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eYF-je-F9O" firstAttribute="bottom" secondItem="6oC-U9-o3e" secondAttribute="bottomMargin" id="8MB-Qb-zcF"/>
-                                                <constraint firstItem="85Q-J4-YOW" firstAttribute="trailing" secondItem="6oC-U9-o3e" secondAttribute="trailingMargin" id="IMD-eI-OHg"/>
-                                                <constraint firstItem="eYF-je-F9O" firstAttribute="top" secondItem="85Q-J4-YOW" secondAttribute="bottom" id="K89-ze-pea"/>
-                                                <constraint firstItem="eYF-je-F9O" firstAttribute="leading" secondItem="6oC-U9-o3e" secondAttribute="leadingMargin" constant="6" id="N6d-Nc-PxR"/>
+                                                <constraint firstItem="85Q-J4-YOW" firstAttribute="centerY" secondItem="6oC-U9-o3e" secondAttribute="centerY" id="0i8-ZK-U5r"/>
+                                                <constraint firstItem="85Q-J4-YOW" firstAttribute="trailing" secondItem="6oC-U9-o3e" secondAttribute="trailingMargin" constant="6" id="IMD-eI-OHg"/>
                                                 <constraint firstItem="85Q-J4-YOW" firstAttribute="leading" secondItem="6oC-U9-o3e" secondAttribute="leadingMargin" constant="6" id="Yjq-Kx-Ukn"/>
-                                                <constraint firstItem="85Q-J4-YOW" firstAttribute="top" secondItem="6oC-U9-o3e" secondAttribute="topMargin" id="ht0-ml-LbE"/>
-                                                <constraint firstItem="eYF-je-F9O" firstAttribute="trailing" secondItem="6oC-U9-o3e" secondAttribute="trailingMargin" id="nGk-DY-gah"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="98" id="kxS-nO-VHD">
-                                        <rect key="frame" x="0.0" y="351" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="kxS-nO-VHD">
+                                        <rect key="frame" x="0.0" y="297" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kxS-nO-VHD" id="x1S-7R-laO">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vSC-kn-MQT" userLabel="branchUniversalObjectTextView">
-                                                    <rect key="frame" x="14" y="29" width="359" height="60"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branch Universal Object Properties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kd-9O-rOf" userLabel="branchUniversalObjectPropertiesLabel">
-                                                    <rect key="frame" x="14" y="8" width="359" height="21"/>
+                                                    <rect key="frame" x="14" y="11" width="365" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="5kd-9O-rOf" firstAttribute="top" secondItem="x1S-7R-laO" secondAttribute="topMargin" id="5pZ-YP-90u"/>
-                                                <constraint firstItem="5kd-9O-rOf" firstAttribute="trailing" secondItem="x1S-7R-laO" secondAttribute="trailingMargin" id="9if-cS-87O"/>
-                                                <constraint firstItem="vSC-kn-MQT" firstAttribute="top" secondItem="5kd-9O-rOf" secondAttribute="bottom" id="C4a-qD-Qh7"/>
-                                                <constraint firstItem="5kd-9O-rOf" firstAttribute="leading" secondItem="x1S-7R-laO" secondAttribute="leadingMargin" constant="6" id="K30-DT-xlQ"/>
-                                                <constraint firstItem="vSC-kn-MQT" firstAttribute="bottom" secondItem="x1S-7R-laO" secondAttribute="bottomMargin" id="Rgd-lN-Ytn"/>
-                                                <constraint firstItem="vSC-kn-MQT" firstAttribute="trailing" secondItem="x1S-7R-laO" secondAttribute="trailingMargin" id="aD4-Ek-4jo"/>
-                                                <constraint firstItem="vSC-kn-MQT" firstAttribute="leading" secondItem="x1S-7R-laO" secondAttribute="leadingMargin" constant="6" id="qKu-9i-IeG"/>
+                                                <constraint firstItem="5kd-9O-rOf" firstAttribute="leading" secondItem="x1S-7R-laO" secondAttribute="leadingMargin" constant="6" id="QyA-Tn-wC5"/>
+                                                <constraint firstItem="5kd-9O-rOf" firstAttribute="trailing" secondItem="x1S-7R-laO" secondAttribute="trailingMargin" constant="6" id="Yv4-j7-dhc"/>
+                                                <constraint firstItem="5kd-9O-rOf" firstAttribute="centerY" secondItem="x1S-7R-laO" secondAttribute="centerY" id="nwA-50-ync"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="wnH-VD-kfe">
-                                        <rect key="frame" x="0.0" y="449" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="341" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wnH-VD-kfe" id="W7I-cV-hNt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -204,7 +184,7 @@
                             <tableViewSection headerTitle="Referral Rewards" id="48j-Sc-YF0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="N1G-oH-hDh">
-                                        <rect key="frame" x="0.0" y="544" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="436" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N1G-oH-hDh" id="ENN-Nm-OiH">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
@@ -233,7 +213,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="Onc-wf-G4D">
-                                        <rect key="frame" x="0.0" y="588" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="480" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Onc-wf-G4D" id="Uw6-OV-oTw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -271,7 +251,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="xcc-rK-2xk">
-                                        <rect key="frame" x="0.0" y="632" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="524" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcc-rK-2xk" id="MAR-OW-qjj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -295,7 +275,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="zOh-9n-jJa">
-                                        <rect key="frame" x="0.0" y="676" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="568" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zOh-9n-jJa" id="7Rc-f6-aFE">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
@@ -324,7 +304,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="jWa-4n-4sH">
-                                        <rect key="frame" x="0.0" y="720" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="612" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWa-4n-4sH" id="9fg-IC-bWp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -348,7 +328,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="beT-dr-Lmz">
-                                        <rect key="frame" x="0.0" y="764" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="656" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="beT-dr-Lmz" id="57t-UB-z4S">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
@@ -374,7 +354,7 @@
                             <tableViewSection headerTitle="Application Events" id="2wG-zu-ZBM" userLabel="In-App Events">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="R2s-j3-arJ">
-                                        <rect key="frame" x="0.0" y="859" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="751" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R2s-j3-arJ" id="A1p-DN-2gS">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
@@ -403,7 +383,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="98" id="RhC-hK-F1P">
-                                        <rect key="frame" x="0.0" y="903" width="414" height="98"/>
+                                        <rect key="frame" x="0.0" y="795" width="414" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RhC-hK-F1P" id="da2-hP-iyc">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="97"/>
@@ -435,7 +415,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="4h4-mT-vbL">
-                                        <rect key="frame" x="0.0" y="1001" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="893" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4h4-mT-vbL" id="uzM-rl-pnG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -459,7 +439,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="yo4-y0-dNM">
-                                        <rect key="frame" x="0.0" y="1045" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="937" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yo4-y0-dNM" id="Fyv-9Y-995">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -483,7 +463,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="tGY-MG-RJb">
-                                        <rect key="frame" x="0.0" y="1089" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="981" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tGY-MG-RJb" id="Poj-gH-ZRE">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -511,7 +491,7 @@
                             <tableViewSection headerTitle="Session Data" id="wTB-pX-vJF" userLabel="Session Data">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="2bg-hb-tyv">
-                                        <rect key="frame" x="0.0" y="1184" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1076" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bg-hb-tyv" id="ZZW-75-6KI">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
@@ -533,7 +513,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="lGg-oI-a6C">
-                                        <rect key="frame" x="0.0" y="1228" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1120" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGg-oI-a6C" id="e5n-P8-PRj">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
@@ -575,7 +555,6 @@
                         <outlet property="activityIndicator" destination="iWm-9a-YrS" id="rgY-wp-brq"/>
                         <outlet property="customEventMetadataTextView" destination="3MJ-Nk-tjQ" id="xv6-06-sD9"/>
                         <outlet property="customEventNameTextField" destination="qqT-nj-v61" id="F1z-dC-Ykt"/>
-                        <outlet property="linkPropertiesTextView" destination="eYF-je-F9O" id="rfc-Pl-CeQ"/>
                         <outlet property="linkTextField" destination="HbG-sF-3ao" id="PZV-Kl-bBm"/>
                         <outlet property="rewardPointsToRedeemTextField" destination="fVR-7S-q91" id="YLa-p0-Z19"/>
                         <outlet property="rewardsBalanceOfBucketTextField" destination="o6J-3u-u1J" id="pJR-Km-nPD"/>
@@ -607,35 +586,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="type" id="8Kc-8u-XdN" userLabel="type">
-                                <string key="footerTitle">Set to 1 to limit deep linking behavior of the generated link to a single use. Set type to 2 to make link show up under Marketing page in the dashboard.</string>
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KiJ-f7-s7E">
-                                        <rect key="frame" x="0.0" y="114" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KiJ-f7-s7E" id="ECZ-Wi-Pri">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIQ-Qe-oiS" userLabel="typeTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="cIQ-Qe-oiS" firstAttribute="leading" secondItem="ECZ-Wi-Pri" secondAttribute="leadingMargin" constant="6" id="P1g-wa-MAi"/>
-                                                <constraint firstItem="cIQ-Qe-oiS" firstAttribute="centerY" secondItem="ECZ-Wi-Pri" secondAttribute="centerY" id="Ztm-hX-ba3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cIQ-Qe-oiS" secondAttribute="trailing" constant="6" id="ilp-Uj-tBS"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="alias" footerTitle="The custom alias for the link, e.g. myapp.com/customalias" id="LXz-Cj-rY4" userLabel="alias">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0CU-dh-acg">
-                                        <rect key="frame" x="0.0" y="257" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0CU-dh-acg" id="DR7-gC-lNM">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -659,7 +613,7 @@
                             <tableViewSection headerTitle="channel" footerTitle="The link's marketing channel. Examples could be Facebook, Twitter, SMS, etc., depending on where the link will be shared." id="EKi-k1-qSM" userLabel="channel">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ZQ5-85-OUb">
-                                        <rect key="frame" x="0.0" y="368" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="225" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZQ5-85-OUb" id="Sup-gj-nMj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -683,7 +637,7 @@
                             <tableViewSection headerTitle="feature" footerTitle="The feature the generated link will be associated with, e.g. &quot;sharing&quot;" id="afB-2q-xg9" userLabel="feature">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ggg-qN-hjW">
-                                        <rect key="frame" x="0.0" y="495" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="352" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ggg-qN-hjW" id="kCh-Ht-Z8Q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -707,7 +661,7 @@
                             <tableViewSection headerTitle="stage" footerTitle="The stage of the marketing funnel where the link will be used" id="TFg-M4-MGB" userLabel="stage">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rGi-aV-FEc">
-                                        <rect key="frame" x="0.0" y="622" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="479" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGi-aV-FEc" id="8ib-uo-Z71">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -731,7 +685,7 @@
                             <tableViewSection headerTitle="tags" footerTitle="A list of tags to be associated with the link" id="Err-LV-0GX" userLabel="tags">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Table View Cell" rowHeight="98" id="APe-MJ-HaR">
-                                        <rect key="frame" x="0.0" y="733" width="414" height="98"/>
+                                        <rect key="frame" x="0.0" y="590" width="414" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="APe-MJ-HaR" id="LjI-5M-9ae">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
@@ -755,10 +709,12 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="$deeplink_path" id="tTv-KE-3Du" userLabel="$deeplink_path">
-                                <string key="footerTitle">The value of the deep link path that you'd like us to append to your URI Scheme. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". This is primarily for supporting legacy deep linking infrastructure.</string>
+                                <mutableString key="footerTitle">The value of the deep link path that you'd like us to append to your URI Scheme. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". This is primarily for supporting legacy deep linking infrastructure.
+
+Universal Links and Spotlight do not support deep linking via URI paths. If possible, we recommend not using $deeplink_path and its platform-specific variants as your only deep link routing method.</mutableString>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="fCK-Qh-CtF">
-                                        <rect key="frame" x="0.0" y="898" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="755" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fCK-Qh-CtF" id="Bwk-qj-sH3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -783,7 +739,7 @@
                                 <string key="footerTitle">The value of the deep link path that you'd like us to append to your URI Scheme on Android. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". This is primarily for supporting legacy deep linking infrastructure.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="jWJ-o0-iwq">
-                                        <rect key="frame" x="0.0" y="1073" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="994" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWJ-o0-iwq" id="kfw-Yq-NeY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -808,7 +764,7 @@
                                 <string key="footerTitle">The value of the deep link path that you'd like us to append to your URI Scheme on iOS. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". This is primarily for supporting legacy deep linking infrastructure.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="q88-TY-fdl">
-                                        <rect key="frame" x="0.0" y="1264" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1185" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q88-TY-fdl" id="wWM-jY-wSi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -832,7 +788,7 @@
                             <tableViewSection headerTitle="$ios_wechat_url" footerTitle="Change the redirect endpoint for WeChat on iOS devices." id="sjT-KP-uMM" userLabel="$ios_wechat_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="WMg-PC-rjl">
-                                        <rect key="frame" x="0.0" y="1455" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1376" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMg-PC-rjl" id="tbh-ps-0ZA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -856,7 +812,7 @@
                             <tableViewSection headerTitle="$ios_weibo_url" footerTitle="Change the redirect endpoint for Weibo on iOS devices." id="9Wh-og-Q5D" userLabel="$ios_weibo_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="oau-oZ-equ">
-                                        <rect key="frame" x="0.0" y="1566" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1487" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oau-oZ-equ" id="m3u-4y-Lnt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -881,7 +837,7 @@
                                 <string key="footerTitle">This is set to 1 (true) or 0 (false), and the default is 0 (false). If true, an attempt to open the app will be made, even if Branch has not seen the device before and is therefore unsure whether the user has the app installed or not. If the app is not installed, we fall back to the respective app store or $platform_url key. By default, we only open the app if we've seen a user initiate a session in your app from a Branch link (has been cookied and deep linked by Branch).</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="jku-gt-pm6">
-                                        <rect key="frame" x="0.0" y="1677" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1598" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jku-gt-pm6" id="Iny-NN-Sb7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -910,7 +866,7 @@
                                 <string key="footerTitle">When a user returns to the browser after the app was successfully opened they will be redirected to this URL. This currently works for iOS only; Android support is coming soon.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PD6-90-h16">
-                                        <rect key="frame" x="0.0" y="1884" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1805" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PD6-90-h16" id="3Pa-m9-yOi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -934,7 +890,7 @@
                             <tableViewSection headerTitle="$match_duration" footerTitle="The attribution window, in seconds, for clicks coming from this link. The default is 7200 (2 hours)." id="qLw-wc-jH4" userLabel="$match_duration">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="lG2-MY-xYa">
-                                        <rect key="frame" x="0.0" y="2027" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1948" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lG2-MY-xYa" id="gWE-sE-iim">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -959,7 +915,7 @@
                                 <string key="footerTitle">For all platforms, where to send the user when the app is not installed. Note that Branch will forward all robots to this URL, overriding any OG tags entered in the link.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="zfQ-mA-UsS">
-                                        <rect key="frame" x="0.0" y="2154" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2075" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zfQ-mA-UsS" id="U7b-AE-TvB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -983,7 +939,7 @@
                             <tableViewSection headerTitle="$desktop_url" footerTitle="Where to send the user on a desktop or laptop. If not set, this defaults to the Branch-hosted text-me-the-app page." id="mav-4d-wu7" userLabel="$desktop_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="15Y-39-rVu">
-                                        <rect key="frame" x="0.0" y="2297" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2218" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15Y-39-rVu" id="h8a-Jo-3BI">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1007,7 +963,7 @@
                             <tableViewSection headerTitle="$android_url" footerTitle="If set, Android users who do not have the app installed will be redirected to this URL instead of the Play Store" id="SCe-A0-nai" userLabel="$android_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Qns-Za-x3O">
-                                        <rect key="frame" x="0.0" y="2424" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2345" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qns-Za-x3O" id="NIe-mw-1VA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1031,7 +987,7 @@
                             <tableViewSection headerTitle="$ios_url" footerTitle="If set, iPhone users who do not have the app installed will be redirected to this URL instead of the App Store" id="bDA-1G-xNs" userLabel="$ios_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xg7-fZ-sky">
-                                        <rect key="frame" x="0.0" y="2551" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2472" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xg7-fZ-sky" id="NhZ-dh-h3x">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1055,7 +1011,7 @@
                             <tableViewSection headerTitle="$ipad_url" footerTitle="If set, iPad users who do not have the app installed will be redirected to this URL instead of the App Store" id="HfC-OP-Dtg" userLabel="$ipad_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="btX-iu-MeG">
-                                        <rect key="frame" x="0.0" y="2678" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2599" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="btX-iu-MeG" id="qMO-mh-mfo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1079,7 +1035,7 @@
                             <tableViewSection headerTitle="$fire_url" footerTitle="If set, Amazon Fire users who do not have the app installed will be redirected to this URL" id="w7n-c0-n0S" userLabel="$fire_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Z3k-dM-uIW">
-                                        <rect key="frame" x="0.0" y="2805" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2726" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z3k-dM-uIW" id="fXr-qw-CzT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1103,7 +1059,7 @@
                             <tableViewSection headerTitle="$blackberry_url" footerTitle="If set, Blackberry users who do not have the app installed will be redirected to this URL" id="O0i-QT-fCA" userLabel="$blackberry_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pMa-C6-b2W">
-                                        <rect key="frame" x="0.0" y="2932" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2853" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pMa-C6-b2W" id="XhU-Ip-UTp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1127,7 +1083,7 @@
                             <tableViewSection headerTitle="$windows_phone_url" footerTitle="If set, Windows phone users who do not have the app installed will be redirected to this URL" id="Mlo-wj-AFO" userLabel="$windows_phone_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="59F-yN-gxT">
-                                        <rect key="frame" x="0.0" y="3059" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="2980" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59F-yN-gxT" id="2CZ-hn-TTz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1143,6 +1099,31 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="W9Y-Kz-ydz" secondAttribute="trailing" constant="6" id="4ts-PH-GhC"/>
                                                 <constraint firstItem="W9Y-Kz-ydz" firstAttribute="leading" secondItem="2CZ-hn-TTz" secondAttribute="leadingMargin" constant="6" id="CFw-dJ-24u"/>
                                                 <constraint firstItem="W9Y-Kz-ydz" firstAttribute="centerY" secondItem="2CZ-hn-TTz" secondAttribute="centerY" id="cxf-5y-Mt5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="type" id="8Kc-8u-XdN" userLabel="type">
+                                <string key="footerTitle">Set to 1 to limit deep linking behavior of the generated link to a single use. Set type to 2 to make link show up under Marketing page in the dashboard.</string>
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KiJ-f7-s7E">
+                                        <rect key="frame" x="0.0" y="3107" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KiJ-f7-s7E" id="ECZ-Wi-Pri">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIQ-Qe-oiS" userLabel="typeTextField">
+                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cIQ-Qe-oiS" firstAttribute="leading" secondItem="ECZ-Wi-Pri" secondAttribute="leadingMargin" constant="6" id="P1g-wa-MAi"/>
+                                                <constraint firstItem="cIQ-Qe-oiS" firstAttribute="centerY" secondItem="ECZ-Wi-Pri" secondAttribute="centerY" id="Ztm-hX-ba3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cIQ-Qe-oiS" secondAttribute="trailing" constant="6" id="ilp-Uj-tBS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1184,7 +1165,7 @@
                         <outlet property="tagsTextView" destination="gyD-DA-0yx" id="M4q-Bk-C78"/>
                         <outlet property="typeTextField" destination="cIQ-Qe-oiS" id="T6G-Gk-s9X"/>
                         <outlet property="windowsPhoneURLTextField" destination="W9Y-Kz-ydz" id="U4x-ck-J4a"/>
-                        <segue destination="9uI-dp-bww" kind="show" identifier="ShowLinkTagsViewController" id="Qus-RU-z7K"/>
+                        <segue destination="9uI-dp-bww" kind="show" identifier="ShowTags" id="Qus-RU-z7K"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISL-Qe-gS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1195,7 +1176,7 @@
         <!--Custom Event Metadata-->
         <scene sceneID="DBI-Qq-Pun">
             <objects>
-                <tableViewController id="f9P-iX-WYi" customClass="CustomEventMetadataTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="f9P-iX-WYi" customClass="DictionaryTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BdP-aF-1NL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1242,7 +1223,7 @@
                     <navigationItem key="navigationItem" title="Custom Event Metadata" id="wHi-Gn-q4b" userLabel="Custom Event Metadata">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="EeE-gM-yOf" userLabel="doneButton">
                             <connections>
-                                <segue destination="U8c-t8-Hlk" kind="unwind" unwindAction="unwindCustomEventMetadataTableViewController:" id="a4W-JE-AMP"/>
+                                <segue destination="U8c-t8-Hlk" kind="unwind" unwindAction="unwindDictionaryTableViewController:" id="a4W-JE-AMP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="HDN-cH-sOA" userLabel="addButton">
@@ -1263,7 +1244,7 @@
         <!--Custom Event Key-Value Pair-->
         <scene sceneID="s8k-qN-lfj">
             <objects>
-                <tableViewController id="IqB-zB-kHb" customClass="CustomEventMetadataElementViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="IqB-zB-kHb" customClass="KeyValuePairTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HEt-Fj-G1w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1355,12 +1336,12 @@
                     <navigationItem key="navigationItem" title="Custom Event Key-Value Pair" id="RIb-YZ-cSX" userLabel="Custom Event Key-Value Pair">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KbB-h2-dD2" userLabel="cancelButton">
                             <connections>
-                                <segue destination="gEH-LZ-jdo" kind="unwind" unwindAction="unwindCustomEventMetadataElementViewController:" id="cOa-JM-0kF"/>
+                                <segue destination="gEH-LZ-jdo" kind="unwind" unwindAction="unwindKeyValuePairTableViewController:" id="cOa-JM-0kF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Jw5-GP-gLn" userLabel="saveButton">
                             <connections>
-                                <segue destination="gEH-LZ-jdo" kind="unwind" unwindAction="unwindCustomEventMetadataElementViewController:" id="Buj-8D-2ye"/>
+                                <segue destination="gEH-LZ-jdo" kind="unwind" unwindAction="unwindKeyValuePairTableViewController:" id="Buj-8D-2ye"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1401,16 +1382,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Tag" id="72O-gi-kol">
+                            <tableViewSection id="72O-gi-kol" userLabel="Section">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uvv-6Y-Gnd">
-                                        <rect key="frame" x="0.0" y="114" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uvv-6Y-Gnd" id="CYU-kY-iEa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-p8-wFJ" userLabel="textField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-p8-wFJ" userLabel="textField">
                                                     <rect key="frame" x="14" y="12" width="392" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
@@ -1431,7 +1412,7 @@
                             <outlet property="delegate" destination="5e7-2J-ss3" id="GN7-3F-lLb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Tag" id="cUi-EA-QPT" userLabel="Add Tag">
+                    <navigationItem key="navigationItem" title="Add Element" id="cUi-EA-QPT">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gXj-cr-h5T" userLabel="cancelButton">
                             <connections>
                                 <segue destination="WIF-C2-NOF" kind="unwind" unwindAction="unwindTextFieldFormTableViewController:" id="jKp-JW-DEd"/>
@@ -1470,24 +1451,24 @@
             </objects>
             <point key="canvasLocation" x="2370" y="2389"/>
         </scene>
-        <!--Tags-->
+        <!--Array-->
         <scene sceneID="P6z-Bq-T81">
             <objects>
-                <tableViewController storyboardIdentifier="ShowLinkTagsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9uI-dp-bww" userLabel="Tags" customClass="LinkTagsTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ArrayTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9uI-dp-bww" userLabel="Array" customClass="ArrayTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="top" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="302-tP-i8L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinkTagTableViewCell" id="qid-rc-K1H" customClass="LinkTagTableViewCell" customModule="TestBed_Swift" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArrayTableViewCell" id="qid-rc-K1H" userLabel="ArrayTableViewCell" customClass="ArrayTableViewCell" customModule="TestBed_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qid-rc-K1H" id="n2h-J3-cnt">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TII-vu-oAf" userLabel="tagLabel">
-                                            <rect key="frame" x="14" y="11" width="67" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elementLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TII-vu-oAf" userLabel="elementLabel">
+                                            <rect key="frame" x="14" y="11" width="104" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1499,7 +1480,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="tagLabel" destination="TII-vu-oAf" id="leu-dW-ZSo"/>
+                                    <outlet property="elementLabel" destination="TII-vu-oAf" id="leu-dW-ZSo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1508,15 +1489,15 @@
                             <outlet property="delegate" destination="9uI-dp-bww" id="Pv3-8L-an6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="QxT-Zf-wJh" userLabel="Tags">
+                    <navigationItem key="navigationItem" title="Title" id="QxT-Zf-wJh" userLabel="ArrayElements">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Vjn-iw-mFr" userLabel="doneButton">
                             <connections>
-                                <segue destination="36D-UM-d62" kind="unwind" unwindAction="unwindLinkTagsTableViewController:" id="MAh-qC-Anc"/>
+                                <segue destination="36D-UM-d62" kind="unwind" unwindAction="unwindArrayTableViewController:" id="MAh-qC-Anc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AlJ-8j-26Y" userLabel="addButton">
                             <connections>
-                                <segue destination="zIj-Eb-eJn" kind="presentation" identifier="AddTag" id="mRq-ae-B0C"/>
+                                <segue destination="zIj-Eb-eJn" kind="presentation" identifier="AddElement" id="mRq-ae-B0C"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1707,22 +1688,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter channel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-l4-IxT" userLabel="canonicalIdentifierTextField">
-                                                    <rect key="frame" x="8" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$canonical_identifier" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-l4-IxT" userLabel="canonicalIdentifierTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zVx-l4-IxT" firstAttribute="leading" secondItem="oIq-Zf-gmY" secondAttribute="leadingMargin" id="T41-lb-fKL"/>
+                                                <constraint firstItem="zVx-l4-IxT" firstAttribute="leading" secondItem="oIq-Zf-gmY" secondAttribute="leadingMargin" constant="6" id="T41-lb-fKL"/>
                                                 <constraint firstItem="zVx-l4-IxT" firstAttribute="centerY" secondItem="oIq-Zf-gmY" secondAttribute="centerY" id="fAP-St-MHi"/>
-                                                <constraint firstItem="zVx-l4-IxT" firstAttribute="trailing" secondItem="oIq-Zf-gmY" secondAttribute="trailingMargin" id="pwO-Dc-wDz"/>
+                                                <constraint firstItem="zVx-l4-IxT" firstAttribute="trailing" secondItem="oIq-Zf-gmY" secondAttribute="trailingMargin" constant="6" id="pwO-Dc-wDz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="canonicalUrl" footerTitle="The canonical URL, used for SEO purposes" id="Lju-xi-L0v" userLabel="canonicalURL">
+                            <tableViewSection headerTitle="$canonical_url" footerTitle="The canonical URL, used for SEO purposes" id="Lju-xi-L0v" userLabel="$canonical_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="eSf-is-r6g" userLabel="canonicalURL">
                                         <rect key="frame" x="0.0" y="257" width="414" height="44"/>
@@ -1731,22 +1712,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter channel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-Bf-axx" userLabel="canonicalURLTextField">
-                                                    <rect key="frame" x="8" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$canonical_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-Bf-axx" userLabel="canonicalURLTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7N1-Bf-axx" firstAttribute="trailing" secondItem="kya-k7-HZE" secondAttribute="trailingMargin" id="6Ej-ql-5YS"/>
+                                                <constraint firstItem="7N1-Bf-axx" firstAttribute="trailing" secondItem="kya-k7-HZE" secondAttribute="trailingMargin" constant="6" id="6Ej-ql-5YS"/>
                                                 <constraint firstItem="7N1-Bf-axx" firstAttribute="centerY" secondItem="kya-k7-HZE" secondAttribute="centerY" id="6W2-QD-qGO"/>
-                                                <constraint firstItem="7N1-Bf-axx" firstAttribute="leading" secondItem="kya-k7-HZE" secondAttribute="leadingMargin" id="VGd-hd-kyq"/>
+                                                <constraint firstItem="7N1-Bf-axx" firstAttribute="leading" secondItem="kya-k7-HZE" secondAttribute="leadingMargin" constant="6" id="VGd-hd-kyq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Content Properties" id="rkH-kT-rLL" userLabel="customData">
+                            <tableViewSection headerTitle="Custom Data" footerTitle="Custom data elements, in the form of key-value pairs." id="rkH-kT-rLL" userLabel="customData">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="NZB-yg-vgt">
                                         <rect key="frame" x="0.0" y="368" width="414" height="98"/>
@@ -1756,17 +1737,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GUc-WI-Ry8" userLabel="customDataTextView">
-                                                    <rect key="frame" x="14" y="8" width="353" height="82"/>
+                                                    <rect key="frame" x="14" y="8" width="365" height="82"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GUc-WI-Ry8" firstAttribute="leading" secondItem="Ach-35-SUG" secondAttribute="leadingMargin" constant="6" id="c2C-IE-RFD"/>
                                                 <constraint firstItem="GUc-WI-Ry8" firstAttribute="top" secondItem="Ach-35-SUG" secondAttribute="topMargin" id="ept-Ho-8Ui"/>
                                                 <constraint firstItem="GUc-WI-Ry8" firstAttribute="bottom" secondItem="Ach-35-SUG" secondAttribute="bottomMargin" id="uTg-R2-GMT"/>
-                                                <constraint firstItem="GUc-WI-Ry8" firstAttribute="trailing" secondItem="Ach-35-SUG" secondAttribute="trailingMargin" constant="-6" id="wKh-mM-mPx"/>
+                                                <constraint firstItem="GUc-WI-Ry8" firstAttribute="trailing" secondItem="Ach-35-SUG" secondAttribute="trailingMargin" constant="6" id="wKh-mM-mPx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1776,23 +1757,24 @@
                                 <string key="footerTitle">Keywords for which this content should be discovered by. Just assign an array of strings with the keywords you’d like to use. Currently, this parameter is only used for iOS Spotlight Indexing.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Table View Cell" rowHeight="98" id="KEn-NU-dHo">
-                                        <rect key="frame" x="0.0" y="517" width="414" height="98"/>
+                                        <rect key="frame" x="0.0" y="533" width="414" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEn-NU-dHo" id="7Bx-7p-L7Y">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N38-Tn-tQO" userLabel="keywordsTextView">
-                                                    <rect key="frame" x="8" y="49" width="365" height="0.0"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N38-Tn-tQO" userLabel="keywordsTextView">
+                                                    <rect key="frame" x="14" y="8" width="365" height="82"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="N38-Tn-tQO" firstAttribute="centerY" secondItem="7Bx-7p-L7Y" secondAttribute="centerY" id="bIl-w5-bKW"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="N38-Tn-tQO" secondAttribute="trailing" id="mOf-7J-VzN"/>
-                                                <constraint firstItem="N38-Tn-tQO" firstAttribute="leading" secondItem="7Bx-7p-L7Y" secondAttribute="leadingMargin" id="rDp-gN-Mge"/>
+                                                <constraint firstItem="N38-Tn-tQO" firstAttribute="top" secondItem="7Bx-7p-L7Y" secondAttribute="topMargin" id="FcP-B9-dZU"/>
+                                                <constraint firstItem="N38-Tn-tQO" firstAttribute="bottom" secondItem="7Bx-7p-L7Y" secondAttribute="bottomMargin" id="fk4-rO-vR6"/>
+                                                <constraint firstItem="N38-Tn-tQO" firstAttribute="trailing" secondItem="7Bx-7p-L7Y" secondAttribute="trailingMargin" constant="6" id="mOf-7J-VzN"/>
+                                                <constraint firstItem="N38-Tn-tQO" firstAttribute="leading" secondItem="7Bx-7p-L7Y" secondAttribute="leadingMargin" constant="6" id="rDp-gN-Mge"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1801,22 +1783,22 @@
                             <tableViewSection headerTitle="$og_title" footerTitle="The name for the piece of content.  This value is scraped by Branch for use in social media." id="sq3-zO-xqj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="z4Z-2P-F2a">
-                                        <rect key="frame" x="0.0" y="714" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="730" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4Z-2P-F2a" id="ohj-nf-Nh0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter feature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uGB-Cu-2fv" userLabel="titleTextField">
-                                                    <rect key="frame" x="8" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uGB-Cu-2fv" userLabel="ogTitleTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uGB-Cu-2fv" firstAttribute="centerY" secondItem="ohj-nf-Nh0" secondAttribute="centerY" id="Jm9-ly-4pf"/>
-                                                <constraint firstItem="uGB-Cu-2fv" firstAttribute="leading" secondItem="ohj-nf-Nh0" secondAttribute="leadingMargin" id="Uta-3U-Cyy"/>
-                                                <constraint firstItem="uGB-Cu-2fv" firstAttribute="trailing" secondItem="ohj-nf-Nh0" secondAttribute="trailingMargin" id="r9c-LS-2fM"/>
+                                                <constraint firstItem="uGB-Cu-2fv" firstAttribute="leading" secondItem="ohj-nf-Nh0" secondAttribute="leadingMargin" constant="6" id="Uta-3U-Cyy"/>
+                                                <constraint firstItem="uGB-Cu-2fv" firstAttribute="trailing" secondItem="ohj-nf-Nh0" secondAttribute="trailingMargin" constant="6" id="r9c-LS-2fM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1824,24 +1806,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$og_description" footerTitle="A description for the content. This value is scraped by Branch for use in social media." id="Oon-pY-bEL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="MAe-k6-MOp">
-                                        <rect key="frame" x="0.0" y="841" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="hI5-Kl-34I">
+                                        <rect key="frame" x="0.0" y="857" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MAe-k6-MOp" id="Vef-C1-Tu7">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hI5-Kl-34I" id="Hgk-Dn-vyF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jCF-iJ-xUs" userLabel="contentDescriptionTextView">
-                                                    <rect key="frame" x="8" y="49" width="365" height="0.0"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zt4-sc-SPv" userLabel="ogDescription">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="jCF-iJ-xUs" secondAttribute="trailing" id="azl-Ie-tBw"/>
-                                                <constraint firstItem="jCF-iJ-xUs" firstAttribute="centerY" secondItem="Vef-C1-Tu7" secondAttribute="centerY" id="r7L-Ty-BsH"/>
-                                                <constraint firstItem="jCF-iJ-xUs" firstAttribute="leading" secondItem="Vef-C1-Tu7" secondAttribute="leadingMargin" id="v5m-QK-G50"/>
+                                                <constraint firstItem="Zt4-sc-SPv" firstAttribute="trailing" secondItem="Hgk-Dn-vyF" secondAttribute="trailingMargin" constant="6" id="1IY-FQ-alC"/>
+                                                <constraint firstItem="Zt4-sc-SPv" firstAttribute="leading" secondItem="Hgk-Dn-vyF" secondAttribute="leadingMargin" constant="6" id="Zko-ul-YBz"/>
+                                                <constraint firstItem="Zt4-sc-SPv" firstAttribute="centerY" secondItem="Hgk-Dn-vyF" secondAttribute="centerY" id="r62-Tk-3jN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1850,46 +1831,46 @@
                             <tableViewSection headerTitle="$og_image_url" footerTitle="The image URL for the content.  This value is scraped by Branch for use in social media." id="NdN-hd-1z3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="v3l-lh-Iqb">
-                                        <rect key="frame" x="0.0" y="1022" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="984" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v3l-lh-Iqb" id="jNg-Ez-iwm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter stage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-Ht-sjB" userLabel="imageURLTextField">
-                                                    <rect key="frame" x="8" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$image_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-Ht-sjB" userLabel="ogImageURLTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oR1-Ht-sjB" firstAttribute="trailing" secondItem="jNg-Ez-iwm" secondAttribute="trailingMargin" id="Kx6-bT-KYc"/>
-                                                <constraint firstItem="oR1-Ht-sjB" firstAttribute="leading" secondItem="jNg-Ez-iwm" secondAttribute="leadingMargin" id="RaB-Hf-0oW"/>
+                                                <constraint firstItem="oR1-Ht-sjB" firstAttribute="trailing" secondItem="jNg-Ez-iwm" secondAttribute="trailingMargin" constant="6" id="Kx6-bT-KYc"/>
+                                                <constraint firstItem="oR1-Ht-sjB" firstAttribute="leading" secondItem="jNg-Ez-iwm" secondAttribute="leadingMargin" constant="6" id="RaB-Hf-0oW"/>
                                                 <constraint firstItem="oR1-Ht-sjB" firstAttribute="centerY" secondItem="jNg-Ez-iwm" secondAttribute="centerY" id="kMN-wj-8QI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="$og_image_url" id="O2e-Ce-8BH" userLabel="$og_image_width">
+                            <tableViewSection headerTitle="$og_image_width" id="O2e-Ce-8BH" userLabel="$og_image_width">
                                 <string key="footerTitle">The image’s width in pixels for social media displays. This value is scraped by Branch for use in social media. If this value is not populated Facebook will not display the image the first time it is shared.</string>
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="8Gq-eA-gwq">
-                                        <rect key="frame" x="0.0" y="1149" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="8Gq-eA-gwq">
+                                        <rect key="frame" x="0.0" y="1111" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Gq-eA-gwq" id="Z2t-eD-GCx">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Uv-Wth" userLabel="ogImageWidth">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_image_width" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Uv-Wth" userLabel="ogImageWidthTextField">
+                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ThH-Uv-Wth" firstAttribute="centerY" secondItem="Z2t-eD-GCx" secondAttribute="centerY" id="1eb-WM-zyE"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ThH-Uv-Wth" secondAttribute="trailing" constant="6" id="Ejn-a2-cHp"/>
+                                                <constraint firstItem="ThH-Uv-Wth" firstAttribute="trailing" secondItem="Z2t-eD-GCx" secondAttribute="trailingMargin" constant="-6" id="Ejn-a2-cHp"/>
                                                 <constraint firstItem="ThH-Uv-Wth" firstAttribute="leading" secondItem="Z2t-eD-GCx" secondAttribute="leadingMargin" constant="6" id="leb-GC-SYV"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1899,23 +1880,23 @@
                             <tableViewSection headerTitle="$og_image_height" id="BmW-5q-ZKb" userLabel="$og_image_height">
                                 <string key="footerTitle">The image’s height in pixels for social media displays. This value is scraped by Branch for use in social media. If this value is not populated Facebook will not display the image the first time it is shared.</string>
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="tm1-TU-0v1">
-                                        <rect key="frame" x="0.0" y="1362" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="tm1-TU-0v1">
+                                        <rect key="frame" x="0.0" y="1270" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tm1-TU-0v1" id="gH6-Qv-vVI">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spb-nB-qDk" userLabel="ogImageHeight">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_image_height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spb-nB-qDk" userLabel="ogImageHeightTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="spb-nB-qDk" firstAttribute="leading" secondItem="gH6-Qv-vVI" secondAttribute="leadingMargin" constant="6" id="5lH-7L-gM2"/>
                                                 <constraint firstItem="spb-nB-qDk" firstAttribute="centerY" secondItem="gH6-Qv-vVI" secondAttribute="centerY" id="6aU-if-AD5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="spb-nB-qDk" secondAttribute="trailing" constant="6" id="AiS-Ch-4hJ"/>
+                                                <constraint firstItem="spb-nB-qDk" firstAttribute="trailing" secondItem="gH6-Qv-vVI" secondAttribute="trailingMargin" constant="6" id="AiS-Ch-4hJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1925,21 +1906,21 @@
                                 <string key="footerTitle">This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here: https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ihe-an-8fc">
-                                        <rect key="frame" x="0.0" y="1575" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1429" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ihe-an-8fc" id="WC9-ar-LmE">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-gC-klu" userLabel="typeTextField">
-                                                    <rect key="frame" x="8" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$content_type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-gC-klu" userLabel="contentTypeTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Jc3-gC-klu" firstAttribute="leading" secondItem="WC9-ar-LmE" secondAttribute="leadingMargin" id="7vG-77-nel"/>
-                                                <constraint firstItem="Jc3-gC-klu" firstAttribute="trailing" secondItem="WC9-ar-LmE" secondAttribute="trailingMargin" id="tVQ-6g-ZJb"/>
+                                                <constraint firstItem="Jc3-gC-klu" firstAttribute="leading" secondItem="WC9-ar-LmE" secondAttribute="leadingMargin" constant="6" id="7vG-77-nel"/>
+                                                <constraint firstItem="Jc3-gC-klu" firstAttribute="trailing" secondItem="WC9-ar-LmE" secondAttribute="trailingMargin" constant="6" id="tVQ-6g-ZJb"/>
                                                 <constraint firstItem="Jc3-gC-klu" firstAttribute="centerY" secondItem="WC9-ar-LmE" secondAttribute="centerY" id="veP-dl-UkL"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1948,21 +1929,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$og_video" footerTitle="A link to a video to be shown in social media displays." id="ATV-3C-8W3" userLabel="$og_video">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="ZwW-P7-uAp">
-                                        <rect key="frame" x="0.0" y="1734" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ZwW-P7-uAp">
+                                        <rect key="frame" x="0.0" y="1588" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZwW-P7-uAp" id="yX6-jE-cmW">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-TF-vGk" userLabel="ogVideoTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-TF-vGk" userLabel="ogVideoTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FYa-TF-vGk" secondAttribute="trailing" constant="6" id="2tb-hC-9Tt"/>
+                                                <constraint firstItem="FYa-TF-vGk" firstAttribute="trailing" secondItem="yX6-jE-cmW" secondAttribute="trailingMargin" constant="6" id="2tb-hC-9Tt"/>
                                                 <constraint firstItem="FYa-TF-vGk" firstAttribute="leading" secondItem="yX6-jE-cmW" secondAttribute="leadingMargin" constant="6" id="O5Z-rd-Qrh"/>
                                                 <constraint firstItem="FYa-TF-vGk" firstAttribute="centerY" secondItem="yX6-jE-cmW" secondAttribute="centerY" id="lc8-w2-qlE"/>
                                             </constraints>
@@ -1972,23 +1953,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$og_url" footerTitle="The base URL of the link as it will be seen in social media displays." id="LQa-4E-eKe">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="EGg-8Y-lBd">
-                                        <rect key="frame" x="0.0" y="1899" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="EGg-8Y-lBd">
+                                        <rect key="frame" x="0.0" y="1699" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EGg-8Y-lBd" id="XxH-jj-pZJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-pr-4lV" userLabel="ogURLTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-pr-4lV" userLabel="ogURLTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="x3s-pr-4lV" firstAttribute="leading" secondItem="XxH-jj-pZJ" secondAttribute="leadingMargin" constant="6" id="7WU-kj-86W"/>
                                                 <constraint firstItem="x3s-pr-4lV" firstAttribute="centerY" secondItem="XxH-jj-pZJ" secondAttribute="centerY" id="8Ig-to-rXx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="x3s-pr-4lV" secondAttribute="trailing" constant="6" id="HPl-Ov-z6k"/>
+                                                <constraint firstItem="x3s-pr-4lV" firstAttribute="trailing" secondItem="XxH-jj-pZJ" secondAttribute="trailingMargin" constant="6" id="HPl-Ov-z6k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1996,22 +1977,22 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$og_type" footerTitle="The type of custom card format link as it will be seen in social media displays." id="6vH-tT-60h" userLabel="$og_type">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="o0O-hu-q7G">
-                                        <rect key="frame" x="0.0" y="2064" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="o0O-hu-q7G">
+                                        <rect key="frame" x="0.0" y="1810" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0O-hu-q7G" id="0ei-DS-btn">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-G0-1wX" userLabel="ogTypeTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-G0-1wX" userLabel="ogTypeTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BVv-G0-1wX" firstAttribute="leading" secondItem="0ei-DS-btn" secondAttribute="leadingMargin" constant="6" id="vJJ-rN-urB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BVv-G0-1wX" secondAttribute="trailing" constant="6" id="x2w-tf-asU"/>
+                                                <constraint firstItem="BVv-G0-1wX" firstAttribute="trailing" secondItem="0ei-DS-btn" secondAttribute="trailingMargin" constant="6" id="x2w-tf-asU"/>
                                                 <constraint firstItem="BVv-G0-1wX" firstAttribute="centerY" secondItem="0ei-DS-btn" secondAttribute="centerY" id="xzG-g2-Hc8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2021,23 +2002,23 @@
                             <tableViewSection headerTitle="$og_redirect" id="oK1-6q-u7J" userLabel="$og_redirect">
                                 <string key="footerTitle">This is an advanced parameter and its use is not recommended. It sets a custom URL that Branch will redirect social media robots to in order to retrieve all the appropriate tags.</string>
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="22X-if-BDx">
-                                        <rect key="frame" x="0.0" y="2245" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="22X-if-BDx">
+                                        <rect key="frame" x="0.0" y="1937" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="22X-if-BDx" id="kFB-l8-vTu">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o21-FJ-6uo" userLabel="ogRedirectTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_redirect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o21-FJ-6uo" userLabel="ogRedirectTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="o21-FJ-6uo" firstAttribute="leading" secondItem="kFB-l8-vTu" secondAttribute="leadingMargin" constant="6" id="C2Z-ud-Rj7"/>
                                                 <constraint firstItem="o21-FJ-6uo" firstAttribute="centerY" secondItem="kFB-l8-vTu" secondAttribute="centerY" id="QzT-uq-plF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="o21-FJ-6uo" secondAttribute="trailing" constant="6" id="uVF-H9-d9C"/>
+                                                <constraint firstItem="o21-FJ-6uo" firstAttribute="trailing" secondItem="kFB-l8-vTu" secondAttribute="trailingMargin" constant="6" id="uVF-H9-d9C"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2045,23 +2026,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$og_app_id" footerTitle="This is rarely used. It sets the OG App ID tag." id="D9M-p9-CMC" userLabel="$og_app_id">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="YEH-oW-sE9">
-                                        <rect key="frame" x="0.0" y="2442" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="YEH-oW-sE9">
+                                        <rect key="frame" x="0.0" y="2080" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEH-oW-sE9" id="Jdf-UG-d0D">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-mZ-QCs" userLabel="ogAppIDTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_app_id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-mZ-QCs" userLabel="ogAppIDTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bz5-mZ-QCs" firstAttribute="leading" secondItem="Jdf-UG-d0D" secondAttribute="leadingMargin" constant="6" id="HZk-EK-TxT"/>
                                                 <constraint firstItem="bz5-mZ-QCs" firstAttribute="centerY" secondItem="Jdf-UG-d0D" secondAttribute="centerY" id="JY0-LY-8Kg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bz5-mZ-QCs" secondAttribute="trailing" constant="6" id="ZpH-QF-6hH"/>
+                                                <constraint firstItem="bz5-mZ-QCs" firstAttribute="trailing" secondItem="Jdf-UG-d0D" secondAttribute="trailingMargin" constant="6" id="ZpH-QF-6hH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2069,22 +2050,22 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_card" footerTitle="The Twitter card type of the link." id="dbi-W1-XAr" userLabel="$twitter_card">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="0hN-9R-gsx">
-                                        <rect key="frame" x="0.0" y="2607" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0hN-9R-gsx">
+                                        <rect key="frame" x="0.0" y="2191" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0hN-9R-gsx" id="UpX-6L-q4i">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-5W-Nn4" userLabel="twitterCardTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-5W-Nn4" userLabel="twitterCardTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qmy-5W-Nn4" firstAttribute="leading" secondItem="UpX-6L-q4i" secondAttribute="leadingMargin" constant="6" id="FVv-eW-PAd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qmy-5W-Nn4" secondAttribute="trailing" constant="6" id="LkS-PG-sTk"/>
+                                                <constraint firstItem="qmy-5W-Nn4" firstAttribute="trailing" secondItem="UpX-6L-q4i" secondAttribute="trailingMargin" constant="6" id="LkS-PG-sTk"/>
                                                 <constraint firstItem="qmy-5W-Nn4" firstAttribute="centerY" secondItem="UpX-6L-q4i" secondAttribute="centerY" id="kK5-ja-R1P"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2093,23 +2074,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_title" footerTitle="The title of the Twitter card." id="5sy-5a-Exq" userLabel="$twitter_title">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="9NF-t1-DYv">
-                                        <rect key="frame" x="0.0" y="2772" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="9NF-t1-DYv">
+                                        <rect key="frame" x="0.0" y="2302" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9NF-t1-DYv" id="Sk9-b5-Ei2" userLabel="Table View Cell">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-p3-iKJ" userLabel="twitterTitleTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-p3-iKJ" userLabel="twitterTitleTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4Ub-p3-iKJ" firstAttribute="leading" secondItem="Sk9-b5-Ei2" secondAttribute="leadingMargin" constant="6" id="QYe-Vj-Rgi"/>
                                                 <constraint firstItem="4Ub-p3-iKJ" firstAttribute="centerY" secondItem="Sk9-b5-Ei2" secondAttribute="centerY" id="XTh-Iv-HgC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="4Ub-p3-iKJ" secondAttribute="trailing" constant="6" id="cgy-WF-fMe"/>
+                                                <constraint firstItem="4Ub-p3-iKJ" firstAttribute="trailing" secondItem="Sk9-b5-Ei2" secondAttribute="trailingMargin" constant="6" id="cgy-WF-fMe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2117,21 +2098,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_description" footerTitle="The description of the Twitter card." id="V0g-pL-c4F" userLabel="$twitter_description">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="5JR-cN-Ogd">
-                                        <rect key="frame" x="0.0" y="2937" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="5JR-cN-Ogd">
+                                        <rect key="frame" x="0.0" y="2413" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5JR-cN-Ogd" id="wJB-E1-l5t">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-Gc-1zU" userLabel="twitterDescriptionTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-Gc-1zU" userLabel="twitterDescriptionTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UWk-Gc-1zU" secondAttribute="trailing" constant="6" id="SuQ-Cy-tKT"/>
+                                                <constraint firstItem="UWk-Gc-1zU" firstAttribute="trailing" secondItem="wJB-E1-l5t" secondAttribute="trailingMargin" constant="6" id="SuQ-Cy-tKT"/>
                                                 <constraint firstItem="UWk-Gc-1zU" firstAttribute="centerY" secondItem="wJB-E1-l5t" secondAttribute="centerY" id="axJ-l9-fRf"/>
                                                 <constraint firstItem="UWk-Gc-1zU" firstAttribute="leading" secondItem="wJB-E1-l5t" secondAttribute="leadingMargin" constant="6" id="iWQ-CX-dWw"/>
                                             </constraints>
@@ -2141,21 +2122,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_site" footerTitle="The site for Twitter." id="fad-Ju-p1a" userLabel="$twitter_site">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="2jB-uZ-wkh">
-                                        <rect key="frame" x="0.0" y="3102" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="2jB-uZ-wkh">
+                                        <rect key="frame" x="0.0" y="2524" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2jB-uZ-wkh" id="EHd-Y5-90V">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZy-37-Vgn" userLabel="twitterSiteTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_site" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZy-37-Vgn" userLabel="twitterSiteTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gZy-37-Vgn" secondAttribute="trailing" constant="6" id="MBA-0t-gi8"/>
+                                                <constraint firstItem="gZy-37-Vgn" firstAttribute="trailing" secondItem="EHd-Y5-90V" secondAttribute="trailingMargin" constant="6" id="MBA-0t-gi8"/>
                                                 <constraint firstItem="gZy-37-Vgn" firstAttribute="centerY" secondItem="EHd-Y5-90V" secondAttribute="centerY" id="Pye-UK-oxp"/>
                                                 <constraint firstItem="gZy-37-Vgn" firstAttribute="leading" secondItem="EHd-Y5-90V" secondAttribute="leadingMargin" constant="6" id="eHT-te-xax"/>
                                             </constraints>
@@ -2165,23 +2146,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_app_country" footerTitle="The app country for the app card." id="4B2-3q-tMX" userLabel="$twitter_app_country">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="r4K-K0-Rca">
-                                        <rect key="frame" x="0.0" y="3267" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="r4K-K0-Rca">
+                                        <rect key="frame" x="0.0" y="2635" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r4K-K0-Rca" id="m7H-wK-sDB">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-xr-Szq" userLabel="twitterAppTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_app" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-xr-Szq" userLabel="twitterAppTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JGm-xr-Szq" firstAttribute="centerY" secondItem="m7H-wK-sDB" secondAttribute="centerY" id="0xv-Zk-qen"/>
                                                 <constraint firstItem="JGm-xr-Szq" firstAttribute="leading" secondItem="m7H-wK-sDB" secondAttribute="leadingMargin" constant="6" id="O45-is-P69"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JGm-xr-Szq" secondAttribute="trailing" constant="6" id="kJj-tB-1kJ"/>
+                                                <constraint firstItem="JGm-xr-Szq" firstAttribute="trailing" secondItem="m7H-wK-sDB" secondAttribute="trailingMargin" constant="6" id="kJj-tB-1kJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2189,47 +2170,47 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_player" footerTitle="The video player’s URL. This defaults to the value of $og_video." id="sRP-Ii-Kex" userLabel="$twitter_player">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="yg7-hw-h36">
-                                        <rect key="frame" x="0.0" y="3432" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="yg7-hw-h36">
+                                        <rect key="frame" x="0.0" y="2746" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yg7-hw-h36" id="m5z-a5-RRR">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-CB-ScR" userLabel="twitterPlayerTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-CB-ScR" userLabel="twitterPlayerTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uuu-CB-ScR" firstAttribute="leading" secondItem="m5z-a5-RRR" secondAttribute="leadingMargin" constant="6" id="NrM-5D-TLK"/>
                                                 <constraint firstItem="uuu-CB-ScR" firstAttribute="centerY" secondItem="m5z-a5-RRR" secondAttribute="centerY" id="XwN-bb-N07"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="uuu-CB-ScR" secondAttribute="trailing" constant="6" id="so7-eF-77N"/>
+                                                <constraint firstItem="uuu-CB-ScR" firstAttribute="trailing" secondItem="m5z-a5-RRR" secondAttribute="trailingMargin" constant="6" id="so7-eF-77N"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="$og_app_id" footerTitle="This sets the player’s width in pixels." id="yBl-u2-lnS" userLabel="$twitter_player_width">
+                            <tableViewSection headerTitle="$twitter_player_width" footerTitle="This sets the player’s width in pixels." id="yBl-u2-lnS" userLabel="$twitter_player_width">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="qA7-qt-GgE">
-                                        <rect key="frame" x="0.0" y="3597" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qA7-qt-GgE">
+                                        <rect key="frame" x="0.0" y="2857" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qA7-qt-GgE" id="3lz-tG-mHt">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-V0-cJ3" userLabel="twitterPlayerWidthTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player_width" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-V0-cJ3" userLabel="twitterPlayerWidthTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fMv-V0-cJ3" firstAttribute="leading" secondItem="3lz-tG-mHt" secondAttribute="leadingMargin" constant="6" id="4cf-tN-y8q"/>
                                                 <constraint firstItem="fMv-V0-cJ3" firstAttribute="centerY" secondItem="3lz-tG-mHt" secondAttribute="centerY" id="5Qx-DT-efu"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="fMv-V0-cJ3" secondAttribute="trailing" constant="6" id="lPq-eL-7pY"/>
+                                                <constraint firstItem="fMv-V0-cJ3" firstAttribute="trailing" secondItem="3lz-tG-mHt" secondAttribute="trailingMargin" constant="6" id="lPq-eL-7pY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2237,23 +2218,23 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="$twitter_player_height" footerTitle="This sets the player’s height in pixels." id="Hlw-4K-k6N" userLabel="$twitter_player_height">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="u03-gq-u1u">
-                                        <rect key="frame" x="0.0" y="3762" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="u03-gq-u1u">
+                                        <rect key="frame" x="0.0" y="2968" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u03-gq-u1u" id="cVY-h9-XlJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-tp-bEB" userLabel="twitterPlayerHeightTextField">
-                                                    <rect key="frame" x="14" y="41" width="353" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player_height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-tp-bEB" userLabel="twitterPlayerHeightTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ZEh-tp-bEB" firstAttribute="centerY" secondItem="cVY-h9-XlJ" secondAttribute="centerY" id="1m1-ws-zMH"/>
                                                 <constraint firstItem="ZEh-tp-bEB" firstAttribute="leading" secondItem="cVY-h9-XlJ" secondAttribute="leadingMargin" constant="6" id="M4h-6u-FNM"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ZEh-tp-bEB" secondAttribute="trailing" constant="6" id="kag-cz-qAD"/>
+                                                <constraint firstItem="ZEh-tp-bEB" firstAttribute="trailing" secondItem="cVY-h9-XlJ" secondAttribute="trailingMargin" constant="6" id="kag-cz-qAD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2262,56 +2243,53 @@
                             <tableViewSection headerTitle="$publicly_indexable" id="uM0-8t-MFb">
                                 <string key="footerTitle">Can be set to either ContentIndexModePublic or ContentIndexModePrivate. Public indicates that you’d like this content to be discovered by other apps</string>
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="HdR-7Y-3aZ">
-                                        <rect key="frame" x="0.0" y="3927" width="414" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HdR-7Y-3aZ">
+                                        <rect key="frame" x="0.0" y="3079" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdR-7Y-3aZ" id="28v-95-Wam">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V2-Os-H9t" userLabel="publiclyIndexableLabel">
-                                                    <rect key="frame" x="169" y="39" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V2-Os-H9t" userLabel="publiclyIndexableLabel">
+                                                    <rect key="frame" x="14" y="12" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B44-sQ-c2b" userLabel="publiclyIndexableSwitch">
-                                                    <rect key="frame" x="165" y="34" width="51" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B44-sQ-c2b" userLabel="publiclyIndexableSwitch">
+                                                    <rect key="frame" x="357" y="7" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="B44-sQ-c2b" secondAttribute="trailing" id="N80-9r-l5J"/>
+                                                <constraint firstItem="9V2-Os-H9t" firstAttribute="leading" secondItem="28v-95-Wam" secondAttribute="leadingMargin" constant="6" id="ii7-dq-bGB"/>
+                                                <constraint firstItem="9V2-Os-H9t" firstAttribute="centerY" secondItem="28v-95-Wam" secondAttribute="centerY" id="kIj-yJ-vuS"/>
+                                                <constraint firstItem="B44-sQ-c2b" firstAttribute="centerY" secondItem="28v-95-Wam" secondAttribute="centerY" id="tMI-dI-9w8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="$exp_date" id="NmM-u4-0i0">
-                                <string key="footerTitle">The date when the content will not longer be available or valid. Currently, this parameter is only used for iOS Spotlight Indexing.</string>
+                                <string key="footerTitle">Expiration date - the date when the content will not longer be available or valid. Currently, this parameter is only used for iOS Spotlight Indexing.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wk3-3v-8Nc">
-                                        <rect key="frame" x="0.0" y="4124" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="3222" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wk3-3v-8Nc" id="f7E-Vs-kCz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expirationDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8T-dM-okK" userLabel="expirationDateLabel">
-                                                    <rect key="frame" x="14" y="12" width="112" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-5x-L9G" userLabel="expirationDateTextField">
-                                                    <rect key="frame" x="186" y="14" width="220" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="220" id="lL2-rg-1KK"/>
-                                                    </constraints>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$exp_date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-5x-L9G" userLabel="expDateTextField">
+                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="T8T-dM-okK" firstAttribute="leading" secondItem="f7E-Vs-kCz" secondAttribute="leadingMargin" constant="6" id="3wC-l6-aAM"/>
                                                 <constraint firstItem="VIt-5x-L9G" firstAttribute="centerY" secondItem="f7E-Vs-kCz" secondAttribute="centerY" id="CeL-by-Z6P"/>
-                                                <constraint firstItem="T8T-dM-okK" firstAttribute="centerY" secondItem="f7E-Vs-kCz" secondAttribute="centerY" id="NMD-St-EYh"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="VIt-5x-L9G" secondAttribute="trailing" id="rFd-my-4Id"/>
+                                                <constraint firstItem="VIt-5x-L9G" firstAttribute="leading" secondItem="f7E-Vs-kCz" secondAttribute="leadingMargin" constant="6" id="b06-H8-Pon"/>
+                                                <constraint firstItem="VIt-5x-L9G" firstAttribute="trailing" secondItem="f7E-Vs-kCz" secondAttribute="trailingMargin" constant="6" id="rFd-my-4Id"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2323,24 +2301,31 @@
                             <outlet property="delegate" destination="dok-LR-mvX" id="qW3-Kx-VN2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cQu-by-3hd"/>
+                    <navigationItem key="navigationItem" id="cQu-by-3hd">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="eBp-NB-7fv">
+                            <connections>
+                                <segue destination="3ix-6a-5ra" kind="unwind" identifier="unwindBranchUniversalObjectTableViewController" unwindAction="unwindBranchUniversalObjectTableViewController:" id="iPv-K7-FJ2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="canonicalIdentifierTextField" destination="zVx-l4-IxT" id="B9t-2p-yf6"/>
                         <outlet property="canonicalURLTextField" destination="7N1-Bf-axx" id="gUb-MR-xew"/>
-                        <outlet property="contentDescriptionTextView" destination="jCF-iJ-xUs" id="0c7-qi-WKj"/>
+                        <outlet property="contentTypeTextField" destination="Jc3-gC-klu" id="Ygx-Xk-aro"/>
                         <outlet property="customDataTextView" destination="GUc-WI-Ry8" id="a77-XP-1kH"/>
-                        <outlet property="expirationDateTextField" destination="VIt-5x-L9G" id="jvD-8X-fdN"/>
-                        <outlet property="imageURLTextField" destination="oR1-Ht-sjB" id="EQ5-cS-Ge0"/>
+                        <outlet property="expDateTextField" destination="VIt-5x-L9G" id="Xf1-gT-7qT"/>
                         <outlet property="keywordsTextView" destination="N38-Tn-tQO" id="6vD-Vd-skT"/>
                         <outlet property="ogAppIDTextField" destination="bz5-mZ-QCs" id="d71-Pv-45F"/>
-                        <outlet property="ogImageHeight" destination="spb-nB-qDk" id="Lam-Hj-kpq"/>
-                        <outlet property="ogImageWidth" destination="ThH-Uv-Wth" id="Qb2-tK-p9B"/>
+                        <outlet property="ogDescriptionTextField" destination="Zt4-sc-SPv" id="o8j-aM-hdq"/>
+                        <outlet property="ogImageHeightTextField" destination="spb-nB-qDk" id="xn8-iP-NhP"/>
+                        <outlet property="ogImageURLTextField" destination="oR1-Ht-sjB" id="EAV-qc-Twy"/>
+                        <outlet property="ogImageWidthTextField" destination="ThH-Uv-Wth" id="Zy8-8G-OC1"/>
                         <outlet property="ogRedirectTextField" destination="o21-FJ-6uo" id="gef-pK-ASG"/>
+                        <outlet property="ogTitleTextField" destination="uGB-Cu-2fv" id="LKZ-wK-2XA"/>
                         <outlet property="ogTypeTextField" destination="BVv-G0-1wX" id="1CX-FP-dTm"/>
                         <outlet property="ogURLTextField" destination="x3s-pr-4lV" id="BOM-U9-EbM"/>
                         <outlet property="ogVideoTextField" destination="FYa-TF-vGk" id="8tx-jN-tpD"/>
                         <outlet property="publiclyIndexableSwitch" destination="B44-sQ-c2b" id="JSb-hL-fEC"/>
-                        <outlet property="titleTextField" destination="uGB-Cu-2fv" id="85V-ss-ozh"/>
                         <outlet property="twitterAppTextField" destination="JGm-xr-Szq" id="V59-3M-taF"/>
                         <outlet property="twitterCardTextField" destination="qmy-5W-Nn4" id="e0U-x5-VcG"/>
                         <outlet property="twitterDescriptionTextField" destination="UWk-Gc-1zU" id="6Nh-qH-hRn"/>
@@ -2349,11 +2334,12 @@
                         <outlet property="twitterPlayerWidthTextField" destination="fMv-V0-cJ3" id="X0o-M3-09W"/>
                         <outlet property="twitterSiteTextField" destination="gZy-37-Vgn" id="lf6-tM-sAY"/>
                         <outlet property="twitterTitleTextField" destination="4Ub-p3-iKJ" id="q7p-bP-lNs"/>
-                        <outlet property="typeTextField" destination="Jc3-gC-klu" id="cpj-eG-2a7"/>
                         <segue destination="f9P-iX-WYi" kind="show" identifier="ShowCustomData" id="wth-hd-3D7"/>
+                        <segue destination="9uI-dp-bww" kind="show" identifier="ShowKeywords" id="X7W-cf-8rz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJ5-Ln-vMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3ix-6a-5ra" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3471" y="1042"/>
         </scene>
@@ -2380,9 +2366,10 @@
         <image name="cancel-28.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fTI-yI-jdX"/>
-        <segue reference="lul-Hc-eKM"/>
-        <segue reference="UT0-7m-xoG"/>
+        <segue reference="7TN-Vi-Tcv"/>
+        <segue reference="X7W-cf-8rz"/>
+        <segue reference="wth-hd-3D7"/>
         <segue reference="wzH-j8-TDu"/>
+        <segue reference="lul-Hc-eKM"/>
     </inferredMetricsTieBreakers>
 </document>

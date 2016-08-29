@@ -12,14 +12,16 @@ struct TestData {
     
     static let userDefaults = NSUserDefaults.standardUserDefaults()
 
-    static func getUserID() -> String {
-        if let value = userDefaults.stringForKey("userID") {
+    static func getUserID() -> String? {
+        return userDefaults.stringForKey("userID")
+        /* if let value = userDefaults.stringForKey("userID") {
             return value
         } else {
-            let value = ""
+            return nil
+            /* let value = ""
             userDefaults.setValue(value, forKey: "userID")
-            return value
-        }
+            return value*/
+        }*/
     }
     
     static func setUserID(value: String) {

@@ -99,7 +99,7 @@ class CustomDataTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showEnterParameter" {
+        if segue.identifier == "AddElement" {
             let keyValuePairsElementViewController = segue.destinationViewController as! EnterCustomDataViewController
             
             // Get the cell that generated this segue.

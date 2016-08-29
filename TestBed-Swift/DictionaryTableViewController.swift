@@ -1,5 +1,5 @@
 //
-//  CustomEventMetadataTableViewController.swift
+//  DictionaryTableViewController.swift
 //  TestBed-Swift
 //
 //  Created by David Westgate on 8/14/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomEventMetadataTableViewController: UITableViewController {
+class DictionaryTableViewController: UITableViewController {
 
     var parameterName = ""
     var customEventMetadata = [String: AnyObject]()
@@ -104,7 +104,7 @@ class CustomEventMetadataTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showEnterParameter" {
-            let customEventMetadataElementViewController = segue.destinationViewController as! CustomEventMetadataElementViewController
+            let customEventMetadataElementViewController = segue.destinationViewController as! KeyValuePairTableViewController
             
             // Get the cell that generated this segue.
             if let selectedCell = sender as? CustomEventMetadataTableViewCell {
@@ -121,8 +121,8 @@ class CustomEventMetadataTableViewController: UITableViewController {
     }
     
     // TODO be sure Cancel does not = Save
-    @IBAction func unwindCustomEventMetadataElementViewController(sender: UIStoryboardSegue) {
-        if let sourceVC = sender.sourceViewController as? CustomEventMetadataElementViewController {
+    @IBAction func unwindKeyValuePairTableViewController(sender: UIStoryboardSegue) {
+        if let sourceVC = sender.sourceViewController as? KeyValuePairTableViewController {
             
             guard sourceVC.keyTextField.text!.characters.count > 0 else {
                 return

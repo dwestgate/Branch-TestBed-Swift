@@ -12,7 +12,6 @@ class ViewController: UITableViewController {
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var userIDTextField: UITextField!
     @IBOutlet weak var linkTextField: UITextField!
-    @IBOutlet weak var linkPropertiesTextView: UITextView!
     @IBOutlet weak var rewardsBucketTextField: UITextField!
     @IBOutlet weak var rewardsBalanceOfBucketTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -26,6 +25,7 @@ class ViewController: UITableViewController {
     var creditHistory: Array<AnyObject>?
     var customEventMetadata = [String: AnyObject]()
     
+    let branchLinkProperties = BranchLinkProperties()
     var branchUniversalObject = BranchUniversalObject()
     
     let canonicalIdentifier = "item/12345"
@@ -44,6 +44,7 @@ class ViewController: UITableViewController {
         
         UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
         
+        linkTextField.text = ""
         self.refreshControlValues()
         
         // let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
@@ -60,8 +61,6 @@ class ViewController: UITableViewController {
         /* if let userID = defaultContainer.valueForKey("userID") as! String? {
             self.userIDTextField.text = userID
         }*/
-
-
         
     }
     
@@ -76,7 +75,6 @@ class ViewController: UITableViewController {
         
         // Now get about populating the other controls
         linkProperties = TestData.getLinkProperties()
-        linkPropertiesTextView.text = linkProperties.description
         rewardPointsToRedeemTextField.text = TestData.getRewardPointsToRedeem()
         customEventNameTextField.text = TestData.getCustomEventName()
         customEventMetadata = TestData.getCustomEventMetadata()
@@ -149,37 +147,10 @@ class ViewController: UITableViewController {
 
     
     @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
-        let branchLinkProperties = BranchLinkProperties()
-
-        branchLinkProperties.addControlParam("type", withValue: linkProperties["type"] as! String)
-        branchLinkProperties.alias = linkProperties["alias"] as! String
-        branchLinkProperties.channel = linkProperties["channel"] as! String
-        branchLinkProperties.feature = linkProperties["feature"] as! String
-        branchLinkProperties.stage = linkProperties["stage"] as! String
-        branchLinkProperties.tags = linkProperties["tags"] as! [AnyObject]
-        branchLinkProperties.addControlParam("$deeplink_path", withValue: linkProperties["deeplinkPath"] as! String)
-        branchLinkProperties.addControlParam("$android_deeplink_path", withValue: linkProperties["androidDeeplinkPath"] as! String)
-        branchLinkProperties.addControlParam("$ios_deeplink_path", withValue: linkProperties["iosDeeplinkPath"] as! String)
-        branchLinkProperties.addControlParam("$ios_wechat_url", withValue: linkProperties["iosWeChatURL"] as! String)
-        branchLinkProperties.addControlParam("$ios_weibo_url", withValue: linkProperties["iosWeiboURL"] as! String)
         
-        
-        branchLinkProperties.addControlParam("$fallback_url", withValue: linkProperties["fallbackURL"] as! String)
-        branchLinkProperties.addControlParam("$desktop_url", withValue: linkProperties["desktopURL"] as! String)
-        branchLinkProperties.addControlParam("$android_url", withValue: linkProperties["androidURL"] as! String)
-        branchLinkProperties.addControlParam("$ios_url", withValue: linkProperties["iosURL"] as! String)
-        branchLinkProperties.addControlParam("$ipad_url", withValue: linkProperties["ipadURl"] as! String)
-        branchLinkProperties.addControlParam("$fire_url", withValue: linkProperties["fireURL"] as! String)
-        branchLinkProperties.addControlParam("$blackberry_url", withValue: linkProperties["blackberryURL"] as! String)
-        branchLinkProperties.addControlParam("$windows_phone_url", withValue: linkProperties["windowsPhoneURL"] as! String)
-        branchLinkProperties.addControlParam("$after_click_url", withValue: linkProperties["afterClickURL"] as! String)
-        if (linkProperties["alwaysDeeplink"] as! Bool) {
-            branchLinkProperties.addControlParam("$always_deeplink", withValue: "true")
-        } else {
-            branchLinkProperties.addControlParam("$always_deeplink", withValue: "0")
+        for key in linkProperties.keys {
+            setBranchLinkProperty(key)
         }
-        branchLinkProperties.matchDuration = linkProperties["matchDuration"] as! UInt
-        
         
         print(branchLinkProperties.description())
         print(branchUniversalObject.description())
@@ -382,6 +353,9 @@ class ViewController: UITableViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        linkTextField.text = ""
+        
         switch sender as! String {
         case "userID":
             let nc = segue.destinationViewController as! UINavigationController
@@ -425,7 +399,7 @@ class ViewController: UITableViewController {
             vc.keyboardType = UIKeyboardType.Alphabet
             vc.incumbantValue = customEventNameTextField.text!
         case "CustomEventMetadata":
-            let vc = (segue.destinationViewController as! CustomEventMetadataTableViewController)
+            let vc = (segue.destinationViewController as! DictionaryTableViewController)
             vc.parameterName = "CustomEventMetadata"
         default:
             let vc = (segue.destinationViewController as! LogOutputViewController)
@@ -520,8 +494,8 @@ class ViewController: UITableViewController {
     
     @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
     
-    @IBAction func unwindCustomEventMetadataTableViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? CustomEventMetadataTableViewController {
+    @IBAction func unwindDictionaryTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? DictionaryTableViewController {
             if (vc.parameterName == "CustomEventMetadata") {
                 customEventMetadata = vc.customEventMetadata
                 self.customEventMetadataTextView.text = customEventMetadata.description
@@ -534,9 +508,42 @@ class ViewController: UITableViewController {
             linkProperties = vc.linkProperties
             
             TestData.setLinkProperties(linkProperties)
-            self.linkPropertiesTextView.text = linkProperties.description
         }
     }
+    
+    @IBAction func unwindBranchUniversalObjectTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? BranchUniversalObjectPropertiesTableViewController {
+            universalObjectProperties = vc.universalObjectProperties
+            
+            TestData.setUniversalObjectProperties(universalObjectProperties)
+        }
+    }
+    
+    func setBranchLinkProperty(key: String) {
+        
+        guard linkProperties[key] != nil else {
+            return
+        }
+        print(key)
+        switch key {
+        case "alias":
+            branchLinkProperties.alias = linkProperties[key] as! String
+        case "channel":
+            branchLinkProperties.channel = linkProperties[key] as! String
+        case "feature":
+            branchLinkProperties.feature = linkProperties[key] as! String
+        case "stage":
+            branchLinkProperties.stage = linkProperties[key] as! String
+        case "tags":
+            branchLinkProperties.tags = linkProperties[key] as! [AnyObject]
+        case "type":
+            branchLinkProperties.addControlParam(BRANCH_LINK_DATA_KEY_TYPE, withValue: linkProperties[key] as! String)
+        default:
+            branchLinkProperties.addControlParam(key, withValue: linkProperties[key] as! String)
+        }
+        
+    }
+
     
 }
 

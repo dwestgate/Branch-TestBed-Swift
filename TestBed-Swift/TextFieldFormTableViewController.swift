@@ -35,13 +35,33 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     // MARK: Variables
-    var incumbantValue: String!
+    var sender = ""
+    var incumbantValue = ""
+    var viewTitle = "Default Title"
+    var placeholder = "Default Placeholder"
+    var header = "Default Header"
+    var footer = "Default Footer"
+    var keyboardType = UIKeyboardType.Default
     
     // MARK: Overridden functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewTitle
+        textField.placeholder = placeholder
         textField.text = incumbantValue
+        textField.keyboardType = keyboardType
+        textField.text = incumbantValue
+        textField.becomeFirstResponder()
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return header
+    }
+    
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return footer
     }
     
     

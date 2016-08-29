@@ -1,5 +1,5 @@
 //
-//  CustomEventMetadataElementViewController.swift
+//  KeyValuePairTableViewController.swift
 //  AdScrubber
 //
 //  Created by David Westgate on 12/31/15.
@@ -26,7 +26,7 @@ import UIKit
 
 /// Manages the user interface for updating the
 /// valueTextView field of ViewController
-class CustomEventMetadataElementViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     
     // MARK: -
     // MARK: Control Outlets

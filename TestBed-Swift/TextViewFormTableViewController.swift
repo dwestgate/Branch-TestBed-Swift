@@ -36,6 +36,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
     // MARK: Variables
     var sender = ""
     var incumbantValue = ""
+    var viewTitle = "Default Title"
     var header = "Default Header"
     var footer = "Default Footer"
     var keyboardType = UIKeyboardType.Default
@@ -44,6 +45,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewTitle
         textView.delegate = self
         textView.keyboardType = keyboardType
         textView.text = incumbantValue

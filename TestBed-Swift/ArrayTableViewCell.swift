@@ -1,5 +1,5 @@
 //
-//  LinkTagTableViewCell.swift
+//  ArrayTableViewCell.swift
 //  TestBed-Swift
 //
 //  Created by David Westgate on 8/17/16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LinkTagTableViewCell: UITableViewCell {
+class ArrayTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var elementLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
