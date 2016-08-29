@@ -50,12 +50,7 @@ class ViewController: UITableViewController {
         // let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
         // self.tableView.addGestureRecognizer(gestureRecognizer)
         
-        branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
-        branchUniversalObject.canonicalUrl = canonicalUrl
-        branchUniversalObject.title = contentTitle
-        branchUniversalObject.contentDescription = contentDescription
-        branchUniversalObject.imageUrl  = imageUrl
-        branchUniversalObject.addMetadataKey("deeplink_text", value: String(format: "This text was embedded as data in a Branch link with the following characteristics:\n\n  canonicalUrl: %@\n  title: %@\n  contentDescription: %@\n  imageUrl: %@\n", canonicalUrl, contentTitle, contentDescription, imageUrl))
+        
 
         
         /* if let userID = defaultContainer.valueForKey("userID") as! String? {
@@ -75,6 +70,7 @@ class ViewController: UITableViewController {
         
         // Now get about populating the other controls
         linkProperties = TestData.getLinkProperties()
+        universalObjectProperties = TestData.getUniversalObjectProperties()
         rewardPointsToRedeemTextField.text = TestData.getRewardPointsToRedeem()
         customEventNameTextField.text = TestData.getCustomEventName()
         customEventMetadata = TestData.getCustomEventMetadata()
@@ -150,6 +146,13 @@ class ViewController: UITableViewController {
         
         for key in linkProperties.keys {
             setBranchLinkProperty(key)
+        }
+        
+        branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
+        /*branchUniversalObject.addMetadataKey("deeplink_text", value: String(format: "This text was embedded as data in a Branch link with the following characteristics:\n\n  canonicalUrl: %@\n  title: %@\n  contentDescription: %@\n  imageUrl: %@\n", canonicalUrl, contentTitle, contentDescription, imageUrl))*/
+        
+        for key in universalObjectProperties.keys {
+            setBranchUniversalObjectProperty(key)
         }
         
         print(branchLinkProperties.description())
@@ -399,8 +402,7 @@ class ViewController: UITableViewController {
             vc.keyboardType = UIKeyboardType.Alphabet
             vc.incumbantValue = customEventNameTextField.text!
         case "CustomEventMetadata":
-            let vc = (segue.destinationViewController as! DictionaryTableViewController)
-            vc.parameterName = "CustomEventMetadata"
+            break
         default:
             let vc = (segue.destinationViewController as! LogOutputViewController)
             vc.logOutput = sender as! String
@@ -496,17 +498,13 @@ class ViewController: UITableViewController {
     
     @IBAction func unwindDictionaryTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? DictionaryTableViewController {
-            if (vc.parameterName == "CustomEventMetadata") {
-                customEventMetadata = vc.customEventMetadata
-                self.customEventMetadataTextView.text = customEventMetadata.description
-            }
+            self.customEventMetadataTextView.text = customEventMetadata.description
         }
     }
     
     @IBAction func unwindLinkPropertiesTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? LinkPropertiesTableViewController {
             linkProperties = vc.linkProperties
-            
             TestData.setLinkProperties(linkProperties)
         }
     }
@@ -514,7 +512,6 @@ class ViewController: UITableViewController {
     @IBAction func unwindBranchUniversalObjectTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? BranchUniversalObjectPropertiesTableViewController {
             universalObjectProperties = vc.universalObjectProperties
-            
             TestData.setUniversalObjectProperties(universalObjectProperties)
         }
     }
@@ -541,7 +538,36 @@ class ViewController: UITableViewController {
         default:
             branchLinkProperties.addControlParam(key, withValue: linkProperties[key] as! String)
         }
+    }
+    
+    func setBranchUniversalObjectProperty(key: String) {
         
+        guard universalObjectProperties[key] != nil else {
+            return
+        }
+        print(key)
+        switch key {
+        case "$canonical_identifier":
+            branchUniversalObject.canonicalIdentifier = universalObjectProperties[key] as! String
+        case "$canonical_url":
+            branchUniversalObject.canonicalUrl = universalObjectProperties[key] as! String
+        case "$content_description":
+            branchUniversalObject.contentDescription = universalObjectProperties[key] as! String
+        case "$exp_date":
+            branchUniversalObject.expirationDate = universalObjectProperties[key] as! NSDate
+        case "$og_image_url":
+            branchUniversalObject.imageUrl = universalObjectProperties[key] as! String
+        case "$keywords":
+            branchUniversalObject.keywords = universalObjectProperties[key] as! [AnyObject]
+        case "$og_title":
+            branchUniversalObject.title = universalObjectProperties[key] as! String
+        case "$og_type":
+            branchUniversalObject.type = universalObjectProperties[key] as! String
+        case "customData":
+            branchUniversalObject.metadata = universalObjectProperties[key] as! [NSObject: AnyObject]
+        default:
+            branchUniversalObject.addMetadataKey(key, value: universalObjectProperties[key] as! String)
+        }
     }
 
     

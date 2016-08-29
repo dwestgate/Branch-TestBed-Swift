@@ -1,5 +1,5 @@
 //
-//  CustomDataTableViewCell.swift
+//  DictionaryTableViewCell.swift
 //  TestBed-Swift
 //
 //  Created by David Westgate on 8/17/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomDataTableViewCell: UITableViewCell {
+class DictionaryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!

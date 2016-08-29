@@ -10,12 +10,11 @@ import UIKit
 
 class DictionaryTableViewController: UITableViewController {
 
-    var parameterName = ""
-    var customEventMetadata = [String: AnyObject]()
+    var dictionary = [String: AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customEventMetadata = TestData.getCustomEventMetadata()
+        dictionary = TestData.getCustomEventMetadata()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,18 +29,18 @@ class DictionaryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customEventMetadata.count
+        return dictionary.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "CustomEventMetadataTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomEventMetadataTableViewCell
+        let cellIdentifier = "DictionaryTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DictionaryTableViewCell
         
-        let keys = Array(customEventMetadata.keys).sort()
+        let keys = Array(dictionary.keys).sort()
         cell.keyLabel.text = keys[indexPath.row]
-        cell.valueLabel.text = self.customEventMetadata[keys[indexPath.row]] as? String
+        cell.valueLabel.text = self.dictionary[keys[indexPath.row]] as? String
 
         return cell
     }
@@ -58,8 +57,8 @@ class DictionaryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            let keys = Array(customEventMetadata.keys)
-            customEventMetadata.removeValueForKey(keys[indexPath.row])
+            let keys = Array(dictionary.keys)
+            dictionary.removeValueForKey(keys[indexPath.row])
 
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
@@ -70,7 +69,7 @@ class DictionaryTableViewController: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        TestData.setCustomEventMetadata(customEventMetadata)
+        TestData.setCustomEventMetadata(dictionary)
         
     }
     
@@ -104,16 +103,16 @@ class DictionaryTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showEnterParameter" {
-            let customEventMetadataElementViewController = segue.destinationViewController as! KeyValuePairTableViewController
+            let vc = segue.destinationViewController as! KeyValuePairTableViewController
             
             // Get the cell that generated this segue.
-            if let selectedCell = sender as? CustomEventMetadataTableViewCell {
+            if let selectedCell = sender as? DictionaryTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedCell)!
-                let keys = Array(customEventMetadata.keys)
+                let keys = Array(dictionary.keys)
                 let selectedParameterKey = keys[indexPath.row]
-                let selectedParameterValue = self.customEventMetadata[keys[indexPath.row]] as? String
-                customEventMetadataElementViewController.incumbantKey = selectedParameterKey
-                customEventMetadataElementViewController.incumbantValue = selectedParameterValue
+                let selectedParameterValue = self.dictionary[keys[indexPath.row]] as? String
+                vc.incumbantKey = selectedParameterKey
+                vc.incumbantValue = selectedParameterValue
             }
         } else if segue.identifier == "AddItem" {
             print("Adding new key-value pair.")
@@ -127,7 +126,7 @@ class DictionaryTableViewController: UITableViewController {
             guard sourceVC.keyTextField.text!.characters.count > 0 else {
                 return
             }
-            customEventMetadata[sourceVC.keyTextField.text!] = sourceVC.valueTextView.text
+            dictionary[sourceVC.keyTextField.text!] = sourceVC.valueTextView.text
             tableView.reloadData()
         }
     }

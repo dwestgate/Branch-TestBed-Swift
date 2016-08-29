@@ -119,10 +119,42 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        universalObjectProperties["$canonical_identifier"] = canonicalIdentifierTextField.text
+        universalObjectProperties["$canonical_url"] = canonicalURLTextField.text
+        
+        universalObjectProperties["$og_title"] = ogTitleTextField.text
+        
+        // contentDescriptionTextView: UITextView!
+        
+        universalObjectProperties["$og_image_url"] = ogImageURLTextField.text
+        universalObjectProperties["$og_image_width"] = ogImageWidthTextField.text
+        universalObjectProperties["$og_image_height"] = ogImageHeightTextField.text
+        universalObjectProperties["$content_type"] = contentTypeTextField.text
+        universalObjectProperties["$og_video"] = ogVideoTextField.text
+        universalObjectProperties["$og_url"] = ogURLTextField.text
+        universalObjectProperties["$og_type"] = ogTypeTextField.text
+        universalObjectProperties["$og_redirect"] = ogRedirectTextField.text
+        universalObjectProperties["$og_app_id"] = ogAppIDTextField.text
+        universalObjectProperties["$twitter_card"] = twitterCardTextField.text
+        universalObjectProperties["$twitter_title"] = twitterTitleTextField.text
+        universalObjectProperties["$twitter_description"] = twitterDescriptionTextField.text
+        universalObjectProperties["$twitter_site"] = twitterSiteTextField.text
+        universalObjectProperties["$twitter_app_country"] = twitterAppTextField.text
+        universalObjectProperties["$twitter_player"] = twitterPlayerTextField.text
+        universalObjectProperties["$twitter_player_width"] = twitterPlayerWidthTextField.text
+        universalObjectProperties["$twitter_player_height"] = twitterPlayerHeightTextField.text
+        
+        if publiclyIndexableSwitch.on {
+            universalObjectProperties["$publicly_indexable"] = "1"
+        } else {
+            universalObjectProperties["$publicly_indexable"] = "0"
+        }
+        
+        universalObjectProperties["$exp_date"] = expDateTextField.text
+        
         switch segue.identifier! {
             case "ShowCustomData":
                 let vc = (segue.destinationViewController as! DictionaryTableViewController)
-                vc.parameterName = "CustomData"
             case "ShowKeywords":
                 let vc = segue.destinationViewController as! ArrayTableViewController
                 if let keywords = universalObjectProperties["keywords"] as? [String] {
@@ -135,15 +167,14 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController 
                 vc.footer = "Enter a new keyword that describes the content."
                 vc.keyboardType = UIKeyboardType.Default
             default:
-                let vc = (segue.destinationViewController as! LogOutputViewController)
-                vc.logOutput = sender as! String
+                break
         }
         
     }
     
     @IBAction func unwindDictionaryTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? DictionaryTableViewController {
-            let customData = vc.customEventMetadata
+            let customData = vc.dictionary
             universalObjectProperties["customData"] = customData
             if customData.count > 0 {
                 customDataTextView.text = customData.description

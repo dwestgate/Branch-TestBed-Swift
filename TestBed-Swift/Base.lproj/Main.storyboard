@@ -1182,7 +1182,7 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomEventMetadataTableViewCell" id="5sc-CW-TxJ" customClass="CustomEventMetadataTableViewCell" customModule="TestBed_Swift" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DictionaryTableViewCell" id="5sc-CW-TxJ" customClass="DictionaryTableViewCell" customModule="TestBed_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sc-CW-TxJ" id="wBY-FX-KDM">

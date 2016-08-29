@@ -28,7 +28,7 @@ struct TestData {
         userDefaults.setValue(value, forKey: "userID")
     }
     
-    static func getLinkProperties() -> Dictionary<String,AnyObject> {
+    static func getLinkProperties() -> [String: AnyObject] {
         if let value = userDefaults.dictionaryForKey("linkProperties") {
             return value
         } else {
@@ -38,11 +38,11 @@ struct TestData {
         }
     }
     
-    static func setLinkProperties(value: Dictionary<String,AnyObject>) {
+    static func setLinkProperties(value: [String: AnyObject]) {
         userDefaults.setObject(value, forKey: "linkProperties")
     }
     
-    static func getUniversalObjectProperties() -> Dictionary<String,AnyObject> {
+    static func getUniversalObjectProperties() -> [String: AnyObject] {
         if let value = userDefaults.dictionaryForKey("UniversalObjectProperties") {
             return value
         } else {
@@ -52,7 +52,7 @@ struct TestData {
         }
     }
     
-    static func setUniversalObjectProperties(value: Dictionary<String,AnyObject>) {
+    static func setUniversalObjectProperties(value: [String: AnyObject]) {
         userDefaults.setObject(value, forKey: "UniversalObjectProperties")
     }
     
@@ -116,7 +116,7 @@ struct TestData {
         userDefaults.setValue(value, forKey: "customEventName")
     }
     
-    static func getCustomEventMetadata() -> Dictionary<String,AnyObject> {
+    static func getCustomEventMetadata() -> [String: AnyObject] {
         if let value = userDefaults.dictionaryForKey("customEventMetadata") {
             return value
         } else {
@@ -126,7 +126,7 @@ struct TestData {
         }
     }
     
-    static func setCustomEventMetadata(value: Dictionary<String,AnyObject>) {
+    static func setCustomEventMetadata(value: [String: AnyObject]) {
         userDefaults.setObject(value, forKey: "customEventMetadata")
     }
     
