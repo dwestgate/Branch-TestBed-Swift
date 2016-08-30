@@ -560,17 +560,17 @@
                         <outlet property="rewardsBalanceOfBucketTextField" destination="o6J-3u-u1J" id="pJR-Km-nPD"/>
                         <outlet property="rewardsBucketTextField" destination="bDu-6h-17H" id="6Vd-Gj-Ksf"/>
                         <outlet property="userIDTextField" destination="Zqg-wL-Xby" id="Yqk-PY-xpm"/>
-                        <segue destination="hjV-EB-GfF" kind="show" identifier="ShowCreditHistoryViewController" id="eyz-BQ-5N5">
+                        <segue destination="hjV-EB-GfF" kind="show" identifier="ShowCreditHistoryTableView" id="eyz-BQ-5N5">
                             <nil key="action"/>
                         </segue>
-                        <segue destination="UBk-EH-q5i" kind="show" identifier="ShowLogOutputViewController" id="IG7-3K-NVU">
+                        <segue destination="UBk-EH-q5i" kind="show" identifier="ShowLogOutputView" id="IG7-3K-NVU">
                             <nil key="action"/>
                         </segue>
-                        <segue destination="QY6-4D-Gxe" kind="show" identifier="ShowLinkPropertiesTableViewController" id="1R6-Nu-a4f"/>
-                        <segue destination="WPU-Ft-SWB" kind="presentation" identifier="ShowTextViewFormTableViewController" id="wdJ-h5-nCf"/>
-                        <segue destination="f9P-iX-WYi" kind="show" identifier="ShowCustomEventMetadataViewController" id="fTI-yI-jdX"/>
-                        <segue destination="dok-LR-mvX" kind="show" identifier="ShowBranchUniversalObjectPropertiesTableViewController" id="Omb-KL-HJx"/>
-                        <segue destination="Aqu-O9-8Kl" kind="show" id="7TN-Vi-Tcv"/>
+                        <segue destination="QY6-4D-Gxe" kind="show" identifier="ShowLinkPropertiesTableView" id="1R6-Nu-a4f"/>
+                        <segue destination="WPU-Ft-SWB" kind="presentation" identifier="ShowTextViewFormNavigationBar" id="wdJ-h5-nCf"/>
+                        <segue destination="f9P-iX-WYi" kind="show" identifier="ShowDictionaryTableView" id="fTI-yI-jdX"/>
+                        <segue destination="dok-LR-mvX" kind="show" identifier="ShowBranchUniversalObjectPropertiesTableView" id="Omb-KL-HJx"/>
+                        <segue destination="Aqu-O9-8Kl" kind="show" identifier="ShowTextViewFormTableView" id="7TN-Vi-Tcv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rM7-0l-bIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -595,8 +595,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-iZ-snS" userLabel="aliasTextField">
-                                                    <rect key="frame" x="14" y="13" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="alias" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-iZ-snS" userLabel="aliasTextField">
+                                                    <rect key="frame" x="14" y="12" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -619,8 +619,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="channel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jF-Qr-Som" userLabel="channelTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="channel" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8jF-Qr-Som" userLabel="channelTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -643,8 +643,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="feature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-5a-g2w" userLabel="featureTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="feature" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-5a-g2w" userLabel="featureTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -667,8 +667,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="stage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKf-cA-BTP" userLabel="stageTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="stage" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="RKf-cA-BTP" userLabel="stageTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -720,8 +720,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$deeplink_path" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-aO-bzl" userLabel="deeplinkPathTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$deeplink_path" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-aO-bzl" userLabel="deeplinkPathTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -745,8 +745,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$android_deeplink_path" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-G3-TTc" userLabel="androidDeeplinkPathTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$android_deeplink_path" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-G3-TTc" userLabel="androidDeeplinkPathTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -770,8 +770,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_deeplink_path" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LAh-Yf-YoI" userLabel="iosDeeplinkPathTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_deeplink_path" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="LAh-Yf-YoI" userLabel="iosDeeplinkPathTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -794,8 +794,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_wechat_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-lH-KbQ" userLabel="iosWeChatURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_wechat_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-lH-KbQ" userLabel="iosWeChatURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -818,8 +818,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_weibo_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-Gb-GHr" userLabel="iosWeiboURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_weibo_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-Gb-GHr" userLabel="iosWeiboURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -872,8 +872,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$after_click_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axt-rS-OdB" userLabel="afterClickURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$after_click_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="axt-rS-OdB" userLabel="afterClickURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -896,8 +896,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="matchDuration" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbC-iA-R9W" userLabel="matchDurationTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="matchDuration" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AbC-iA-R9W" userLabel="matchDurationTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -921,8 +921,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$fallback_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-Zw-oed" userLabel="fallbackURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$fallback_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-Zw-oed" userLabel="fallbackURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -945,8 +945,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$desktop_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-wl-KRF" userLabel="desktopURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$desktop_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-wl-KRF" userLabel="desktopURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -969,8 +969,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$android_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-yM-ART" userLabel="androidURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$android_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-yM-ART" userLabel="androidURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -993,8 +993,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtG-OZ-0tp" userLabel="iosURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ios_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xtG-OZ-0tp" userLabel="iosURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1017,8 +1017,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ipad_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UV6-Os-JFv" userLabel="ipadURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ipad_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UV6-Os-JFv" userLabel="ipadURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1041,8 +1041,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$fire_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-9n-yTX" userLabel="fireURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$fire_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-9n-yTX" userLabel="fireURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1065,8 +1065,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$blackberry_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0L3-oL-gau" userLabel="blackberryURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$blackberry_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0L3-oL-gau" userLabel="blackberryURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1089,8 +1089,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$windows_phone_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9Y-Kz-ydz" userLabel="windowsPhoneURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$windows_phone_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="W9Y-Kz-ydz" userLabel="windowsPhoneURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1114,8 +1114,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIQ-Qe-oiS" userLabel="typeTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="cIQ-Qe-oiS" userLabel="typeTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1173,10 +1173,10 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
             </objects>
             <point key="canvasLocation" x="1839" y="1042"/>
         </scene>
-        <!--Custom Event Metadata-->
+        <!--Dictionary-->
         <scene sceneID="DBI-Qq-Pun">
             <objects>
-                <tableViewController id="f9P-iX-WYi" customClass="DictionaryTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="f9P-iX-WYi" userLabel="Dictionary" customClass="DictionaryTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BdP-aF-1NL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1221,12 +1221,12 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Custom Event Metadata" id="wHi-Gn-q4b" userLabel="Custom Event Metadata">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="EeE-gM-yOf" userLabel="doneButton">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="EeE-gM-yOf" userLabel="doneButton">
                             <connections>
-                                <segue destination="U8c-t8-Hlk" kind="unwind" unwindAction="unwindDictionaryTableViewController:" id="a4W-JE-AMP"/>
+                                <segue destination="U8c-t8-Hlk" kind="unwind" unwindAction="unwindDictionaryTableViewController:" id="Y8p-9h-9Fi"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="HDN-cH-sOA" userLabel="addButton">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HDN-cH-sOA" userLabel="addButton">
                             <connections>
                                 <segue destination="iHK-cY-AOG" kind="presentation" identifier="AddItem" id="c2J-aP-WKg"/>
                             </connections>
@@ -1241,10 +1241,10 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
             </objects>
             <point key="canvasLocation" x="4936" y="685"/>
         </scene>
-        <!--Custom Event Key-Value Pair-->
+        <!--Key-Value Pair-->
         <scene sceneID="s8k-qN-lfj">
             <objects>
-                <tableViewController id="IqB-zB-kHb" customClass="KeyValuePairTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="IqB-zB-kHb" userLabel="Key-Value Pair" customClass="KeyValuePairTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HEt-Fj-G1w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1286,7 +1286,7 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-1h-NJp">
                                                     <rect key="frame" x="8" y="8" width="398" height="81"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-3j-dU9" userLabel="valueTextView">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-3j-dU9" userLabel="valueTextView">
                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="81"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="blacklistURL" label="blacklistURL"/>
@@ -1296,23 +1296,24 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                         </textView>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtr-cd-flr" userLabel="cancelButton">
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtr-cd-flr" userLabel="clearButton">
                                                             <rect key="frame" x="398" y="31" width="0.0" height="20"/>
-                                                            <accessibility key="accessibilityConfiguration" identifier="cancelButton" label="cancelButton"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="clearButton" label="clearButton"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Q30-ah-zZW"/>
+                                                                <constraint firstAttribute="width" constant="20" id="dwc-V4-593"/>
                                                             </constraints>
                                                             <state key="normal" image="cancel-28.png"/>
                                                             <connections>
-                                                                <action selector="cancelButtonTouchUpInside:" destination="IqB-zB-kHb" eventType="touchUpInside" id="xmA-JC-Hng"/>
+                                                                <action selector="clearButtonTouchUpInside:" destination="IqB-zB-kHb" eventType="touchUpInside" id="xmA-JC-Hng"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Ytx-3j-dU9" firstAttribute="leading" secondItem="YPt-1h-NJp" secondAttribute="leading" id="KKH-Hu-gGT"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Ytx-3j-dU9" secondAttribute="bottom" id="KUk-Kk-9V9"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Wtr-cd-flr" secondAttribute="trailing" id="Reo-fR-Pey"/>
-                                                        <constraint firstItem="Ytx-3j-dU9" firstAttribute="top" secondItem="YPt-1h-NJp" secondAttribute="top" id="x9H-JL-tNF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Wtr-cd-flr" secondAttribute="trailing" id="5NO-CA-djk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ytx-3j-dU9" secondAttribute="bottom" id="Q4s-vp-XDT"/>
+                                                        <constraint firstItem="Ytx-3j-dU9" firstAttribute="leading" secondItem="YPt-1h-NJp" secondAttribute="leading" id="QtJ-I8-y0c"/>
+                                                        <constraint firstItem="Ytx-3j-dU9" firstAttribute="top" secondItem="YPt-1h-NJp" secondAttribute="top" id="tha-7T-4Rc"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -1333,22 +1334,21 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                             <outlet property="delegate" destination="IqB-zB-kHb" id="yvR-bL-j5K"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Custom Event Key-Value Pair" id="RIb-YZ-cSX" userLabel="Custom Event Key-Value Pair">
+                    <navigationItem key="navigationItem" id="RIb-YZ-cSX" userLabel="Key-Value Pair Navigation Item">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KbB-h2-dD2" userLabel="cancelButton">
                             <connections>
-                                <segue destination="gEH-LZ-jdo" kind="unwind" unwindAction="unwindKeyValuePairTableViewController:" id="cOa-JM-0kF"/>
+                                <segue destination="gEH-LZ-jdo" kind="unwind" identifier="Cancel" unwindAction="unwindByCancelling:" id="cOa-JM-0kF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Jw5-GP-gLn" userLabel="saveButton">
                             <connections>
-                                <segue destination="gEH-LZ-jdo" kind="unwind" unwindAction="unwindKeyValuePairTableViewController:" id="Buj-8D-2ye"/>
+                                <segue destination="gEH-LZ-jdo" kind="unwind" identifier="Save" unwindAction="unwindKeyValuePairTableViewController:" id="Buj-8D-2ye"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="Wtr-cd-flr" id="hH9-Sl-nP6"/>
+                        <outlet property="clearButton" destination="Wtr-cd-flr" id="hH9-Sl-nP6"/>
                         <outlet property="keyTextField" destination="JdZ-c9-SvZ" id="I7i-Be-bW7"/>
-                        <outlet property="saveButton" destination="Jw5-GP-gLn" id="RHF-iO-Es3"/>
                         <outlet property="valueTextView" destination="Ytx-3j-dU9" id="OgB-U1-HhQ"/>
                     </connections>
                 </tableViewController>
@@ -1373,10 +1373,10 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
             </objects>
             <point key="canvasLocation" x="5502" y="1101"/>
         </scene>
-        <!--TextFieldFormTableViewController-->
+        <!--TextField Form-->
         <scene sceneID="pZU-K5-V7Q">
             <objects>
-                <tableViewController id="5e7-2J-ss3" userLabel="TextFieldFormTableViewController" customClass="TextFieldFormTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5e7-2J-ss3" userLabel="TextField Form" customClass="TextFieldFormTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="jPl-dh-hen">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1412,21 +1412,19 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                             <outlet property="delegate" destination="5e7-2J-ss3" id="GN7-3F-lLb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Element" id="cUi-EA-QPT">
+                    <navigationItem key="navigationItem" id="cUi-EA-QPT" userLabel="TextField Form Navigation Item">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gXj-cr-h5T" userLabel="cancelButton">
                             <connections>
-                                <segue destination="WIF-C2-NOF" kind="unwind" unwindAction="unwindTextFieldFormTableViewController:" id="jKp-JW-DEd"/>
+                                <segue destination="WIF-C2-NOF" kind="unwind" identifier="Cancel" unwindAction="unwindByCancelling:" id="jKp-JW-DEd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="2pY-tp-6Fi" userLabel="saveButton">
                             <connections>
-                                <segue destination="WIF-C2-NOF" kind="unwind" unwindAction="unwindTextFieldFormTableViewController:" id="DlX-R0-TeQ"/>
+                                <segue destination="WIF-C2-NOF" kind="unwind" identifier="Save" unwindAction="unwindTextFieldFormTableViewController:" id="DlX-R0-TeQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="gXj-cr-h5T" id="9Gp-1f-sTO"/>
-                        <outlet property="saveButton" destination="2pY-tp-6Fi" id="Qnd-Qp-dqj"/>
                         <outlet property="textField" destination="PT5-p8-wFJ" id="eda-rU-06Q"/>
                     </connections>
                 </tableViewController>
@@ -1574,10 +1572,10 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
             </objects>
             <point key="canvasLocation" x="1312" y="27"/>
         </scene>
-        <!--TextViewFormTableViewController-->
+        <!--TextView Form-->
         <scene sceneID="4av-qW-gdO">
             <objects>
-                <tableViewController id="Aqu-O9-8Kl" userLabel="TextViewFormTableViewController" customClass="TextViewFormTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Aqu-O9-8Kl" userLabel="TextView Form" customClass="TextViewFormTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bNk-SI-3yX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1608,7 +1606,7 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                                         </textView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-kZ-oCy" userLabel="clearButton">
                                                             <rect key="frame" x="378" y="31" width="20" height="20"/>
-                                                            <accessibility key="accessibilityConfiguration" identifier="cancelButton" label="cancelButton"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="clearButton" label="clearButton"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="5ph-OE-lUL"/>
                                                                 <constraint firstAttribute="width" constant="20" id="gWl-lE-Kwu"/>
@@ -1645,15 +1643,15 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="n9M-oY-MLO">
+                    <navigationItem key="navigationItem" id="n9M-oY-MLO" userLabel="TextView Form Navigation Item">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gWe-Na-7BQ">
                             <connections>
-                                <segue destination="ZFQ-QM-Boa" kind="unwind" identifier="cancelButton" unwindAction="unwindByCancelling:" id="hQS-pm-K0f"/>
+                                <segue destination="ZFQ-QM-Boa" kind="unwind" identifier="Cancel" unwindAction="unwindByCancelling:" id="hQS-pm-K0f"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="qUx-K8-QwN">
                             <connections>
-                                <segue destination="ZFQ-QM-Boa" kind="unwind" identifier="saveButton" unwindAction="unwindTextViewFormTableViewController:" id="do3-3e-hHK"/>
+                                <segue destination="ZFQ-QM-Boa" kind="unwind" identifier="Save" unwindAction="unwindTextViewFormTableViewController:" id="do3-3e-hHK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1661,7 +1659,6 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                     <connections>
                         <outlet property="clearButton" destination="dxb-kZ-oCy" id="Mpr-W2-kEX"/>
                         <outlet property="textView" destination="rpg-0S-e9Y" id="ieH-Ll-ACU"/>
-                        <segue destination="ZFQ-QM-Boa" kind="unwind" identifier="UnwindTextViewFormTableViewController" unwindAction="unwindTextViewFormTableViewController:" id="DJr-8h-b6Y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yn1-1u-XeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1688,8 +1685,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$canonical_identifier" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-l4-IxT" userLabel="canonicalIdentifierTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$canonical_identifier" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-l4-IxT" userLabel="canonicalIdentifierTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1712,8 +1709,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$canonical_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-Bf-axx" userLabel="canonicalURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$canonical_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-Bf-axx" userLabel="canonicalURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
@@ -1789,8 +1786,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uGB-Cu-2fv" userLabel="ogTitleTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uGB-Cu-2fv" userLabel="ogTitleTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1837,8 +1834,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$image_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-Ht-sjB" userLabel="ogImageURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$image_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-Ht-sjB" userLabel="ogImageURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
@@ -1862,8 +1859,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_image_width" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Uv-Wth" userLabel="ogImageWidthTextField">
-                                                    <rect key="frame" x="14" y="14" width="386" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_image_width" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Uv-Wth" userLabel="ogImageWidthTextField">
+                                                    <rect key="frame" x="14" y="13" width="386" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
@@ -1887,8 +1884,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_image_height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spb-nB-qDk" userLabel="ogImageHeightTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_image_height" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="spb-nB-qDk" userLabel="ogImageHeightTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
@@ -1912,8 +1909,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$content_type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-gC-klu" userLabel="contentTypeTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$content_type" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-gC-klu" userLabel="contentTypeTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1936,8 +1933,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-TF-vGk" userLabel="ogVideoTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_video" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-TF-vGk" userLabel="ogVideoTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -1960,8 +1957,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-pr-4lV" userLabel="ogURLTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_url" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-pr-4lV" userLabel="ogURLTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
@@ -1984,8 +1981,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-G0-1wX" userLabel="ogTypeTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_type" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-G0-1wX" userLabel="ogTypeTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2009,8 +2006,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_redirect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o21-FJ-6uo" userLabel="ogRedirectTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_redirect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o21-FJ-6uo" userLabel="ogRedirectTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
@@ -2033,8 +2030,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_app_id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-mZ-QCs" userLabel="ogAppIDTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$og_app_id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-mZ-QCs" userLabel="ogAppIDTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2057,8 +2054,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-5W-Nn4" userLabel="twitterCardTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_card" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-5W-Nn4" userLabel="twitterCardTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2081,8 +2078,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-p3-iKJ" userLabel="twitterTitleTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-p3-iKJ" userLabel="twitterTitleTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2105,8 +2102,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-Gc-1zU" userLabel="twitterDescriptionTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_description" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-Gc-1zU" userLabel="twitterDescriptionTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2129,8 +2126,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_site" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZy-37-Vgn" userLabel="twitterSiteTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_site" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gZy-37-Vgn" userLabel="twitterSiteTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
@@ -2153,8 +2150,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_app" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-xr-Szq" userLabel="twitterAppTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_app" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-xr-Szq" userLabel="twitterAppTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2177,8 +2174,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-CB-ScR" userLabel="twitterPlayerTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-CB-ScR" userLabel="twitterPlayerTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                                 </textField>
@@ -2201,8 +2198,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player_width" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-V0-cJ3" userLabel="twitterPlayerWidthTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player_width" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-V0-cJ3" userLabel="twitterPlayerWidthTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
@@ -2225,8 +2222,8 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player_height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-tp-bEB" userLabel="twitterPlayerHeightTextField">
-                                                    <rect key="frame" x="14" y="14" width="398" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_player_height" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-tp-bEB" userLabel="twitterPlayerHeightTextField">
+                                                    <rect key="frame" x="14" y="13" width="398" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
@@ -2250,18 +2247,18 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V2-Os-H9t" userLabel="publiclyIndexableLabel">
-                                                    <rect key="frame" x="14" y="12" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$publicly_indexable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V2-Os-H9t" userLabel="publiclyIndexableLabel">
+                                                    <rect key="frame" x="14" y="12" width="149" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B44-sQ-c2b" userLabel="publiclyIndexableSwitch">
-                                                    <rect key="frame" x="357" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="363" y="7" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="B44-sQ-c2b" secondAttribute="trailing" id="N80-9r-l5J"/>
+                                                <constraint firstItem="B44-sQ-c2b" firstAttribute="trailing" secondItem="28v-95-Wam" secondAttribute="trailingMargin" constant="6" id="N80-9r-l5J"/>
                                                 <constraint firstItem="9V2-Os-H9t" firstAttribute="leading" secondItem="28v-95-Wam" secondAttribute="leadingMargin" constant="6" id="ii7-dq-bGB"/>
                                                 <constraint firstItem="9V2-Os-H9t" firstAttribute="centerY" secondItem="28v-95-Wam" secondAttribute="centerY" id="kIj-yJ-vuS"/>
                                                 <constraint firstItem="B44-sQ-c2b" firstAttribute="centerY" secondItem="28v-95-Wam" secondAttribute="centerY" id="tMI-dI-9w8"/>
@@ -2304,7 +2301,7 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
                     <navigationItem key="navigationItem" id="cQu-by-3hd">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="eBp-NB-7fv">
                             <connections>
-                                <segue destination="3ix-6a-5ra" kind="unwind" identifier="unwindBranchUniversalObjectTableViewController" unwindAction="unwindBranchUniversalObjectTableViewController:" id="iPv-K7-FJ2"/>
+                                <segue destination="3ix-6a-5ra" kind="unwind" identifier="UnwindBranchUniversalObjectTableViewController" unwindAction="unwindBranchUniversalObjectTableViewController:" id="iPv-K7-FJ2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2367,9 +2364,9 @@ Universal Links and Spotlight do not support deep linking via URI paths. If poss
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7TN-Vi-Tcv"/>
-        <segue reference="X7W-cf-8rz"/>
         <segue reference="wth-hd-3D7"/>
+        <segue reference="nbR-gd-qo0"/>
+        <segue reference="Qus-RU-z7K"/>
         <segue reference="wzH-j8-TDu"/>
-        <segue reference="lul-Hc-eKM"/>
     </inferredMetricsTieBreakers>
 </document>

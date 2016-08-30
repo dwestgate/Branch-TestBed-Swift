@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestBed-Swift/ViewController.swift"
-            timestampString = "494130151.398976"
+            filePath = "TestBed-Swift/DictionaryTableViewController.swift"
+            timestampString = "494290279.794252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "514"
-            endingLineNumber = "514"
-            landmarkName = "unwindBranchUniversalObjectTableViewController(_:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

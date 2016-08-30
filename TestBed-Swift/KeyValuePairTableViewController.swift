@@ -1,76 +1,87 @@
 //
 //  KeyValuePairTableViewController.swift
-//  AdScrubber
+//  TestBed-Swift
 //
-//  Created by David Westgate on 12/31/15.
-//  Copyright © 2016 David Westgate
+//  Created by David Westgate on 8/29/16.
+//  Copyright © 2016 Branch Metrics. All rights reserved.
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions: The above copyright
-// notice and this permission notice shall be included in all copies or
-// substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE
-
 import UIKit
 
-/// Manages the user interface for updating the
-/// valueTextView field of ViewController
 class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     
-    // MARK: -
-    // MARK: Control Outlets
+    // MARK: - Controls
+    
     @IBOutlet weak var keyTextField: UITextField!
     @IBOutlet weak var valueTextView: UITextView!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var clearButton: UIButton!
     
-    // MARK: Variables
-    var incumbantKey: String!
-    var incumbantValue: String!
+    var incumbantKey = ""
+    var incumbantValue = ""
+    var viewTitle = "Default Title"
+    var keyHeader = "Default Key Header"
+    var keyFooter = "Default Key Footer"
+    var valueHeader = "Default Value Header"
+    var valueFooter = "Default Value Footer"
+    var keyKeyboardType = UIKeyboardType.Default
+    var valueKeyboardType = UIKeyboardType.Default
     
-    // MARK: Overridden functions
+    // MARK: - Core View Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewTitle
         keyTextField.text = incumbantKey
         valueTextView.delegate = self
         valueTextView.text = incumbantValue
+        setClearButtonVisibility()
         setFirstResponder()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Control Functions
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // TestData.setCustomEventMetadataElement(valueTextView.text)
-        
-    }
-    
-    // MARK: Control Actions
-    @IBAction func cancelButtonTouchUpInside(sender: AnyObject) {
+    @IBAction func clearButtonTouchUpInside(sender: AnyObject) {
         valueTextView.text = incumbantValue
         valueTextView.textColor = UIColor.lightGrayColor()
         valueTextView.becomeFirstResponder()
         valueTextView.selectedTextRange = valueTextView.textRangeFromPosition(valueTextView.beginningOfDocument, toPosition: valueTextView.beginningOfDocument)
     }
     
-    // MARK: Control Functions
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        var header = ""
+        
+        switch section {
+        case 0:
+            header = keyHeader
+        case 1:
+            header = valueHeader
+        default:
+            break
+        }
+        return header
+    }
+    
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        
+        var footer = ""
+        
+        switch section {
+        case 0:
+            footer = keyFooter
+        case 1:
+            footer = valueFooter
+        default:
+            break
+        }
+        return footer
+    }
+    
     func textViewDidChangeSelection(textView: UITextView) {
         if self.view.window != nil {
             if textView.textColor == UIColor.lightGrayColor() {
@@ -81,10 +92,16 @@ class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegat
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
+        guard (text != "\n") else {
+            performSegueWithIdentifier("Save", sender: "save")
+            return false
+        }
+        
         let t: NSString = textView.text
         let updatedText = t.stringByReplacingCharactersInRange(range, withString:text)
         
         guard (updatedText != "") else {
+            clearButton.hidden = true
             textView.text = incumbantValue
             textView.textColor = UIColor.lightGrayColor()
             textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
@@ -99,29 +116,25 @@ class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegat
         return true
     }
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        cancelButton.hidden = false
-    }
-    
-    func textViewDidEndEditing(textView: UITextView) {
-        cancelButton.hidden = true
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if ((saveButton === sender) && (keyTextField != "")) {
-            // don't need this if using unwind
-        }
+    func textViewDidChange(textView: UITextView) {
+        setClearButtonVisibility()
     }
     
     func setFirstResponder() {
-        if (incumbantKey == nil) {
+        if (incumbantKey == "") {
             keyTextField.becomeFirstResponder()
         } else {
             keyTextField.enabled = false
             valueTextView.becomeFirstResponder()
         }
-        // if there is no value in either control, only enable key
-        // if there is a value in key allow editing of either control
+    }
+    
+    func setClearButtonVisibility() {
+        if valueTextView.text == "" {
+            clearButton.hidden = true
+        } else if valueTextView.textColor != UIColor.lightGrayColor() {
+            clearButton.hidden = false
+        }
     }
     
 }

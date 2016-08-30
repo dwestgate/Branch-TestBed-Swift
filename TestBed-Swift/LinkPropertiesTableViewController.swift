@@ -2,15 +2,15 @@
 //  LinkPropertiesTableViewController.swift
 //  TestBed-Swift
 //
-//  Created by David Westgate on 8/7/16.
+//  Created by David Westgate on 8/29/16.
 //  Copyright © 2016 Branch Metrics. All rights reserved.
 //
-
 import UIKit
 
 class LinkPropertiesTableViewController: UITableViewController {
     
-
+    // MARK: - Controls
+    
     @IBOutlet weak var aliasTextField: UITextField!
     @IBOutlet weak var channelTextField: UITextField!
     @IBOutlet weak var featureTextField: UITextField!
@@ -36,19 +36,62 @@ class LinkPropertiesTableViewController: UITableViewController {
     
     var linkProperties = [String: AnyObject]()
     
+    // MARK: - Core View Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         refreshControls()
-        
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Navigation
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch(indexPath.section) {
+            case 4 :
+                self.performSegueWithIdentifier("ShowTags", sender: "Tags")
+            default : break
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        refreshLinkProperties()
+        
+        if segue.identifier! == "ShowTags" {
+            let vc = segue.destinationViewController as! ArrayTableViewController
+            if let tags = linkProperties["tags"] as? [String] {
+                vc.array = tags
+            }
+            vc.viewTitle = "Link Tags"
+            vc.sender = sender as! String
+            vc.header = "Tag"
+            vc.placeholder = "tag"
+            vc.footer = "Enter a new tag to associate with the link."
+            vc.keyboardType = UIKeyboardType.Default
+        }
+    }
+    
+    @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
+    
+    @IBAction func unwindArrayTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? ArrayTableViewController {
+            let tags = vc.array
+            linkProperties["tags"] = tags
+            if tags.count > 0 {
+                tagsTextView.text = tags.description
+            } else {
+                tagsTextView.text = ""
+            }
+        }
+    }
+    
+    // MARK: - Refresh Functions
     
     func refreshControls() {
         aliasTextField.text = linkProperties["alias"] as? String
@@ -87,86 +130,8 @@ class LinkPropertiesTableViewController: UITableViewController {
         windowsPhoneURLTextField.text = linkProperties["$windows_phone_url"] as? String
         typeTextField.text = linkProperties["type"] as? String
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // MARK: - Table view data source
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch(indexPath.section) {
-            case 4 :
-                self.performSegueWithIdentifier("ShowTags", sender: "Tags")
-            default : break
-        }
-        
-    }
-    
-    @IBAction func unwindArrayTableViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? ArrayTableViewController {
-            let tags = vc.array
-            linkProperties["tags"] = tags
-            if tags.count > 0 {
-                tagsTextView.text = tags.description
-            } else {
-                tagsTextView.text = ""
-            }
-        }
-    }
-    
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func refreshLinkProperties() {
         linkProperties["alias"] = aliasTextField.text
         linkProperties["channel"] = channelTextField.text
         linkProperties["feature"] = featureTextField.text
@@ -195,21 +160,6 @@ class LinkPropertiesTableViewController: UITableViewController {
         linkProperties["$blackberry_url"] = blackberryURLTextField.text
         linkProperties["$windows_phone_url"] = windowsPhoneURLTextField.text
         linkProperties["type"] = typeTextField.text
-        
-        if segue.identifier! == "ShowTags" {
-            let vc = segue.destinationViewController as! ArrayTableViewController
-            if let tags = linkProperties["tags"] as? [String] {
-                vc.array = tags
-            }
-            vc.viewTitle = "Link Tags"
-            vc.sender = sender as! String
-            vc.header = "Tag"
-            vc.placeholder = "tag"
-            vc.footer = "Enter a new tag to associate with the link."
-            vc.keyboardType = UIKeyboardType.Default
-        }
-
     }
     
-
 }

@@ -2,10 +2,9 @@
 //  DictionaryTableViewController.swift
 //  TestBed-Swift
 //
-//  Created by David Westgate on 8/14/16.
+//  Created by David Westgate on 8/29/16.
 //  Copyright © 2016 Branch Metrics. All rights reserved.
 //
-
 import UIKit
 
 class DictionaryTableViewController: UITableViewController {
@@ -14,12 +13,10 @@ class DictionaryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dictionary = TestData.getCustomEventMetadata()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -65,39 +62,6 @@ class DictionaryTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        TestData.setCustomEventMetadata(dictionary)
-        
-    }
-    
-    /*
-    - (void)addItem:sender {
-    if (itemInputController == nil) {
-    itemInputController = [[ItemInputController alloc] init];
-    }
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:itemInputController];
-    [[self navigationController] presentModalViewController:navigationController animated:YES];
-    }*/
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 
     // MARK: - Navigation
 
@@ -112,14 +76,19 @@ class DictionaryTableViewController: UITableViewController {
                 let selectedParameterKey = keys[indexPath.row]
                 let selectedParameterValue = self.dictionary[keys[indexPath.row]] as? String
                 vc.incumbantKey = selectedParameterKey
-                vc.incumbantValue = selectedParameterValue
+                vc.incumbantValue = selectedParameterValue!
             }
         } else if segue.identifier == "AddItem" {
-            print("Adding new key-value pair.")
+            /* let vc = segue.destinationViewController as! DictionaryTableViewController
+            if let dictionary = linkProperties["tags"] as? [String] {
+                vc.array = tags
+            }
+            print("Adding new key-value pair.")*/
         }
     }
     
-    // TODO be sure Cancel does not = Save
+    @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
+    
     @IBAction func unwindKeyValuePairTableViewController(sender: UIStoryboardSegue) {
         if let sourceVC = sender.sourceViewController as? KeyValuePairTableViewController {
             

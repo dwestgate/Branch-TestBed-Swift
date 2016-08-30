@@ -2,13 +2,14 @@
 //  BranchUniversalObjectPropertiesTableViewController.swift
 //  TestBed-Swift
 //
-//  Created by David Westgate on 8/7/16.
+//  Created by David Westgate on 8/29/16.
 //  Copyright © 2016 Branch Metrics. All rights reserved.
 //
-
 import UIKit
 
-class BranchUniversalObjectPropertiesTableViewController: UITableViewController {
+class BranchUniversalObjectPropertiesTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    // MARK: - Controls
     
     @IBOutlet weak var canonicalIdentifierTextField: UITextField!
     @IBOutlet weak var canonicalURLTextField: UITextField!
@@ -36,19 +37,145 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController 
     @IBOutlet weak var publiclyIndexableSwitch: UISwitch!
     @IBOutlet weak var expDateTextField: UITextField!
     
+    let datePicker = UIDatePicker()
     var universalObjectProperties = [String: AnyObject]()
+    
+    // MARK: - Core View Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        datePicker.datePickerMode = .Date
+        self.expDateTextField.inputView = datePicker
+        self.expDateTextField.inputAccessoryView = createToolbar(true)
         
         refreshControls()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Navigation
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch(indexPath.section) {
+        case 2 :
+            self.performSegueWithIdentifier("ShowCustomData", sender: "CustomData")
+        case 3 :
+            self.performSegueWithIdentifier("ShowKeywords", sender: "Keywords")
+        default : break
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        refreshUniversalObjectProperties()
+        
+        switch segue.identifier! {
+            case "ShowCustomData":
+                let vc = segue.destinationViewController as! DictionaryTableViewController
+                if let customData = universalObjectProperties["customData"] as? [String: AnyObject] {
+                    vc.dictionary = customData
+                }
+                // vc.viewTitle = "Custom Data"
+                // vc.sender = sender as! String
+                // vc.header = "Custom Data"
+                // vc.placeholder = "tag"
+                // vc.footer = "Enter a new tag to associate with the link."
+                // vc.keyboardType = UIKeyboardType.Default
+            
+            case "ShowKeywords":
+                let vc = segue.destinationViewController as! ArrayTableViewController
+                if let keywords = universalObjectProperties["$keywords"] as? [String] {
+                    vc.array = keywords
+                }
+                vc.viewTitle = "Keywords"
+                vc.sender = sender as! String
+                vc.header = "Keyword"
+                vc.placeholder = "keyword"
+                vc.footer = "Enter a new keyword that describes the content."
+                vc.keyboardType = UIKeyboardType.Default
+            default:
+                break
+        }
+    }
+    
+    @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
+    
+    @IBAction func unwindDictionaryTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? DictionaryTableViewController {
+            let customData = vc.dictionary
+            universalObjectProperties["customData"] = customData
+            if customData.count > 0 {
+                customDataTextView.text = customData.description
+            } else {
+                customDataTextView.text = ""
+            }
+        }
+    }
+    
+    @IBAction func unwindArrayTableViewController(segue:UIStoryboardSegue) {
+        if let vc = segue.sourceViewController as? ArrayTableViewController {
+            let keywords = vc.array
+            universalObjectProperties["$keywords"] = keywords
+            if keywords.count > 0 {
+                keywordsTextView.text = keywords.description
+            } else {
+                keywordsTextView.text = ""
+            }
+        }
+    }
+    
+    //MARK: - Date Picker
+    
+    func createToolbar(withCancelButton: Bool) -> UIToolbar {
+        let toolbar = UIToolbar(frame: CGRectMake(0,0,self.view.frame.size.width,44))
+        toolbar.tintColor = UIColor.grayColor()
+        let donePickingButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: #selector(self.donePicking))
+        let emptySpace = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        if (withCancelButton) {
+            let cancelPickingButton = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: #selector(self.donePicking))
+            toolbar.setItems([cancelPickingButton, emptySpace, donePickingButton], animated: true)
+        } else {
+            toolbar.setItems([emptySpace, donePickingButton], animated: true)
+        }
+        
+        return toolbar
+    }
+    
+    func createPicker() -> UIPickerView {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        picker.showsSelectionIndicator = true
+        
+        return picker
+    }
+    
+    func donePicking() {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let expirationDate = datePicker.date
+        self.expDateTextField.text = String(format:"%@", dateFormatter.stringFromDate(expirationDate))
+        self.expDateTextField.resignFirstResponder()
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 0
+    }
+    
+    func showAlert(alertTitle: String, withDescription message: String) {
+        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert);
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil));
+        presentViewController(alert, animated: true, completion: nil);
     }
     
     func refreshControls() {
@@ -99,26 +226,7 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController 
         expDateTextField.text = universalObjectProperties["$exp_date"] as? String
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch(indexPath.section) {
-        case 2 :
-            self.performSegueWithIdentifier("ShowCustomData", sender: "CustomData")
-        case 3 :
-            self.performSegueWithIdentifier("ShowKeywords", sender: "Keywords")
-        default : break
-        }
-        
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    func refreshUniversalObjectProperties() {
         universalObjectProperties["$canonical_identifier"] = canonicalIdentifierTextField.text
         universalObjectProperties["$canonical_url"] = canonicalURLTextField.text
         
@@ -145,118 +253,13 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController 
         universalObjectProperties["$twitter_player_height"] = twitterPlayerHeightTextField.text
         
         if publiclyIndexableSwitch.on {
+            
             universalObjectProperties["$publicly_indexable"] = "1"
         } else {
             universalObjectProperties["$publicly_indexable"] = "0"
         }
         
         universalObjectProperties["$exp_date"] = expDateTextField.text
-        
-        switch segue.identifier! {
-            case "ShowCustomData":
-                let vc = (segue.destinationViewController as! DictionaryTableViewController)
-            case "ShowKeywords":
-                let vc = segue.destinationViewController as! ArrayTableViewController
-                if let keywords = universalObjectProperties["keywords"] as? [String] {
-                    vc.array = keywords
-                }
-                vc.viewTitle = "Keywords"
-                vc.sender = sender as! String
-                vc.header = "Keyword"
-                vc.placeholder = "keyword"
-                vc.footer = "Enter a new keyword that describes the content."
-                vc.keyboardType = UIKeyboardType.Default
-            default:
-                break
-        }
-        
     }
-    
-    @IBAction func unwindDictionaryTableViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? DictionaryTableViewController {
-            let customData = vc.dictionary
-            universalObjectProperties["customData"] = customData
-            if customData.count > 0 {
-                customDataTextView.text = customData.description
-            } else {
-                customDataTextView.text = ""
-            }
-        }
-    }
-    /*
-    @IBAction func unwindCustomDataTableViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? CustomDataTableViewController {
-            customData = vc.keyValuePairs
-        }
-    }*/
-    
-    
-    @IBAction func unwindArrayTableViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? ArrayTableViewController {
-            let keywords = vc.array
-            universalObjectProperties["keywords"] = keywords
-            if keywords.count > 0 {
-                keywordsTextView.text = keywords.description
-            } else {
-                keywordsTextView.text = ""
-            }
-        }
-    }
-    
-    
-    /*
-     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

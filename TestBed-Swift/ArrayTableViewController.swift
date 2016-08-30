@@ -2,10 +2,9 @@
 //  ArrayTableViewController.swift
 //  TestBed-Swift
 //
-//  Created by David Westgate on 8/14/16.
+//  Created by David Westgate on 8/29/16.
 //  Copyright © 2016 Branch Metrics. All rights reserved.
 //
-
 import UIKit
 
 class ArrayTableViewController: UITableViewController {
@@ -91,8 +90,8 @@ class ArrayTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
     
-    // TODO be sure Cancel does not = Save
     @IBAction func unwindTextFieldFormTableViewController(sender: UIStoryboardSegue) {
         if let vc = sender.sourceViewController as? TextFieldFormTableViewController {
             

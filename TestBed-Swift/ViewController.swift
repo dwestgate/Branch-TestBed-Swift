@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TestBed-Swift
 //
-//  Created by David Westgate on 5/26/16.
+//  Created by David Westgate on 8/29/16.
 //  Copyright © 2016 Branch Metrics. All rights reserved.
 //
 import UIKit
@@ -19,7 +19,6 @@ class ViewController: UITableViewController {
     @IBOutlet weak var customEventNameTextField: UITextField!
     @IBOutlet weak var customEventMetadataTextView: UITextView!
     
-    // let defaultContainer = NSUserDefaults.standardUserDefaults()
     var linkProperties = [String: AnyObject]()
     var universalObjectProperties = [String: AnyObject]()
     var creditHistory: Array<AnyObject>?
@@ -28,13 +27,7 @@ class ViewController: UITableViewController {
     let branchLinkProperties = BranchLinkProperties()
     var branchUniversalObject = BranchUniversalObject()
     
-    let canonicalIdentifier = "item/12345"
-    let canonicalUrl = "https://dev.branch.io/getting-started/deep-link-routing/guide/ios/"
-    let contentTitle = "Content Title"
-    let contentDescription = "My Content Description"
-    let imageUrl = "https://pbs.twimg.com/profile_images/658759610220703744/IO1HUADP.png"
     let feature = "Sharing Feature"
-    let channel = "Distribution Channel"
     let desktop_url = "http://branch.io"
     let ios_url = "https://dev.branch.io/getting-started/sdk-integration-guide/guide/ios/"
     let shareText = "Super amazing thing I want to share"
@@ -45,36 +38,7 @@ class ViewController: UITableViewController {
         UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
         
         linkTextField.text = ""
-        self.refreshControlValues()
-        
-        // let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
-        // self.tableView.addGestureRecognizer(gestureRecognizer)
-        
-        
-
-        
-        /* if let userID = defaultContainer.valueForKey("userID") as! String? {
-            self.userIDTextField.text = userID
-        }*/
-        
-    }
-    
-    func refreshControlValues() {
-        // First load the three values required to refresh the rewards balance
-        userIDTextField.text = TestData.getUserID()
-        rewardsBucketTextField.text = TestData.getRewardsBucket()
-        rewardsBalanceOfBucketTextField.text = TestData.getRewardsBalanceOfBucket()
-        
-        // Then initiate a refresh of the rewards balance
-        refreshRewardsBalanceOfBucket()
-        
-        // Now get about populating the other controls
-        linkProperties = TestData.getLinkProperties()
-        universalObjectProperties = TestData.getUniversalObjectProperties()
-        rewardPointsToRedeemTextField.text = TestData.getRewardPointsToRedeem()
-        customEventNameTextField.text = TestData.getCustomEventName()
-        customEventMetadata = TestData.getCustomEventMetadata()
-        customEventMetadataTextView.text = customEventMetadata.description
+        refreshControlValues()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,17 +46,15 @@ class ViewController: UITableViewController {
         
         self.refreshControlValues()
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.section, indexPath.row) {
         case (0,0) :
-            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "userID")
+            self.performSegueWithIdentifier("ShowTextViewFormNavigationBar", sender: "userID")
         case (1,0) :
             guard linkTextField.text?.characters.count > 0 else {
                 break
@@ -100,47 +62,45 @@ class ViewController: UITableViewController {
             UIPasteboard.generalPasteboard().string = linkTextField.text
             showAlert("Link copied to clipboard", withDescription: linkTextField.text!)
         case (1,1) :
-            self.performSegueWithIdentifier("ShowLinkPropertiesTableViewController", sender: "LinkProperties")
+            self.performSegueWithIdentifier("ShowLinkPropertiesTableView", sender: "LinkProperties")
         case (1,2) :
-            self.performSegueWithIdentifier("ShowBranchUniversalObjectPropertiesTableViewController", sender: "BranchUniversalObjectProperties")
+            self.performSegueWithIdentifier("ShowBranchUniversalObjectPropertiesTableView", sender: "BranchUniversalObjectProperties")
         case (2,0) :
-            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "RewardsBucket")
+            self.performSegueWithIdentifier("ShowTextViewFormNavigationBar", sender: "RewardsBucket")
         case (2,3) :
-            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "RewardPointsToRedeem")
+            self.performSegueWithIdentifier("ShowTextViewFormNavigationBar", sender: "RewardPointsToRedeem")
         case (2,5) :
             let branch = Branch.getInstance()
             branch.getCreditHistoryWithCallback { (creditHistory, error) in
                 if (error == nil) {
                     self.creditHistory = creditHistory as Array?
-                    self.performSegueWithIdentifier("ShowCreditHistoryViewController", sender: "CreditHistory")
+                    self.performSegueWithIdentifier("ShowCreditHistoryTableView", sender: "CreditHistory")
                 } else {
                     print(String(format: "Branch TestBed: Error retrieving credit history: %@", error.localizedDescription))
                     self.showAlert("Error retrieving credit history", withDescription:error.localizedDescription)
                 }
             }
         case (3,0) :
-            self.performSegueWithIdentifier("ShowTextViewFormTableViewController", sender: "CustomEventName")
+            self.performSegueWithIdentifier("ShowTextViewFormNavigationBar", sender: "CustomEventName")
         case (3,1) :
-            self.performSegueWithIdentifier("ShowCustomEventMetadataViewController", sender: "CustomEventMetadata")
+            self.performSegueWithIdentifier("ShowDictionaryTableView", sender: "CustomEventMetadata")
         case (4,0) :
             let branch = Branch.getInstance()
             let params = branch.getFirstReferringParams()
             let logOutput = String(format:"LatestReferringParams:\n\n%@", params.description)
             
-            self.performSegueWithIdentifier("ShowLogOutputViewController", sender: logOutput)
+            self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
             print("Branch TestBed: LatestReferringParams:\n", logOutput)
         case (4,1) :
             let branch = Branch.getInstance()
             let params = branch.getFirstReferringParams()
             let logOutput = String(format:"FirstReferringParams:\n\n%@", params.description)
             
-            self.performSegueWithIdentifier("ShowLogOutputViewController", sender: logOutput)
+            self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
             print("Branch TestBed: FirstReferringParams:\n", logOutput)
         default : break
         }
-        
     }
-
     
     @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
         
@@ -148,15 +108,12 @@ class ViewController: UITableViewController {
             setBranchLinkProperty(key)
         }
         
-        branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
-        /*branchUniversalObject.addMetadataKey("deeplink_text", value: String(format: "This text was embedded as data in a Branch link with the following characteristics:\n\n  canonicalUrl: %@\n  title: %@\n  contentDescription: %@\n  imageUrl: %@\n", canonicalUrl, contentTitle, contentDescription, imageUrl))*/
+        branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: universalObjectProperties["canonicalIdentifier"] as! String)
         
         for key in universalObjectProperties.keys {
             setBranchUniversalObjectProperty(key)
         }
         
-        print(branchLinkProperties.description())
-        print(branchUniversalObject.description())
         branchUniversalObject.getShortUrlWithLinkProperties(branchLinkProperties) { (url, error) in
             if (error == nil) {
                 print(url)
@@ -168,7 +125,6 @@ class ViewController: UITableViewController {
             
         }
     }
-    
     
     @IBAction func redeemPointsButtonTouchUpInside(sender: AnyObject) {
         rewardsBalanceOfBucketTextField.hidden = true
@@ -196,21 +152,6 @@ class ViewController: UITableViewController {
         refreshRewardsBalanceOfBucket()
     }
     
-    /*@IBAction func simulateLogoutButtonTouchUpInside(sender: AnyObject) {
-        let branch = Branch.getInstance()
-        branch.logoutWithCallback { (changed, error) in
-            if (error != nil || !changed) {
-                print(String(format: "Branch TestBed: Logout failed: %@", error))
-                self.showAlert("Error simulating logout", withDescription: error.localizedDescription)
-            } else {
-                print("Branch TestBed: Logout succeeded")
-                self.showAlert("Logout succeeded", withDescription: "")
-                self.refreshRewardsBalanceOfBucket()
-            }
-        }
-
-    }*/
-    
     @IBAction func sendEventButtonTouchUpInside(sender: AnyObject) {
         var customEventName = "buy"
         let branch = Branch.getInstance()
@@ -228,51 +169,36 @@ class ViewController: UITableViewController {
         self.showAlert(String(format: "Custom event '%@' dispatched", customEventName), withDescription: "")
     }
     
-    /*
-    @IBAction func sendComplexEventButtonTouchUpInside(sender: AnyObject) {
-        self.performSegueWithIdentifier("ShowBranchLink", sender: nil)
-        
-        let eventDetails = ["name": user_id1, "integer": 1, "boolean": true, "float": 3.14159265359, "test_key": test_key]
-        let branch = Branch.getInstance()
-        branch.userCompletedAction("buy", withState: eventDetails as [NSObject : AnyObject])
-        let logOutput = String(format: "Branch Link Details:\n\n%@", eventDetails.description)
-        self.performSegueWithIdentifier("ShowLogOutputViewController", sender: logOutput)
-        
-    }*/
-    
     @IBAction func showRewardsHistoryButtonTouchUpInside(sender: AnyObject) {
         let branch = Branch.getInstance()
         branch.getCreditHistoryWithCallback { (creditHistory, error) in
             if (error == nil) {
                 self.creditHistory = creditHistory as Array?
-                self.performSegueWithIdentifier("ShowCreditHistoryViewController", sender: nil)
+                self.performSegueWithIdentifier("ShowCreditHistoryTableView", sender: nil)
             } else {
                 print(String(format: "Branch TestBed: Error retrieving credit history: %@", error.localizedDescription))
                 self.showAlert("Error retrieving credit history", withDescription:error.localizedDescription)
             }
         }
     }
-
     
     @IBAction func viewFirstReferringParamsButtonTouchUpInside(sender: AnyObject) {
         let branch = Branch.getInstance()
         let params = branch.getFirstReferringParams()
         let logOutput = String(format:"FirstReferringParams:\n\n%@", params.description)
         
-        self.performSegueWithIdentifier("ShowLogOutputViewController", sender: logOutput)
+        self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
         print("Branch TestBed: FirstReferringParams:\n", logOutput)
     }
-    
     
     @IBAction func viewLatestReferringParamsButtonTouchUpInside(sender: AnyObject) {
         let branch = Branch.getInstance()
         let params = branch.getFirstReferringParams()
         let logOutput = String(format:"LatestReferringParams:\n\n%@", params.description)
         
-        self.performSegueWithIdentifier("ShowLogOutputViewController", sender: logOutput)
+        self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
         print("Branch TestBed: LatestReferringParams:\n", logOutput)
     }
-    
     
     @IBAction func simulateContentAccessButtonTouchUpInside(sender: AnyObject) {
         self.branchUniversalObject.registerView()
@@ -297,8 +223,6 @@ class ViewController: UITableViewController {
         }
     }
     
-    
-    //example using callbackWithURLandSpotlightIdentifier
     @IBAction func registerWithSpotlightButtonTouchUpInside(sender: AnyObject) {
         branchUniversalObject.addMetadataKey("deeplink_text", value: "This link was generated for Spotlight registration")
         branchUniversalObject.listOnSpotlightWithIdentifierCallback { (url, spotlightIdentifier, error) in
@@ -312,11 +236,9 @@ class ViewController: UITableViewController {
         }
     }
     
-    
     func textFieldDidChange(sender:UITextField) {
         sender.resignFirstResponder()
     }
-    
     
     func refreshRewardsBalanceOfBucket() {
         rewardsBalanceOfBucketTextField.hidden = true
@@ -335,26 +257,6 @@ class ViewController: UITableViewController {
         rewardsBalanceOfBucketTextField.hidden = false
     }
     
-    
-    //MARK: Resign First Responder
-    /* func hideKeyboard() {
-        if (self.branchLinkTextField.isFirstResponder()) {
-            self.branchLinkTextField.resignFirstResponder();
-        }
-    }*/
-    
-    
-    func showAlert(alertTitle: String, withDescription message: String) {
-        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) {
-            UIAlertAction in
-            self.refreshRewardsBalanceOfBucket()
-        }
-        alert.addAction(okAction)
-        presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         linkTextField.text = ""
@@ -364,8 +266,9 @@ class ViewController: UITableViewController {
             let nc = segue.destinationViewController as! UINavigationController
             let vc = nc.topViewController as! TextViewFormTableViewController
             vc.sender = sender as! String
+            vc.viewTitle = "User ID"
             vc.header = "User ID"
-            vc.footer = "This User ID (or developer_id) is the application-assigned ID of the user. If not assigned, referrals from links created by the user will show up as 'anonymous' in reporting."
+            vc.footer = "This User ID (or developer_id) is the application-assigned ID of the user. If not assigned, referrals from links created by the user will show up as 'Anonymous' in reporting."
             vc.keyboardType = UIKeyboardType.Alphabet
             vc.incumbantValue = userIDTextField.text!
         case "LinkProperties":
@@ -381,6 +284,7 @@ class ViewController: UITableViewController {
             let nc = segue.destinationViewController as! UINavigationController
             let vc = nc.topViewController as! TextViewFormTableViewController
             vc.sender = sender as! String
+            vc.viewTitle = "Rewards Bucket"
             vc.header = "Rewards Bucket"
             vc.footer = "Rewards are granted via rules configured in the Rewards Rules section of the dashboard. Rewards are normally accumulated in a 'default' bucket, however any bucket name can be specified in rewards rules. Use this setting to specify the name of a non-default rewards bucket."
             vc.keyboardType = UIKeyboardType.Alphabet
@@ -389,6 +293,7 @@ class ViewController: UITableViewController {
             let nc = segue.destinationViewController as! UINavigationController
             let vc = nc.topViewController as! TextViewFormTableViewController
             vc.sender = sender as! String
+            vc.viewTitle = "Reward Points"
             vc.header = "Number of Reward Points to Redeem"
             vc.footer = "This is the quantity of points to subtract from the selected bucket's balance."
             vc.keyboardType = UIKeyboardType.NumberPad
@@ -397,21 +302,22 @@ class ViewController: UITableViewController {
             let nc = segue.destinationViewController as! UINavigationController
             let vc = nc.topViewController as! TextViewFormTableViewController
             vc.sender = sender as! String
+            vc.viewTitle = "Custom Event"
             vc.header = "Custom Event Name"
             vc.footer = "This is the name of the event that is referenced when creating rewards rules and webhooks."
             vc.keyboardType = UIKeyboardType.Alphabet
             vc.incumbantValue = customEventNameTextField.text!
         case "CustomEventMetadata":
-            break
+            let vc = segue.destinationViewController as! DictionaryTableViewController
+            customEventMetadata = TestData.getCustomEventMetadata()
+            vc.dictionary = customEventMetadata
         default:
             let vc = (segue.destinationViewController as! LogOutputViewController)
             vc.logOutput = sender as! String
             
         }
-        
     }
     
-    // This is where we call setIdentity
     @IBAction func unwindTextViewFormTableViewController(segue:UIStoryboardSegue) {
 
         if let vc = segue.sourceViewController as? TextViewFormTableViewController {
@@ -489,8 +395,6 @@ class ViewController: UITableViewController {
                 }
             default: break
             }
-            
-            
         }
     }
     
@@ -498,7 +402,13 @@ class ViewController: UITableViewController {
     
     @IBAction func unwindDictionaryTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? DictionaryTableViewController {
-            self.customEventMetadataTextView.text = customEventMetadata.description
+            customEventMetadata = vc.dictionary
+            TestData.setCustomEventMetadata(customEventMetadata)
+            if customEventMetadata.count > 0 {
+                customEventMetadataTextView.text = customEventMetadata.description
+            } else {
+                customEventMetadataTextView.text = ""
+            }
         }
     }
     
@@ -545,7 +455,7 @@ class ViewController: UITableViewController {
         guard universalObjectProperties[key] != nil else {
             return
         }
-        print(key)
+
         switch key {
         case "$canonical_identifier":
             branchUniversalObject.canonicalIdentifier = universalObjectProperties[key] as! String
@@ -554,7 +464,10 @@ class ViewController: UITableViewController {
         case "$content_description":
             branchUniversalObject.contentDescription = universalObjectProperties[key] as! String
         case "$exp_date":
-            branchUniversalObject.expirationDate = universalObjectProperties[key] as! NSDate
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let expirationDate = dateFormatter.dateFromString(universalObjectProperties[key] as! String)
+            branchUniversalObject.expirationDate = expirationDate
         case "$og_image_url":
             branchUniversalObject.imageUrl = universalObjectProperties[key] as! String
         case "$keywords":
@@ -564,12 +477,47 @@ class ViewController: UITableViewController {
         case "$og_type":
             branchUniversalObject.type = universalObjectProperties[key] as! String
         case "customData":
-            branchUniversalObject.metadata = universalObjectProperties[key] as! [NSObject: AnyObject]
+            if let data = universalObjectProperties[key] as? [String: String] {
+                for customDataKey in data.keys {
+                    branchUniversalObject.addMetadataKey(customDataKey, value: data[customDataKey])
+                }
+            }
         default:
             branchUniversalObject.addMetadataKey(key, value: universalObjectProperties[key] as! String)
         }
     }
-
+    
+    func refreshControlValues() {
+        // First load the three values required to refresh the rewards balance
+        userIDTextField.text = TestData.getUserID()
+        rewardsBucketTextField.text = TestData.getRewardsBucket()
+        rewardsBalanceOfBucketTextField.text = TestData.getRewardsBalanceOfBucket()
+        
+        // Then initiate a refresh of the rewards balance
+        refreshRewardsBalanceOfBucket()
+        
+        // Now get about populating the other controls
+        linkProperties = TestData.getLinkProperties()
+        universalObjectProperties = TestData.getUniversalObjectProperties()
+        rewardPointsToRedeemTextField.text = TestData.getRewardPointsToRedeem()
+        customEventNameTextField.text = TestData.getCustomEventName()
+        customEventMetadata = TestData.getCustomEventMetadata()
+        if (customEventMetadata.count > 0) {
+            customEventMetadataTextView.text = customEventMetadata.description
+        } else {
+            customEventMetadataTextView.text = ""
+        }
+    }
+    
+    func showAlert(alertTitle: String, withDescription message: String) {
+        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) {
+            UIAlertAction in
+            self.refreshRewardsBalanceOfBucket()
+        }
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
     
 }
 
