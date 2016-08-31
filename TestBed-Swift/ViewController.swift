@@ -102,13 +102,37 @@ class ViewController: UITableViewController {
         }
     }
     
+    @IBAction func actionButtonTouchUpInside(sender: AnyObject) {
+        let linkProperties = BranchLinkProperties()
+        linkProperties.feature = feature
+        linkProperties.addControlParam("$desktop_url", withValue: desktop_url)
+        linkProperties.addControlParam("$ios_url", withValue: ios_url)
+        
+        branchUniversalObject.addMetadataKey("deeplink_text", value: "This link was generated during Share Sheet sharing")
+        
+        branchUniversalObject.showShareSheetWithLinkProperties(linkProperties, andShareText: shareText, fromViewController: nil, anchor: actionButton) { (activityType, completed) in
+            if (completed) {
+                print(String(format: "Branch TestBed: Completed sharing to %@", activityType))
+            } else {
+                print("Branch TestBed: Link Sharing Failed\n")
+                self.showAlert("Link Sharing Failed", withDescription: "")
+            }
+        }
+    }
+    
     @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
         
         for key in linkProperties.keys {
             setBranchLinkProperty(key)
         }
         
-        branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: universalObjectProperties["canonicalIdentifier"] as! String)
+        if let canonicalIdentifier = universalObjectProperties["canonicalIdentifier"] as? String {
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
+        } else {
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
+        }
+        
+
         
         for key in universalObjectProperties.keys {
             setBranchUniversalObjectProperty(key)
@@ -203,24 +227,6 @@ class ViewController: UITableViewController {
     @IBAction func simulateContentAccessButtonTouchUpInside(sender: AnyObject) {
         self.branchUniversalObject.registerView()
         self.showAlert("Content Access Registered", withDescription: "")
-    }
-    
-    @IBAction func actionButtonTouchUpInside(sender: AnyObject) {
-        let linkProperties = BranchLinkProperties()
-        linkProperties.feature = feature
-        linkProperties.addControlParam("$desktop_url", withValue: desktop_url)
-        linkProperties.addControlParam("$ios_url", withValue: ios_url)
-        
-        branchUniversalObject.addMetadataKey("deeplink_text", value: "This link was generated during Share Sheet sharing")
-        
-        branchUniversalObject.showShareSheetWithLinkProperties(linkProperties, andShareText: shareText, fromViewController: nil, anchor: actionButton) { (activityType, completed) in
-            if (completed) {
-                print(String(format: "Branch TestBed: Completed sharing to %@", activityType))
-            } else {
-                print("Branch TestBed: Link Sharing Failed\n")
-                self.showAlert("Link Sharing Failed", withDescription: "")
-            }
-        }
     }
     
     @IBAction func registerWithSpotlightButtonTouchUpInside(sender: AnyObject) {

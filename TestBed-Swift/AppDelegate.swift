@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Automatic Deeplinking on "deeplink_text"
         let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
-        branch.registerDeepLinkController(navigationController, forKey:"deeplink_text")
+        branch.registerDeepLinkController(navigationController, forKey:"$deeplink_path")
         
         // Required. Initialize session. automaticallyDisplayDeepLinkController is optional (default is false).
         branch.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: true, deepLinkHandler: { params, error in
@@ -50,10 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Branch TestBed: Initialization failed\n%@", error.localizedDescription)
             }
         })
-
         return true
     }
-    
 
     // Respond to URI scheme links
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -64,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
     // Respond to Universal Links
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
         // pass the url to the handle deep link call
@@ -72,19 +69,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
     func application(application: UIApplication, didReceiveRemoteNotification launchOptions: [NSObject: AnyObject]) -> Void {
         Branch.getInstance().handlePushNotification(launchOptions)
     }
     
-    
     func applicationWillResignActive(application: UIApplication) {
     }
-    
 
     func applicationDidEnterBackground(application: UIApplication) {
     }
-    
 
     func applicationWillEnterForeground(application: UIApplication) {
     }
@@ -92,11 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
     }
-
     
     func applicationWillTerminate(application: UIApplication) {
     }
-
 
 }
 
