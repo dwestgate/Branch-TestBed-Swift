@@ -26,7 +26,7 @@ class NavigationController: UINavigationController, BranchDeepLinkingController 
     func configureControlWithData(data: [NSObject : AnyObject]!) {
         let logOutputViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LogOutput") as! LogOutputViewController
         self.pushViewController(logOutputViewController, animated: true)
-        if let deeplinkText = data["deeplink_text"] as! String? {
+        if let deeplinkText = data["$deeplink_path"] as! String? {
             let logOutput = String(format:"Successfully Deeplinked:\n\n%@\nSession Details:\n\n%@", deeplinkText, data.description)
             logOutputViewController.logOutput = logOutput
         }

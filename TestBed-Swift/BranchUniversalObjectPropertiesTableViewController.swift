@@ -7,10 +7,11 @@
 //
 import UIKit
 
-class BranchUniversalObjectPropertiesTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class BranchUniversalObjectPropertiesTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     // MARK: - Controls
     
+    @IBOutlet weak var clearAllValuesButton: UIButton!
     @IBOutlet weak var canonicalIdentifierTextField: UITextField!
     @IBOutlet weak var canonicalURLTextField: UITextField!
     @IBOutlet weak var customDataTextView: UITextView!
@@ -45,6 +46,29 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        canonicalIdentifierTextField.delegate = self
+        canonicalURLTextField.delegate = self
+        ogTitleTextField.delegate = self
+        ogDescriptionTextField.delegate = self
+        ogImageURLTextField.delegate = self
+        ogImageWidthTextField.delegate = self
+        ogImageHeightTextField.delegate = self
+        contentTypeTextField.delegate = self
+        ogVideoTextField.delegate = self
+        ogURLTextField.delegate = self
+        ogTypeTextField.delegate = self
+        ogRedirectTextField.delegate = self
+        ogAppIDTextField.delegate = self
+        twitterCardTextField.delegate = self
+        twitterTitleTextField.delegate = self
+        twitterDescriptionTextField.delegate = self
+        twitterSiteTextField.delegate = self
+        twitterAppTextField.delegate = self
+        twitterPlayerTextField.delegate = self
+        twitterPlayerWidthTextField.delegate = self
+        twitterPlayerHeightTextField.delegate = self
+        expDateTextField.delegate = self
+        
         UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
         
         datePicker.datePickerMode = .Date
@@ -59,6 +83,16 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
     }
     
     // MARK: - Navigation
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    @IBAction func clearAllValuesButton(sender: AnyObject) {
+        universalObjectProperties.removeAll()
+        refreshControls()
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.section) {

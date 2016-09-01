@@ -12,15 +12,13 @@ struct TestData {
     static let userDefaults = NSUserDefaults.standardUserDefaults()
 
     static func getUserID() -> String? {
-        return userDefaults.stringForKey("userID")
-        /* if let value = userDefaults.stringForKey("userID") {
+        if let value = userDefaults.stringForKey("userID") {
             return value
         } else {
-            return nil
-            /* let value = ""
+            let value = ""
             userDefaults.setValue(value, forKey: "userID")
-            return value*/
-        }*/
+            return value
+        }
     }
     
     static func setUserID(value: String) {
@@ -101,7 +99,7 @@ struct TestData {
         }
     }
     
-    static func getCustomEventName() -> String {
+    static func getCustomEventName() -> String? {
         if let value = userDefaults.stringForKey("customEventName") {
             return value
         } else {

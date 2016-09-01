@@ -26,11 +26,8 @@ class ViewController: UITableViewController {
     
     let branchLinkProperties = BranchLinkProperties()
     var branchUniversalObject = BranchUniversalObject()
-    
-    let feature = "Sharing Feature"
-    let desktop_url = "http://branch.io"
-    let ios_url = "https://dev.branch.io/getting-started/sdk-integration-guide/guide/ios/"
-    let shareText = "Super amazing thing I want to share"
+
+    let shareText = "Shared from Branch's TestBed-Swift"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,27 +100,13 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func actionButtonTouchUpInside(sender: AnyObject) {
-        let linkProperties = BranchLinkProperties()
-        linkProperties.feature = feature
-        linkProperties.addControlParam("$desktop_url", withValue: desktop_url)
-        linkProperties.addControlParam("$ios_url", withValue: ios_url)
-        
-        branchUniversalObject.addMetadataKey("deeplink_text", value: "This link was generated during Share Sheet sharing")
-        
-        branchUniversalObject.showShareSheetWithLinkProperties(linkProperties, andShareText: shareText, fromViewController: nil, anchor: actionButton) { (activityType, completed) in
-            if (completed) {
-                print(String(format: "Branch TestBed: Completed sharing to %@", activityType))
-            } else {
-                print("Branch TestBed: Link Sharing Failed\n")
-                self.showAlert("Link Sharing Failed", withDescription: "")
-            }
-        }
-    }
-    
-    @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
         
         for key in linkProperties.keys {
             setBranchLinkProperty(key)
+        }
+        
+        for key in universalObjectProperties.keys {
+            setBranchUniversalObjectProperty(key)
         }
         
         if let canonicalIdentifier = universalObjectProperties["canonicalIdentifier"] as? String {
@@ -132,10 +115,34 @@ class ViewController: UITableViewController {
             branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
         }
         
-
+        let feature = branchLinkProperties.feature
+        branchLinkProperties.feature = "Sharing"
+        
+        branchUniversalObject.showShareSheetWithLinkProperties(branchLinkProperties, andShareText: shareText, fromViewController: nil, anchor: actionButton) { (activityType, completed) in
+            if (completed) {
+                print(String(format: "Branch TestBed: Completed sharing to %@", activityType))
+            } else {
+                print("Branch TestBed: Link Sharing Failed\n")
+                self.showAlert("Link Sharing Failed", withDescription: "")
+            }
+        }
+        branchLinkProperties.feature = feature
+    }
+    
+    @IBAction func createBranchLinkButtonTouchUpInside(sender: AnyObject) {
+        
+        for key in linkProperties.keys {
+            setBranchLinkProperty(key)
+        }
         
         for key in universalObjectProperties.keys {
             setBranchUniversalObjectProperty(key)
+        }
+        
+        if let canonicalIdentifier = universalObjectProperties["canonicalIdentifier"] as? String {
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
+        } else {
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
         }
         
         branchUniversalObject.getShortUrlWithLinkProperties(branchLinkProperties) { (url, error) in
