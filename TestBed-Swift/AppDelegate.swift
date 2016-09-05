@@ -19,12 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Automatic Deeplinking on "deeplink_text"
         let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
-        branch.registerDeepLinkController(navigationController, forKey:"$deeplink_path")
+        branch.registerDeepLinkController(navigationController, forKey:"$canonical_identifier")
         
         // Required. Initialize session. automaticallyDisplayDeepLinkController is optional (default is false).
         branch.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: true, deepLinkHandler: { params, error in
             
             if (error == nil) {
+                
+                
                 // Deeplinking logic for use when automaticallyDisplayDeepLinkController = false
                 /*
                 if let clickedBranchLink = params[BRANCH_INIT_KEY_CLICKED_BRANCH_LINK] as! Bool? {
@@ -47,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 */
             } else {
-                print("Branch TestBed: Initialization failed\n%@", error.localizedDescription)
+                print("Branch TestBed: Initialization failed\n%@", error!.localizedDescription)
             }
         })
         return true

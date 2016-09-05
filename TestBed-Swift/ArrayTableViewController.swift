@@ -10,11 +10,11 @@ import UIKit
 class ArrayTableViewController: UITableViewController {
     
     var array = [String]()
-    var sender = ""
-    var viewTitle = "Default ArrayTableViewController Title"
-    var header = "Default ArrayTableViewController Header"
-    var placeholder = "Default ArrayTableViewController Placeholder"
-    var footer = "Default ArrayTableViewController Footer"
+    var incumbantValue = ""
+    var viewTitle = "Default Array Title"
+    var header = "Default Array Header"
+    var placeholder = "Default Array Placeholder"
+    var footer = "Default Array Footer"
     var keyboardType = UIKeyboardType.Default
     
     override func viewDidLoad() {
@@ -42,8 +42,6 @@ class ArrayTableViewController: UITableViewController {
         
         let cellIdentifier = "ArrayTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ArrayTableViewCell
-        print("indexPath.row = \(indexPath.row)")
-        print("array = \(array.description)")
         
         cell.elementLabel.text = array[indexPath.row]
         
@@ -81,11 +79,11 @@ class ArrayTableViewController: UITableViewController {
         if segue.identifier == "AddElement" {
             let nc = segue.destinationViewController as! UINavigationController
             let vc = nc.topViewController as! TextFieldFormTableViewController
-            vc.sender = self.sender
-            vc.viewTitle = self.viewTitle
-            vc.header = self.header
-            vc.placeholder = self.placeholder
-            vc.footer = self.footer
+            vc.incumbantValue = incumbantValue
+            vc.viewTitle = viewTitle
+            vc.header = header
+            vc.placeholder = placeholder
+            vc.footer = footer
             vc.keyboardType = UIKeyboardType.Default
         }
     }

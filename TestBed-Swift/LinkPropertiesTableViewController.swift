@@ -18,7 +18,6 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet weak var stageTextField: UITextField!
     @IBOutlet weak var tagsTextView: UITextView!
     @IBOutlet weak var aliasTextField: UITextField!
-    @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var fallbackURLTextField: UITextField!
     @IBOutlet weak var desktopURLTextField: UITextField!
     @IBOutlet weak var iosURLTextField: UITextField!
@@ -51,12 +50,10 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         super.viewDidLoad()
 
         channelTextField.delegate = self
-        channelTextField.delegate = self
         featureTextField.delegate = self
         campaignTextField.delegate = self
         stageTextField.delegate = self
         aliasTextField.delegate = self
-        typeTextField.delegate = self
         fallbackURLTextField.delegate = self
         desktopURLTextField.delegate = self
         iosURLTextField.delegate = self
@@ -100,7 +97,7 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.section) {
-            case 4 :
+            case 5 :
                 self.performSegueWithIdentifier("ShowTags", sender: "Tags")
             default : break
         }
@@ -116,7 +113,6 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
                 vc.array = tags
             }
             vc.viewTitle = "Link Tags"
-            vc.sender = sender as! String
             vc.header = "Tag"
             vc.placeholder = "tag"
             vc.footer = "Enter a new tag to associate with the link."
@@ -129,7 +125,7 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
     @IBAction func unwindArrayTableViewController(segue:UIStoryboardSegue) {
         if let vc = segue.sourceViewController as? ArrayTableViewController {
             let tags = vc.array
-            linkProperties["tags"] = tags
+            linkProperties["~tags"] = tags
             if tags.count > 0 {
                 tagsTextView.text = tags.description
             } else {
@@ -141,19 +137,22 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
     // MARK: - Refresh Functions
     
     func refreshControls() {
-        channelTextField.text = linkProperties["channel"] as? String
-        featureTextField.text = linkProperties["feature"] as? String
-        campaignTextField.text = linkProperties["campaign"] as? String
-        stageTextField.text = linkProperties["stage"] as? String
+        channelTextField.text = linkProperties["~channel"] as? String
+        featureTextField.text = linkProperties["~feature"] as? String
+        campaignTextField.text = linkProperties["~campaign"] as? String
+        stageTextField.text = linkProperties["~stage"] as? String
         
-        if let tags = linkProperties["tags"] as? [String] {
+        if let tags = linkProperties["~tags"] as? [String] {
             if tags.count > 0 {
                 tagsTextView.text = tags.description
+            } else {
+                tagsTextView.text = ""
             }
+        } else {
+            tagsTextView.text = ""
         }
         
         aliasTextField.text = linkProperties["alias"] as? String
-        typeTextField.text = linkProperties["type"] as? String
         fallbackURLTextField.text = linkProperties["$fallback_url"] as? String
         desktopURLTextField.text = linkProperties["$desktop_url"] as? String
         iosURLTextField.text = linkProperties["$ios_url"] as? String
@@ -170,6 +169,8 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         if let webOnly = linkProperties["$web_only"] as? String {
             if webOnly == "1" {
                 webOnlySwitch.on = true
+            } else {
+                webOnlySwitch.on = false
             }
         }
         
@@ -182,6 +183,8 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         if let alwaysDeeplink = linkProperties["$always_deeplink"] as? String {
             if alwaysDeeplink == "1" {
                 alwaysDeeplinkSwitch.on = true
+            } else {
+                alwaysDeeplinkSwitch.on = false
             }
         }
         
@@ -191,61 +194,73 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         oneTimeUseSwitch.on = false
         if let oneTimeUse = linkProperties["$one_time_use"] as? String {
             if oneTimeUse == "1" {
-                alwaysDeeplinkSwitch.on = true
+                oneTimeUseSwitch.on = true
+            } else {
+                oneTimeUseSwitch.on = false
             }
         }
+        
+        iosDeepviewTextField.text = linkProperties["$ios_deepview"] as? String
+        androidDeepviewTextField.text = linkProperties["$android_deepview"] as? String
+        desktopDeepviewTextField.text = linkProperties["$desktop_deepview"] as? String
         
     }
     
     func refreshLinkProperties() {
-        linkProperties["channel"] = channelTextField.text
-        linkProperties["feature"] = featureTextField.text
-        linkProperties["campaign"] = campaignTextField.text
-        linkProperties["stage"] = stageTextField.text
-        
-        linkProperties["alias"] = aliasTextField.text
-        linkProperties["type"] = typeTextField.text
-        linkProperties["$fallback_url"] = fallbackURLTextField.text
-        linkProperties["$desktop_url"] = desktopURLTextField.text
-        linkProperties["$ios_url"] = iosURLTextField.text
-        linkProperties["$ipad_url"] = ipadURLTextField.text
-        linkProperties["$android_url"] = androidURLTextField.text
-        linkProperties["$windows_phone_url"] = windowsPhoneURLTextField.text
-        linkProperties["$blackberry_url"] = blackberryURLTextField.text
-        linkProperties["$fire_url"] = fireURLTextField.text
-        linkProperties["$ios_wechat_url"] = iosWeChatURLTextField.text
-        linkProperties["$ios_weibo_url"] = iosWeiboURLTextField.text
-        linkProperties["$after_click_url"] = afterClickURLTextField.text
+        addProperty("~channel", value: channelTextField.text!)
+        addProperty("~feature", value: featureTextField.text!)
+        addProperty("~campaign", value: campaignTextField.text!)
+        addProperty("~stage", value: stageTextField.text!)
+        addProperty("alias", value: aliasTextField.text!)
+        addProperty("$fallback_url", value: fallbackURLTextField.text!)
+        addProperty("$desktop_url", value: desktopURLTextField.text!)
+        addProperty("$ios_url", value: iosURLTextField.text!)
+        addProperty("$ipad_url", value: ipadURLTextField.text!)
+        addProperty("$android_url", value: androidURLTextField.text!)
+        addProperty("$windows_phone_url", value: windowsPhoneURLTextField.text!)
+        addProperty("$blackberry_url", value: blackberryURLTextField.text!)
+        addProperty("$fire_url", value: fireURLTextField.text!)
+        addProperty("$ios_wechat_url", value: iosWeChatURLTextField.text!)
+        addProperty("$ios_weibo_url", value: iosWeiboURLTextField.text!)
+        addProperty("$after_click_url", value: afterClickURLTextField.text!)
 
         if webOnlySwitch.on {
             linkProperties["$web_only"] = "1"
         } else {
-            linkProperties["$web_only"] = "0"
+            linkProperties.removeValueForKey("$web_only")
         }
         
-        linkProperties["$deeplink_path"] = deeplinkPathTextField.text
-        linkProperties["$android_deeplink_path"] = androidDeeplinkPathTextField.text
-        linkProperties["$ios_deeplink_path"] = iosDeeplinkPathTextField.text
-        linkProperties["$match_duration"] = matchDurationTextField.text
+        addProperty("$deeplink_path", value: deeplinkPathTextField.text!)
+        addProperty("$android_deeplink_path", value: androidDeeplinkPathTextField.text!)
+        addProperty("$ios_deeplink_path", value: iosDeeplinkPathTextField.text!)
+        addProperty("$match_duration", value: matchDurationTextField.text!)
         
         if alwaysDeeplinkSwitch.on {
             linkProperties["$always_deeplink"] = "1"
         } else {
-            linkProperties["$always_deeplink"] = "0"
+            linkProperties.removeValueForKey("$always_deeplink")
         }
         
-        linkProperties["$ios_redirect_timeout"] = iosRedirectTimeoutTextField.text
-        linkProperties["$android_redirect_timeout"] = androidRedirectTimeoutTextField.text
+        addProperty("$ios_redirect_timeout", value: iosRedirectTimeoutTextField.text!)
+        addProperty("$android_redirect_timeout", value: androidRedirectTimeoutTextField.text!)
         
         if oneTimeUseSwitch.on {
             linkProperties["$one_time_use"] = "1"
         } else {
-            linkProperties["$one_time_use"] = "0"
+            linkProperties.removeValueForKey("$one_time_use")
         }
         
-        linkProperties["$ios_deepview"] = iosDeepviewTextField.text
-        linkProperties["$android_deepview"] = androidDeepviewTextField.text
-        linkProperties["$desktop_deepview"] = desktopDeepviewTextField.text
+        addProperty("$ios_deepview", value: iosDeepviewTextField.text!)
+        addProperty("$android_deepview", value: androidDeepviewTextField.text!)
+        addProperty("$desktop_deepview", value: desktopDeepviewTextField.text!)
+    }
+    
+    func addProperty(key: String, value: String) {
+        guard value.characters.count > 0 else {
+            linkProperties.removeValueForKey(key)
+            return
+        }
+        linkProperties[key] = value
     }
     
 }

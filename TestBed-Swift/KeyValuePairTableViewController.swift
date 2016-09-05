@@ -19,6 +19,7 @@ class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegat
     var incumbantValue = ""
     var viewTitle = "Default Title"
     var keyHeader = "Default Key Header"
+    var keyPlaceholder = "Default Key Placeholder"
     var keyFooter = "Default Key Footer"
     var valueHeader = "Default Value Header"
     var valueFooter = "Default Value Footer"

@@ -9,10 +9,22 @@ import UIKit
 
 class DictionaryTableViewController: UITableViewController {
 
+    var incumbantKey = ""
+    var incumbantValue = ""
+    var viewTitle = "Default Dictionary Title"
+    var keyHeader = "Default Key Header"
+    var keyPlaceholder = "Default Key Placeholder"
+    var keyFooter = "Default Key Footer"
+    var valueHeader = "Default Value Header"
+    var valueFooter = "Default Value Footer"
+    var keyKeyboardType = UIKeyboardType.Default
+    var valueKeyboardType = UIKeyboardType.Default
     var dictionary = [String: AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = viewTitle
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,8 +77,19 @@ class DictionaryTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showEnterParameter" {
-            let vc = segue.destinationViewController as! KeyValuePairTableViewController
+        if segue.identifier == "AddKeyValuePair" {
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.topViewController as! KeyValuePairTableViewController
+            vc.incumbantKey = incumbantKey
+            vc.incumbantValue = incumbantValue
+            vc.viewTitle = viewTitle
+            vc.keyHeader = keyHeader
+            vc.keyPlaceholder = keyPlaceholder
+            vc.keyFooter = keyFooter
+            vc.valueHeader = valueHeader
+            vc.valueFooter = valueFooter
+            vc.keyKeyboardType = UIKeyboardType.Default
+            vc.valueKeyboardType = UIKeyboardType.Default
             
             // Get the cell that generated this segue.
             if let selectedCell = sender as? DictionaryTableViewCell {
@@ -77,12 +100,6 @@ class DictionaryTableViewController: UITableViewController {
                 vc.incumbantKey = selectedParameterKey
                 vc.incumbantValue = selectedParameterValue!
             }
-        } else if segue.identifier == "AddItem" {
-            /* let vc = segue.destinationViewController as! DictionaryTableViewController
-            if let dictionary = linkProperties["tags"] as? [String] {
-                vc.array = tags
-            }
-            print("Adding new key-value pair.")*/
         }
     }
     
