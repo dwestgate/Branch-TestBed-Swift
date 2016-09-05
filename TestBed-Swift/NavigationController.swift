@@ -21,21 +21,13 @@ class NavigationController: UINavigationController, BranchDeepLinkingController 
         super.didReceiveMemoryWarning()
     }
     
-    func configureControlWithData(data: [NSObject : AnyObject]!) {
+    func configureControlWithData(params: [NSObject : AnyObject]!) {
         let logOutputViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LogOutput") as! LogOutputViewController
-        print("Navigation Controller")
         self.pushViewController(logOutputViewController, animated: true)
-        if let deeplinkText = data["$canonical_identifier"] as! String? {
-
-            do {
-                let jsonData = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions.PrettyPrinted)
-                let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
-                let logOutput = String(format:"Successfully Deeplinked:\n\n%@\nSession Details:\n\n%@", deeplinkText, jsonString)
-                logOutputViewController.logOutput = logOutput
-            } catch let error as NSError {
-                print(error.description)
-            }
-            
-        }
+        
+        let dict = params as Dictionary
+        let referringLink = dict["~referring_link"]
+        let logOutput = String(format:"\nReferring link: \(referringLink)\n\nSessionDetails:\n\(dict.JSONDescription())")
+        logOutputViewController.logOutput = logOutput
     }
 }

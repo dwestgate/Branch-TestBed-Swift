@@ -17,37 +17,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let branch = Branch.getInstance()
         branch.setDebug()
 
-        // Automatic Deeplinking on "deeplink_text"
+        // Automatic Deeplinking on "~referring_link"
         let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
-        branch.registerDeepLinkController(navigationController, forKey:"$canonical_identifier")
+        branch.registerDeepLinkController(navigationController, forKey:"~referring_link")
         
         // Required. Initialize session. automaticallyDisplayDeepLinkController is optional (default is false).
         branch.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: true, deepLinkHandler: { params, error in
             
             if (error == nil) {
                 
-                
                 // Deeplinking logic for use when automaticallyDisplayDeepLinkController = false
                 /*
                 if let clickedBranchLink = params[BRANCH_INIT_KEY_CLICKED_BRANCH_LINK] as! Bool? {
                     
                     if clickedBranchLink {
-                        
-                        if let deeplinkText = params["deeplink_text"] as! String? {
-                            
-                            let navigationController = self.window!.rootViewController as! UINavigationController
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let logOutputViewController = storyboard.instantiateViewControllerWithIdentifier("LogOutput") as! LogOutputViewController
-                            navigationController.pushViewController(logOutputViewController, animated: true)
-                            let logOutput = String(format:"Successfully Deeplinked:\n\n%@\nSession Details:\n\n%@", deeplinkText, branch.getLatestReferringParams().description)
-                            logOutputViewController.logOutput = logOutput
-                            
-                        }
+                 
+                        let nc = self.window!.rootViewController as! UINavigationController
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let logOutputViewController = storyboard.instantiateViewControllerWithIdentifier("LogOutput") as! LogOutputViewController
+                        nc.pushViewController(logOutputViewController, animated: true)
+                 
+                        let dict = params as Dictionary
+                        let referringLink = dict["~referring_link"]
+                        let logOutput = String(format:"\nReferring link: \(referringLink)\n\nSessionDetails:\n\(dict.JSONDescription())")
+                        logOutputViewController.logOutput = logOutput
+                 
                     }
                 } else {
                     print(String(format: "Branch TestBed: Finished init with params\n%@", params.description))
                 }
                 */
+ 
             } else {
                 print("Branch TestBed: Initialization failed\n%@", error!.localizedDescription)
             }

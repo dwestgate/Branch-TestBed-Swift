@@ -133,16 +133,18 @@ class ViewController: UITableViewController {
         case (4,0) :
             let branch = Branch.getInstance()
             let params = branch.getLatestReferringParams()
-            let logOutput = String(format:"LatestReferringParams:\n\n%@", params.description)
+            let logOutput = String(format:"LatestReferringParams:\n\n%@", params.JSONDescription())
             
-            self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
+            // self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
+            self.performSegueWithIdentifier("ShowLogOutputView", sender: "LatestReferringParams")
             print("Branch TestBed: LatestReferringParams:\n", logOutput)
         case (4,1) :
             let branch = Branch.getInstance()
             let params = branch.getFirstReferringParams()
-            let logOutput = String(format:"FirstReferringParams:\n\n%@", params.description)
+            let logOutput = String(format:"FirstReferringParams:\n\n%@", params.JSONDescription())
             
-            self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
+            // self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
+            self.performSegueWithIdentifier("ShowLogOutputView", sender: "FirstReferringParams")
             print("Branch TestBed: FirstReferringParams:\n", logOutput)
         default : break
         }
@@ -169,12 +171,11 @@ class ViewController: UITableViewController {
         let feature = branchLinkProperties.feature
         branchLinkProperties.feature = "Sharing"
         
-        branchUniversalObject.showShareSheetWithLinkProperties(branchLinkProperties, andShareText: shareText, fromViewController: nil, anchor: actionButton) { (activityType, completed) in
+        branchUniversalObject.showShareSheetWithLinkProperties(branchLinkProperties, andShareText: shareText, fromViewController: self, anchor: actionButton) { (activityType, completed) in
             if (completed) {
                 print(String(format: "Branch TestBed: Completed sharing to %@", activityType))
             } else {
-                print("Branch TestBed: Link Sharing Failed\n")
-                self.showAlert("Link Sharing Canceled", withDescription: "")
+                print("Branch TestBed: Link Sharing Cancelled\n")
             }
         }
         branchLinkProperties.feature = feature
@@ -247,25 +248,27 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func redeemPointsButtonTouchUpInside(sender: AnyObject) {
-        rewardsBalanceOfBucketTextField.hidden = true
-        activityIndicator.startAnimating()
-        var pointsToRedeem = 5
-        
-        if rewardPointsToRedeemTextField.text != "" {
-            pointsToRedeem = Int(rewardPointsToRedeemTextField.text!)!
-        }
+        let points = rewardPointsToRedeemTextField.text != "" ? Int(rewardPointsToRedeemTextField.text!) : 5
+        let bucket = rewardsBucketTextField.text != "" ? rewardsBucketTextField.text : "default"
         
         let branch = Branch.getInstance()
-        branch.redeemRewards(pointsToRedeem, forBucket: rewardsBucketTextField.text) { (changed, error) in
+        branch.redeemRewards(points!, forBucket: bucket) { (changed, error) in
+            
+            defer {
+                self.rewardsBalanceOfBucketTextField.hidden = false
+                self.activityIndicator.stopAnimating()
+            }
+            
             if (error != nil || !changed) {
                 print(String(format: "Branch TestBed: Didn't redeem anything: %@", error!))
                 self.showAlert("Redemption Unsuccessful", withDescription: error!.localizedDescription)
             } else {
                 print("Branch TestBed: Five Points Redeemed!")
             }
+            
+            self.refreshRewardsBalanceOfBucket()
         }
-        rewardsBalanceOfBucketTextField.hidden = false
-        activityIndicator.stopAnimating()
+        
     }
     
     @IBAction func reloadBalanceButtonTouchUpInside(sender: AnyObject) {
@@ -326,7 +329,7 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func registerWithSpotlightButtonTouchUpInside(sender: AnyObject) {
-        branchUniversalObject.addMetadataKey("deeplink_text", value: "This link was generated for Spotlight registration")
+        branchUniversalObject.addMetadataKey("$canonical_identifier", value: "This link was generated for Spotlight registration")
         branchUniversalObject.listOnSpotlightWithIdentifierCallback { (url, spotlightIdentifier, error) in
             if (error == nil) {
                 print("Branch TestBed: ShortURL: %@   spotlight ID: %@", url, spotlightIdentifier)
@@ -421,10 +424,27 @@ class ViewController: UITableViewController {
             vc.valueFooter = ""
             vc.keyKeyboardType = UIKeyboardType.Default
             vc.valueKeyboardType = UIKeyboardType.Default
-        default:
+        case "LatestReferringParams":
             let vc = (segue.destinationViewController as! LogOutputViewController)
-            vc.logOutput = sender as! String
-            
+            let branch = Branch.getInstance()
+            let dict = branch.getLatestReferringParams() as Dictionary
+        
+            if let referringLink = dict["~referring_link"] {
+                vc.logOutput = String(format:"\nReferring link: \(referringLink)\n\nSession details:\n\(dict.JSONDescription())")
+            } else {
+                vc.logOutput = "\nNot a referred session"
+            }
+        case "FirstReferringParams":
+            let vc = (segue.destinationViewController as! LogOutputViewController)
+            let branch = Branch.getInstance()
+            let dict = branch.getFirstReferringParams() as Dictionary
+            if dict.count > 0 {
+                vc.logOutput = String(format:"\nFirst session details:\n\(dict.JSONDescription())")
+            } else {
+                vc.logOutput = "\nApp has not yet been opened via a Branch link"
+            }
+        default:
+            break
         }
     }
     
