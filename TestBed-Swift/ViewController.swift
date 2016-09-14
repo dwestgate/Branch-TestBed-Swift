@@ -178,10 +178,10 @@ class ViewController: UITableViewController {
         
         print(universalObjectProperties["$canonical_identifier"])
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)!
         } else {
             print(universalObjectProperties["$canonical_identifier"])
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")!
         }
         
         for key in universalObjectProperties.keys {
@@ -193,7 +193,7 @@ class ViewController: UITableViewController {
         
         branchUniversalObject.showShareSheet(with: branchLinkProperties, andShareText: shareText, from: self, anchor: actionButton) { (activityType, completed) in
             if (completed) {
-                print(String(format: "Branch TestBed: Completed sharing to %@", activityType))
+                print(String(format: "Branch TestBed: Completed sharing to %@", activityType!))
             } else {
                 print("Branch TestBed: Link Sharing Cancelled\n")
             }
@@ -243,10 +243,10 @@ class ViewController: UITableViewController {
         
         print(universalObjectProperties["$canonical_identifier"])
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)!
         } else {
             print(universalObjectProperties["$canonical_identifier"])
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")!
         }
         
         for key in universalObjectProperties.keys {
@@ -346,19 +346,6 @@ class ViewController: UITableViewController {
     @IBAction func simulateContentAccessButtonTouchUpInside(_ sender: AnyObject) {
         self.branchUniversalObject.registerView()
         self.showAlert("Content Access Registered", withDescription: "")
-    }
-    
-    @IBAction func registerWithSpotlightButtonTouchUpInside(_ sender: AnyObject) {
-        branchUniversalObject.addMetadataKey("$canonical_identifier", value: "This link was generated for Spotlight registration")
-        branchUniversalObject.listOnSpotlight { (url, spotlightIdentifier, error) in
-            if (error == nil) {
-                print("Branch TestBed: ShortURL: %@   spotlight ID: %@", url, spotlightIdentifier)
-                self.showAlert("Spotlight Registration Succeeded", withDescription: String(format: "Branch Link:\n%@\n\nSpotlight ID:\n%@", url!, spotlightIdentifier!))
-            } else {
-                print("Branch TestBed: Error: %@", error!.localizedDescription)
-                self.showAlert("Spotlight Registration Failed", withDescription: error!.localizedDescription)
-            }
-        }
     }
     
     func textFieldDidChange(_ sender:UITextField) {
@@ -611,7 +598,7 @@ class ViewController: UITableViewController {
             branchUniversalObject.canonicalIdentifier = universalObjectProperties[key] as! String
         case "$og_description":
             if let description = universalObjectProperties[key] {
-                branchUniversalObject.contentDescription = description as! String
+                branchUniversalObject.contentDescription = description as? String
                 // Branch will use "contentDescription" as $og_description, but we'll set it explicitly as well
                 branchUniversalObject.addMetadataKey(key, value: description as! String)
             }
@@ -622,7 +609,7 @@ class ViewController: UITableViewController {
             branchUniversalObject.expirationDate = expirationDate
         case "$og_image_url":
             if let imageURL = universalObjectProperties[key] {
-                branchUniversalObject.imageUrl = imageURL as! String
+                branchUniversalObject.imageUrl = imageURL as? String
                 // Branch will use "imageURL" as $og_image_url, but we'll set it explicitly as well
                 branchUniversalObject.addMetadataKey(key, value: imageURL as! String)
             }
@@ -630,7 +617,7 @@ class ViewController: UITableViewController {
             branchUniversalObject.keywords = universalObjectProperties[key] as! [AnyObject]
         case "$og_title":
             if let title = universalObjectProperties[key] {
-                branchUniversalObject.title = title as! String
+                branchUniversalObject.title = title as? String
                 // Branch will use "title" as $og_title, but we'll set it explicitly as well
                 branchUniversalObject.addMetadataKey(key, value: title as! String)
             }
@@ -638,7 +625,7 @@ class ViewController: UITableViewController {
             print("Done")
         case "$og_type":
             if let ogType = universalObjectProperties[key] {
-                branchUniversalObject.type = universalObjectProperties[key] as! String
+                branchUniversalObject.type = universalObjectProperties[key] as? String
                 // Branch will use "type" as $og_type, but we'll set it explicitly as well
                 branchUniversalObject.addMetadataKey(key, value: ogType as! String)
             }
@@ -657,7 +644,7 @@ class ViewController: UITableViewController {
         case "customData":
             if let data = universalObjectProperties[key] as? [String: String] {
                 for customDataKey in data.keys {
-                    branchUniversalObject.addMetadataKey(customDataKey, value: data[customDataKey])
+                    branchUniversalObject.addMetadataKey(customDataKey, value: data[customDataKey]!)
                 }
             }
         default:
