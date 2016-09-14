@@ -75,7 +75,7 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         androidDeepviewTextField.delegate = self
         desktopDeepviewTextField.delegate = self
         
-        UITableViewCell.appearance().backgroundColor = UIColor.whiteColor()
+        UITableViewCell.appearance().backgroundColor = UIColor.white
         refreshControls()
     }
 
@@ -85,30 +85,30 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
     
     // MARK: - Navigation
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
     
-    @IBAction func clearAllValuesTouchUpInside(sender: AnyObject) {
+    @IBAction func clearAllValuesTouchUpInside(_ sender: AnyObject) {
         linkProperties.removeAll()
         refreshControls()
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch(indexPath.section) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch((indexPath as NSIndexPath).section) {
             case 5 :
-                self.performSegueWithIdentifier("ShowTags", sender: "Tags")
+                self.performSegue(withIdentifier: "ShowTags", sender: "Tags")
             default : break
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         refreshLinkProperties()
         
         if segue.identifier! == "ShowTags" {
-            let vc = segue.destinationViewController as! ArrayTableViewController
+            let vc = segue.destination as! ArrayTableViewController
             if let tags = linkProperties["tags"] as? [String] {
                 vc.array = tags
             }
@@ -116,16 +116,16 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
             vc.header = "Tag"
             vc.placeholder = "tag"
             vc.footer = "Enter a new tag to associate with the link."
-            vc.keyboardType = UIKeyboardType.Default
+            vc.keyboardType = UIKeyboardType.default
         }
     }
     
-    @IBAction func unwindByCancelling(segue:UIStoryboardSegue) { }
+    @IBAction func unwindByCancelling(_ segue:UIStoryboardSegue) { }
     
-    @IBAction func unwindArrayTableViewController(segue:UIStoryboardSegue) {
-        if let vc = segue.sourceViewController as? ArrayTableViewController {
+    @IBAction func unwindArrayTableViewController(_ segue:UIStoryboardSegue) {
+        if let vc = segue.source as? ArrayTableViewController {
             let tags = vc.array
-            linkProperties["~tags"] = tags
+            linkProperties["~tags"] = tags as AnyObject?
             if tags.count > 0 {
                 tagsTextView.text = tags.description
             } else {
@@ -165,12 +165,12 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         iosWeiboURLTextField.text = linkProperties["$ios_weibo_url"] as? String
         afterClickURLTextField.text = linkProperties["$after_click_url"] as? String
         
-        webOnlySwitch.on = false
+        webOnlySwitch.isOn = false
         if let webOnly = linkProperties["$web_only"] as? String {
             if webOnly == "1" {
-                webOnlySwitch.on = true
+                webOnlySwitch.isOn = true
             } else {
-                webOnlySwitch.on = false
+                webOnlySwitch.isOn = false
             }
         }
         
@@ -179,24 +179,24 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         iosDeeplinkPathTextField.text = linkProperties["$ios_deeplink_path"] as? String
         matchDurationTextField.text = linkProperties["$match_duration"] as? String
         
-        alwaysDeeplinkSwitch.on = false
+        alwaysDeeplinkSwitch.isOn = false
         if let alwaysDeeplink = linkProperties["$always_deeplink"] as? String {
             if alwaysDeeplink == "1" {
-                alwaysDeeplinkSwitch.on = true
+                alwaysDeeplinkSwitch.isOn = true
             } else {
-                alwaysDeeplinkSwitch.on = false
+                alwaysDeeplinkSwitch.isOn = false
             }
         }
         
         iosRedirectTimeoutTextField.text = linkProperties["$ios_redirect_timeout"] as? String
         androidRedirectTimeoutTextField.text = linkProperties["$android_redirect_timeout"] as? String
         
-        oneTimeUseSwitch.on = false
+        oneTimeUseSwitch.isOn = false
         if let oneTimeUse = linkProperties["$one_time_use"] as? String {
             if oneTimeUse == "1" {
-                oneTimeUseSwitch.on = true
+                oneTimeUseSwitch.isOn = true
             } else {
-                oneTimeUseSwitch.on = false
+                oneTimeUseSwitch.isOn = false
             }
         }
         
@@ -224,10 +224,10 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         addProperty("$ios_weibo_url", value: iosWeiboURLTextField.text!)
         addProperty("$after_click_url", value: afterClickURLTextField.text!)
 
-        if webOnlySwitch.on {
-            linkProperties["$web_only"] = "1"
+        if webOnlySwitch.isOn {
+            linkProperties["$web_only"] = "1" as AnyObject?
         } else {
-            linkProperties.removeValueForKey("$web_only")
+            linkProperties.removeValue(forKey: "$web_only")
         }
         
         addProperty("$deeplink_path", value: deeplinkPathTextField.text!)
@@ -235,19 +235,19 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         addProperty("$ios_deeplink_path", value: iosDeeplinkPathTextField.text!)
         addProperty("$match_duration", value: matchDurationTextField.text!)
         
-        if alwaysDeeplinkSwitch.on {
-            linkProperties["$always_deeplink"] = "1"
+        if alwaysDeeplinkSwitch.isOn {
+            linkProperties["$always_deeplink"] = "1" as AnyObject?
         } else {
-            linkProperties.removeValueForKey("$always_deeplink")
+            linkProperties.removeValue(forKey: "$always_deeplink")
         }
         
         addProperty("$ios_redirect_timeout", value: iosRedirectTimeoutTextField.text!)
         addProperty("$android_redirect_timeout", value: androidRedirectTimeoutTextField.text!)
         
-        if oneTimeUseSwitch.on {
-            linkProperties["$one_time_use"] = "1"
+        if oneTimeUseSwitch.isOn {
+            linkProperties["$one_time_use"] = "1" as AnyObject?
         } else {
-            linkProperties.removeValueForKey("$one_time_use")
+            linkProperties.removeValue(forKey: "$one_time_use")
         }
         
         addProperty("$ios_deepview", value: iosDeepviewTextField.text!)
@@ -255,12 +255,12 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         addProperty("$desktop_deepview", value: desktopDeepviewTextField.text!)
     }
     
-    func addProperty(key: String, value: String) {
+    func addProperty(_ key: String, value: String) {
         guard value.characters.count > 0 else {
-            linkProperties.removeValueForKey(key)
+            linkProperties.removeValue(forKey: key)
             return
         }
-        linkProperties[key] = value
+        linkProperties[key] = value as AnyObject?
     }
     
 }

@@ -19,7 +19,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
     var viewTitle = "Default Title"
     var header = "Default Header"
     var footer = "Default Footer"
-    var keyboardType = UIKeyboardType.Default
+    var keyboardType = UIKeyboardType.default
     
     // MARK: - Core View Functions
     
@@ -40,52 +40,52 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
     
     // MARK: - Control Functions
     
-    @IBAction func clearButtonTouchUpInside(sender: AnyObject) {
+    @IBAction func clearButtonTouchUpInside(_ sender: AnyObject) {
         textView.text = incumbantValue
-        textView.textColor = UIColor.lightGrayColor()
+        textView.textColor = UIColor.lightGray
         textView.becomeFirstResponder()
-        textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+        textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
         setClearButtonVisibility()
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return header
     }
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return footer
     }
     
-    func textViewDidChangeSelection(textView: UITextView) {
+    func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil {
-            if textView.textColor == UIColor.lightGrayColor() {
-                textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+            if textView.textColor == UIColor.lightGray {
+                textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             }
         }
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         guard (text != "\n") else {
-            performSegueWithIdentifier("Save", sender: "save")
+            performSegue(withIdentifier: "Save", sender: "save")
             return false
         }
         
-        let t: NSString = textView.text
-        let updatedText = t.stringByReplacingCharactersInRange(range, withString:text)
+        let t: NSString = textView.text as NSString
+        let updatedText = t.replacingCharacters(in: range, with:text)
         
         guard (updatedText != "") else {
-            clearButton.hidden = true
+            clearButton.isHidden = true
             textView.text = incumbantValue
-            textView.textColor = UIColor.lightGrayColor()
-            textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+            textView.textColor = UIColor.lightGray
+            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             setClearButtonVisibility()
             return false
         }
         
-        if (textView.textColor == UIColor.lightGrayColor()) {
+        if (textView.textColor == UIColor.lightGray) {
             textView.text = nil
-            textView.textColor = UIColor.blackColor()
+            textView.textColor = UIColor.black
         }
         
         setClearButtonVisibility()
@@ -93,15 +93,15 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
         return true
     }
     
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         setClearButtonVisibility()
     }
     
     func setClearButtonVisibility() {
         if textView.text == "" {
-            clearButton.hidden = true
-        } else if textView.textColor != UIColor.lightGrayColor() {
-            clearButton.hidden = false
+            clearButton.isHidden = true
+        } else if textView.textColor != UIColor.lightGray {
+            clearButton.isHidden = false
         }
     }
     

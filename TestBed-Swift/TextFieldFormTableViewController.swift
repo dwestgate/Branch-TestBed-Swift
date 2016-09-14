@@ -20,7 +20,7 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
     var placeholder = "Default Placeholder"
     var header = "Default Header"
     var footer = "Default Footer"
-    var keyboardType = UIKeyboardType.Default
+    var keyboardType = UIKeyboardType.default
     
     // MARK: - Core View Functions
     
@@ -41,11 +41,11 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
     
     // MARK: - Control Functions
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return header
     }
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return footer
     }
     

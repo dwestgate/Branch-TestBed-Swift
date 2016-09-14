@@ -19,7 +19,7 @@ class LogOutputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // setting scrollEnabled to false prevents a clipping bug
-        logOutputTextView.scrollEnabled = false
+        logOutputTextView.isScrollEnabled = false
         logOutputTextView.text = logOutput
     }
 
@@ -29,9 +29,9 @@ class LogOutputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         // re-enabling scrollEnabled after view is painted
-        logOutputTextView.scrollEnabled = true
+        logOutputTextView.isScrollEnabled = true
     }
 
     

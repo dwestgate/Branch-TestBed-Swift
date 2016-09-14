@@ -12,12 +12,12 @@ extension Dictionary {
 
     func JSONDescription() -> String {
         
-        let data = self as! AnyObject
+        let data = self as AnyObject
         var jsonString = "Error parsing dictionary"
         
         do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions.PrettyPrinted)
-            jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
+            let jsonData = try JSONSerialization.data(withJSONObject: data, options: JSONSerialization.WritingOptions.prettyPrinted)
+            jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
             
         } catch let error as NSError {
             print(error.description)

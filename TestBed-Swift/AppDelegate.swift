@@ -12,17 +12,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let branch = Branch.getInstance()
-        branch.setDebug()
+        branch?.setDebug()
 
         // Automatic Deeplinking on "~referring_link"
         let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
-        branch.registerDeepLinkController(navigationController, forKey:"~referring_link")
+        branch?.registerDeepLinkController(navigationController, forKey:"~referring_link")
         
         // Required. Initialize session. automaticallyDisplayDeepLinkController is optional (default is false).
-        branch.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: true, deepLinkHandler: { params, error in
+        branch?.initSession(launchOptions: launchOptions, automaticallyDisplayDeepLinkController: true, deepLinkHandler: { params, error in
             
             if (error == nil) {
                 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                  
                         let dict = params as Dictionary
                         let referringLink = dict["~referring_link"]
-                        let logOutput = String(format:"\nReferring link: \(referringLink)\n\nSessionDetails:\n\(dict.JSONDescription())")
+                        let logOutput = String(format:"\nReferring link: \(referringLink)\n\nSession Details:\n\(dict.JSONDescription())")
                         logOutputViewController.logOutput = logOutput
                  
                     }
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // Respond to URI scheme links
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if (!Branch.getInstance().handleDeepLink(url)) {
             // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
         }
@@ -65,30 +65,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // Respond to Universal Links
-    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         // pass the url to the handle deep link call
-        Branch.getInstance().continueUserActivity(userActivity);
+        Branch.getInstance().continue(userActivity);
         return true
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification launchOptions: [NSObject: AnyObject]) -> Void {
+    func application(_ application: UIApplication, didReceiveRemoteNotification launchOptions: [AnyHashable: Any]) -> Void {
         Branch.getInstance().handlePushNotification(launchOptions)
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
     }
 
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
     }
 
 }
