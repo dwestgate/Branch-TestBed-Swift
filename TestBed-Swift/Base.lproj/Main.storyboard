@@ -1783,10 +1783,6 @@ Default value: default_template</string>
                                                         </textView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-kZ-oCy" userLabel="clearButton">
                                                             <accessibility key="accessibilityConfiguration" identifier="clearButton" label="clearButton"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="5ph-OE-lUL"/>
-                                                                <constraint firstAttribute="width" constant="20" id="gWl-lE-Kwu"/>
-                                                            </constraints>
                                                             <state key="normal" image="cancel-28.png"/>
                                                             <connections>
                                                                 <action selector="clearButtonTouchUpInside:" destination="Aqu-O9-8Kl" eventType="touchUpInside" id="1l2-wX-nL6"/>
@@ -1794,16 +1790,15 @@ Default value: default_template</string>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="rpg-0S-e9Y" secondAttribute="bottom" id="0zx-Ob-VI6"/>
+                                                        <constraint firstItem="rpg-0S-e9Y" firstAttribute="bottom" secondItem="bBo-K7-Axw" secondAttribute="bottom" id="0zx-Ob-VI6"/>
                                                         <constraint firstItem="rpg-0S-e9Y" firstAttribute="top" secondItem="bBo-K7-Axw" secondAttribute="top" id="Jj4-is-pgB"/>
                                                         <constraint firstItem="rpg-0S-e9Y" firstAttribute="leading" secondItem="bBo-K7-Axw" secondAttribute="leading" id="Oov-jS-3jh"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dxb-kZ-oCy" secondAttribute="trailing" id="TJz-hm-Meb"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bBo-K7-Axw" secondAttribute="trailing" id="3ty-HX-Jcc"/>
+                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="trailing" secondItem="5OY-9g-dIW" secondAttribute="trailingMargin" id="3ty-HX-Jcc"/>
                                                 <constraint firstItem="bBo-K7-Axw" firstAttribute="centerY" secondItem="5OY-9g-dIW" secondAttribute="centerY" id="HF6-na-ikw"/>
                                                 <constraint firstItem="bBo-K7-Axw" firstAttribute="leading" secondItem="5OY-9g-dIW" secondAttribute="leadingMargin" id="Yn5-j4-ftR"/>
                                             </constraints>

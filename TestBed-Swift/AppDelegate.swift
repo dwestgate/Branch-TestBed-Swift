@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (error == nil) {
                 
                 // Deeplinking logic for use when automaticallyDisplayDeepLinkController = false
-                
+                /*
                 if let clickedBranchLink = params[BRANCH_INIT_KEY_CLICKED_BRANCH_LINK] as! Bool? {
                     
                     if clickedBranchLink {
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else {
                     print(String(format: "Branch TestBed: Finished init with params\n%@", params.description))
                 }
-                
+                */
  
             } else {
                 print("Branch TestBed: Initialization failed\n%@", error!.localizedDescription)
