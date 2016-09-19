@@ -6,6 +6,7 @@
 //  Copyright © 2016 Branch Metrics. All rights reserved.
 //
 import UIKit
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
@@ -178,18 +179,15 @@ class ViewController: UITableViewController {
         
         print(universalObjectProperties["$canonical_identifier"])
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)!
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         } else {
             print(universalObjectProperties["$canonical_identifier"])
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")!
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
         }
         
         for key in universalObjectProperties.keys {
             setBranchUniversalObjectProperty(key)
         }
-        
-        let feature = branchLinkProperties.feature
-        branchLinkProperties.feature = "Sharing"
         
         branchUniversalObject.showShareSheet(with: branchLinkProperties, andShareText: shareText, from: self, anchor: actionButton) { (activityType, completed) in
             if (completed) {
@@ -198,7 +196,6 @@ class ViewController: UITableViewController {
                 print("Branch TestBed: Link Sharing Cancelled\n")
             }
         }
-        branchLinkProperties.feature = feature
     }
     
     
@@ -243,10 +240,10 @@ class ViewController: UITableViewController {
         
         print(universalObjectProperties["$canonical_identifier"])
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)!
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         } else {
             print(universalObjectProperties["$canonical_identifier"])
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")!
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
         }
         
         for key in universalObjectProperties.keys {
@@ -630,10 +627,12 @@ class ViewController: UITableViewController {
                 branchUniversalObject.addMetadataKey(key, value: ogType as! String)
             }
         case "$price":
-            if let price = universalObjectProperties[key] {
-                // branchUniversalObject.price = universalObjectProperties[key] as! String
-                // if .price not yet available
-                branchUniversalObject.addMetadataKey(key, value: price as! String)
+            if let price = universalObjectProperties[key] as? String {
+                if let float_price = Float(price) {
+                    branchUniversalObject.price = CGFloat(float_price)
+                } else {
+                    branchUniversalObject.price = 0.0
+                }
             }
         case "$currency":
             if let currency = universalObjectProperties[key] {

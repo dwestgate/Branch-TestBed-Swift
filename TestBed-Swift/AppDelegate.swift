@@ -27,14 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (error == nil) {
                 
                 // Deeplinking logic for use when automaticallyDisplayDeepLinkController = false
-                /*
+                
                 if let clickedBranchLink = params[BRANCH_INIT_KEY_CLICKED_BRANCH_LINK] as! Bool? {
                     
                     if clickedBranchLink {
                  
                         let nc = self.window!.rootViewController as! UINavigationController
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let logOutputViewController = storyboard.instantiateViewControllerWithIdentifier("LogOutput") as! LogOutputViewController
+                        let logOutputViewController = storyboard.instantiateViewController(withIdentifier: "LogOutput") as! LogOutputViewController
                         nc.pushViewController(logOutputViewController, animated: true)
                  
                         let dict = params as Dictionary
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else {
                     print(String(format: "Branch TestBed: Finished init with params\n%@", params.description))
                 }
-                */
+                
  
             } else {
                 print("Branch TestBed: Initialization failed\n%@", error!.localizedDescription)
