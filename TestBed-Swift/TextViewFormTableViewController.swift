@@ -13,6 +13,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var sender = ""
     var incumbantValue = ""
@@ -100,9 +101,17 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
     func setClearButtonVisibility() {
         if textView.text == "" {
             clearButton.isHidden = true
+            saveButton.isEnabled = false
         } else if textView.textColor != UIColor.lightGray {
             clearButton.isHidden = false
+            saveButton.isEnabled = true
         }
+        if textView.text == incumbantValue {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
+        
     }
     
 }

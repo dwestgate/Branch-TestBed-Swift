@@ -14,6 +14,7 @@ class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegat
     @IBOutlet weak var keyTextField: UITextField!
     @IBOutlet weak var valueTextView: UITextView!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var incumbantKey = ""
     var incumbantValue = ""
@@ -135,6 +136,13 @@ class KeyValuePairTableViewController: UITableViewController, UITextFieldDelegat
             clearButton.isHidden = true
         } else if valueTextView.textColor != UIColor.lightGray {
             clearButton.isHidden = false
+        }
+        if ((keyTextField.text == incumbantKey) && (valueTextView.text == incumbantValue)) {
+            saveButton.isEnabled = false
+        } else  if (keyTextField.text == "") {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
         }
     }
     

@@ -86,26 +86,47 @@ class ViewController: UITableViewController {
                                        selector: #selector(self.applicationDidBecomeActive),
                                        name:NSNotification.Name.UIApplicationDidBecomeActive,
                                        object:nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(self.refreshEnabledButtons),
+                                       name: Notification.Name("BranchCallbackCompleted"),
+                                       object: nil)
         
+        /* notificationCenter.addObserver(forName: nil, object: nil, queue: nil) { notification in
+            print("NOTIFICATION: \(notification.name): \(notification.userInfo ?? [:])")
+        }*/
         
         linkTextField.text = ""
         refreshControlValues()
+        refreshEnabledButtons()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let branch = Branch.getInstance()
-        if branch?.getLatestReferringParams().count > 2 {
-            loadLinkPropertiesButton.isEnabled = true
-            loadObjectPropertiesButton.isEnabled = true
+    func printNotification(name: NSNotification) {
+        print(name.description)
+    }
+    /*override func viewDidAppear(_ animated: Bool) {
+        refreshEnabledButtons()
+    }*/
+    
+    func applicationDidBecomeActive() {
+        refreshEnabledButtons()
+    }
+    
+    func refreshEnabledButtons() {
+        // LatestReferringParams will always be greater than 2 if populated
+        print(Branch.getInstance().getLatestReferringParams().JSONDescription())
+        if let clickedBranchLink = Branch.getInstance().getLatestReferringParams()["+clicked_branch_link"] as! Bool? {
+            print(Branch.getInstance().getLatestReferringParams().JSONDescription())
+            if  clickedBranchLink == true {
+                loadLinkPropertiesButton.isEnabled = true
+                loadObjectPropertiesButton.isEnabled = true
+            } else {
+                loadLinkPropertiesButton.isEnabled = false
+                loadObjectPropertiesButton.isEnabled = false
+            }
         } else {
             loadLinkPropertiesButton.isEnabled = false
             loadObjectPropertiesButton.isEnabled = false
         }
-    }
-    
-    func applicationDidBecomeActive() {
-        loadLinkPropertiesButton.isEnabled = false
-        loadObjectPropertiesButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -152,21 +173,19 @@ class ViewController: UITableViewController {
         case (3,1) :
             self.performSegue(withIdentifier: "ShowDictionaryTableView", sender: "CustomEventMetadata")
         case (4,0) :
-            let branch = Branch.getInstance()
-            let params = branch?.getLatestReferringParams()
-            let logOutput = String(format:"LatestReferringParams:\n\n%@", (params?.JSONDescription())!)
             
-            // self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
-            self.performSegue(withIdentifier: "ShowLogOutputView", sender: "LatestReferringParams")
-            print("Branch TestBed: LatestReferringParams:\n", logOutput)
+            print(Branch.getInstance().getLatestReferringParams().JSONDescription())
+            if let params = Branch.getInstance().getLatestReferringParams() {
+                let logOutput = String(format:"LatestReferringParams:\n\n%@", (params.JSONDescription()))
+                self.performSegue(withIdentifier: "ShowLogOutputView", sender: "LatestReferringParams")
+                print("Branch TestBed: LatestReferringParams:\n", logOutput)
+            }
         case (4,1) :
-            let branch = Branch.getInstance()
-            let params = branch?.getFirstReferringParams()
-            let logOutput = String(format:"FirstReferringParams:\n\n%@", (params?.JSONDescription())!)
-            
-            // self.performSegueWithIdentifier("ShowLogOutputView", sender: logOutput)
-            self.performSegue(withIdentifier: "ShowLogOutputView", sender: "FirstReferringParams")
-            print("Branch TestBed: FirstReferringParams:\n", logOutput)
+            if let params = Branch.getInstance().getFirstReferringParams() {
+                let logOutput = String(format:"FirstReferringParams:\n\n%@", (params.JSONDescription()))
+                self.performSegue(withIdentifier: "ShowLogOutputView", sender: "FirstReferringParams")
+                print("Branch TestBed: FirstReferringParams:\n", logOutput)
+            }
         default : break
         }
     }
@@ -635,10 +654,10 @@ class ViewController: UITableViewController {
                 }
             }
         case "$currency":
-            if let currency = universalObjectProperties[key] {
-                // branchUniversalObject.currency = universalObjectProperties[key] as! String
+            if let currency = universalObjectProperties[key] as? String {
+                branchUniversalObject.currency = currency
                 // if .currency not yet available
-                branchUniversalObject.addMetadataKey(key, value: currency as! String)
+                // branchUniversalObject.addMetadataKey(key, value: currency as! String)
             }
         case "customData":
             if let data = universalObjectProperties[key] as? [String: String] {

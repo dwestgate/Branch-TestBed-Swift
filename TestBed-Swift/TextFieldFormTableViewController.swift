@@ -12,6 +12,7 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
     // MARK: Control
     
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var sender = ""
     var incumbantValue = ""
@@ -31,7 +32,6 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
         textField.placeholder = placeholder
         textField.text = incumbantValue
         textField.keyboardType = keyboardType
-        textField.text = incumbantValue
         textField.becomeFirstResponder()
     }
     
@@ -49,4 +49,11 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
         return footer
     }
     
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if textField.text == incumbantValue {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
+    }
 }
