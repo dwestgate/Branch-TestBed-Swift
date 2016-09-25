@@ -91,38 +91,29 @@ class ViewController: UITableViewController {
                                        name: Notification.Name("BranchCallbackCompleted"),
                                        object: nil)
         
-        /* notificationCenter.addObserver(forName: nil, object: nil, queue: nil) { notification in
-            print("NOTIFICATION: \(notification.name): \(notification.userInfo ?? [:])")
-        }*/
+
         
         linkTextField.text = ""
         refreshControlValues()
         refreshEnabledButtons()
     }
     
-    func printNotification(name: NSNotification) {
-        print(name.description)
-    }
-    /*override func viewDidAppear(_ animated: Bool) {
-        refreshEnabledButtons()
-    }*/
-    
     func applicationDidBecomeActive() {
-        refreshEnabledButtons()
+        loadLinkPropertiesButton.isEnabled = false
+        loadObjectPropertiesButton.isEnabled = false
     }
     
     func refreshEnabledButtons() {
-        // LatestReferringParams will always be greater than 2 if populated
-        print(Branch.getInstance().getLatestReferringParams().JSONDescription())
+        var enableButtons = false
+        
         if let clickedBranchLink = Branch.getInstance().getLatestReferringParams()["+clicked_branch_link"] as! Bool? {
+            enableButtons = clickedBranchLink
+            
             print(Branch.getInstance().getLatestReferringParams().JSONDescription())
-            if  clickedBranchLink == true {
-                loadLinkPropertiesButton.isEnabled = true
-                loadObjectPropertiesButton.isEnabled = true
-            } else {
-                loadLinkPropertiesButton.isEnabled = false
-                loadObjectPropertiesButton.isEnabled = false
-            }
+        }
+        if enableButtons == true {
+            loadLinkPropertiesButton.isEnabled = true
+            loadObjectPropertiesButton.isEnabled = true
         } else {
             loadLinkPropertiesButton.isEnabled = false
             loadObjectPropertiesButton.isEnabled = false

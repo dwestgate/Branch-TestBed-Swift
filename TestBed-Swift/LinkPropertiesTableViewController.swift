@@ -76,6 +76,8 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         desktopDeepviewTextField.delegate = self
         
         UITableViewCell.appearance().backgroundColor = UIColor.white
+        clearAllValuesButton.isEnabled = linkProperties.count > 0 ? true : false
+
         refreshControls()
     }
 
@@ -92,6 +94,7 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
     
     @IBAction func clearAllValuesTouchUpInside(_ sender: AnyObject) {
         linkProperties.removeAll()
+        clearAllValuesButton.isEnabled = false
         refreshControls()
     }
     
@@ -132,6 +135,10 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
                 tagsTextView.text = ""
             }
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        refreshLinkProperties()
     }
     
     // MARK: - Refresh Functions
@@ -253,6 +260,10 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         addProperty("$ios_deepview", value: iosDeepviewTextField.text!)
         addProperty("$android_deepview", value: androidDeepviewTextField.text!)
         addProperty("$desktop_deepview", value: desktopDeepviewTextField.text!)
+        
+        
+        print("linkProperties.count=\(linkProperties.count)")
+        clearAllValuesButton.isEnabled = linkProperties.count > 0 ? true : false
     }
     
     func addProperty(_ key: String, value: String) {

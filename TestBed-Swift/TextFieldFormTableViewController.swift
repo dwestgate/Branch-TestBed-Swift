@@ -32,6 +32,7 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
         textField.placeholder = placeholder
         textField.text = incumbantValue
         textField.keyboardType = keyboardType
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
         textField.becomeFirstResponder()
     }
     
@@ -49,8 +50,8 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
         return footer
     }
     
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        if textField.text == incumbantValue {
+    func textFieldDidChange() {
+        if ((textField.text == incumbantValue) || (textField.text == "")) {
             saveButton.isEnabled = false
         } else {
             saveButton.isEnabled = true

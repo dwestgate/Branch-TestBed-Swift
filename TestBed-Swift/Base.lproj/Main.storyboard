@@ -52,10 +52,10 @@
                             <tableViewSection headerTitle="User ID" id="M3D-Op-5C4">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="9PD-Xf-pMv">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9PD-Xf-pMv" id="oy4-nh-VrW">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEr-U8-kO6" userLabel="userIDLabel">
@@ -81,10 +81,10 @@
                             <tableViewSection headerTitle="Branch Link" id="YQE-y9-kVv" userLabel="Branch Link">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="SvS-QW-z9B">
-                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="219.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SvS-QW-z9B" id="L7a-G4-QJ9">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knu-zU-SC4" userLabel="loadLinkPropertiesButton">
@@ -104,10 +104,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="QtH-si-2sI">
-                                        <rect key="frame" x="0.0" y="265" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="263.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QtH-si-2sI" id="sAU-P6-hNZ">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-SJ-zcY" userLabel="loadObjectPropertiesButton">
@@ -127,10 +127,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="CK1-FW-dDc">
-                                        <rect key="frame" x="0.0" y="309" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="307.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CK1-FW-dDc" id="6oC-U9-o3e">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Properties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85Q-J4-YOW" userLabel="linkPropertiesLabel">
@@ -148,10 +148,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="kxS-nO-VHD">
-                                        <rect key="frame" x="0.0" y="353" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kxS-nO-VHD" id="x1S-7R-laO">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branch Universal Object Properties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kd-9O-rOf" userLabel="branchUniversalObjectPropertiesLabel">
@@ -169,10 +169,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="6Qn-rk-4ru">
-                                        <rect key="frame" x="0.0" y="397" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="395.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Qn-rk-4ru" id="sHq-Fk-nk7">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branch Link" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-Cx-jOD" userLabel="linkLabel">
@@ -195,10 +195,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="wnH-VD-kfe">
-                                        <rect key="frame" x="0.0" y="441" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="439.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wnH-VD-kfe" id="W7I-cV-hNt">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-t5-eOr" userLabel="createBranchLinkButton">
@@ -222,10 +222,10 @@
                             <tableViewSection headerTitle="Referral Rewards" id="48j-Sc-YF0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="N1G-oH-hDh">
-                                        <rect key="frame" x="0.0" y="542" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="539.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N1G-oH-hDh" id="ENN-Nm-OiH">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewards Bucket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-Pb-122" userLabel="rewardsBucketLabel">
@@ -249,10 +249,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="Onc-wf-G4D">
-                                        <rect key="frame" x="0.0" y="586" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="583.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Onc-wf-G4D" id="Uw6-OV-oTw">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewards Balance of Bucket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vva-kI-ICr" userLabel="rewardsBalanceOfBucketLabel">
@@ -284,10 +284,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="xcc-rK-2xk">
-                                        <rect key="frame" x="0.0" y="630" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="627.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcc-rK-2xk" id="MAR-OW-qjj">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StD-HT-u4H" userLabel="reloadBalanceButton">
@@ -307,10 +307,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="zOh-9n-jJa">
-                                        <rect key="frame" x="0.0" y="674" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="671.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zOh-9n-jJa" id="7Rc-f6-aFE">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward Points to Redeem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRf-7P-KD1" userLabel="rewardPointsToRedeemLabel">
@@ -334,10 +334,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="jWa-4n-4sH">
-                                        <rect key="frame" x="0.0" y="718" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="715.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWa-4n-4sH" id="9fg-IC-bWp">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmL-5h-bC6" userLabel="redeemPointsButton">
@@ -357,10 +357,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="beT-dr-Lmz">
-                                        <rect key="frame" x="0.0" y="762" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="759.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="beT-dr-Lmz" id="57t-UB-z4S">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewards History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmx-Gi-qdh">
@@ -382,10 +382,10 @@
                             <tableViewSection headerTitle="Application Events" id="2wG-zu-ZBM" userLabel="In-App Events">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="R2s-j3-arJ">
-                                        <rect key="frame" x="0.0" y="863" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="859.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R2s-j3-arJ" id="A1p-DN-2gS">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B34-U2-drr" userLabel="customEventNameLabel">
@@ -409,10 +409,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="98" id="RhC-hK-F1P">
-                                        <rect key="frame" x="0.0" y="907" width="375" height="98"/>
+                                        <rect key="frame" x="0.0" y="903.5" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RhC-hK-F1P" id="da2-hP-iyc">
-                                            <frame key="frameInset" width="342" height="97"/>
+                                            <frame key="frameInset" width="342" height="97.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Event Metadata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFj-sv-YSF" userLabel="customEventMetadataLabel">
@@ -439,10 +439,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="4h4-mT-vbL">
-                                        <rect key="frame" x="0.0" y="1005" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1001.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4h4-mT-vbL" id="uzM-rl-pnG">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEx-Pg-EvB" userLabel="sendCustomEventButton">
@@ -462,10 +462,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="yo4-y0-dNM">
-                                        <rect key="frame" x="0.0" y="1049" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1045.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yo4-y0-dNM" id="Fyv-9Y-995">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTS-u4-TnJ" userLabel="simulateContentAccessButton">
@@ -489,10 +489,10 @@
                             <tableViewSection headerTitle="Session Data" id="wTB-pX-vJF" userLabel="Session Data">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="2bg-hb-tyv">
-                                        <rect key="frame" x="0.0" y="1150" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1145.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bg-hb-tyv" id="ZZW-75-6KI">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referred session parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjO-nN-MvI" userLabel="LatestReferringParamsLabel">
@@ -510,10 +510,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="lGg-oI-a6C">
-                                        <rect key="frame" x="0.0" y="1194" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1189.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGg-oI-a6C" id="e5n-P8-PRj">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First referred session parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa5-ZX-lSd" userLabel="FirstReferringParamsLabel">
@@ -612,13 +612,13 @@
                                 <string key="footerTitle">Use channel to tag the route that your link reaches users. For example, tag links with ‘Facebook’ or ‘LinkedIn’ to help track clicks and installs through those paths separately.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="7xK-3f-h7M">
-                                        <rect key="frame" x="0.0" y="207" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="206.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7xK-3f-h7M" id="6y9-vg-xRl">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-GD-t6z" userLabel="channelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2Uy-GD-t6z" userLabel="channelTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -636,13 +636,13 @@
                                 <string key="footerTitle">This is the feature of your app that the link might be associated with. For example, if you had built a referral program, you would label links with the feature: 'referral'</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ggg-qN-hjW">
-                                        <rect key="frame" x="0.0" y="375" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="374" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ggg-qN-hjW" id="kCh-Ht-Z8Q">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-5a-g2w" userLabel="featureTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-5a-g2w" userLabel="featureTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -660,13 +660,13 @@
                                 <string key="footerTitle">Use this field to organize the links by marketing campaign. For example, if you launched a new feature or product and want to run a campaign around that</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="aLS-Le-CA2">
-                                        <rect key="frame" x="0.0" y="527" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="525.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aLS-Le-CA2" id="Nq9-WT-bQj">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-nz-Zg6" userLabel="campaignTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-nz-Zg6" userLabel="campaignTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -684,13 +684,13 @@
                                 <string key="footerTitle">Use this to categorize the progress or category of a user when the link was generated. For example, if you had an invite system accessible on level 1, level 3 and 5, you could differentiate links generated at each level with this parameter</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rGi-aV-FEc">
-                                        <rect key="frame" x="0.0" y="679" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="677" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGi-aV-FEc" id="8ib-uo-Z71">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="RKf-cA-BTP" userLabel="stageTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RKf-cA-BTP" userLabel="stageTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -708,7 +708,7 @@
                                 <string key="footerTitle">This is a free form entry with unlimited values. Use it to organize your link data with labels that don’t fit within the bounds of the above.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Table View Cell" rowHeight="98" id="APe-MJ-HaR">
-                                        <rect key="frame" x="0.0" y="863" width="375" height="98"/>
+                                        <rect key="frame" x="0.0" y="860.5" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="APe-MJ-HaR" id="LjI-5M-9ae">
                                             <frame key="frameInset" width="342" height="98"/>
@@ -734,13 +734,13 @@
                                 <string key="footerTitle">Specify a link alias in place of the standard encoded short URL (e.g., [branchsubdomain]/youralias or yourdomain.co/youralias). Link aliases are unique, immutable objects that cannot be deleted.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0CU-dh-acg">
-                                        <rect key="frame" x="0.0" y="1069" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1066" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0CU-dh-acg" id="DR7-gC-lNM">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-iZ-snS" userLabel="aliasTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-iZ-snS" userLabel="aliasTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -758,13 +758,13 @@
                                 <string key="footerTitle">For all platforms, where to send the user when the app is not installed. Note that Branch will forward all robots to this URL, overriding any OG tags entered in the link.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="zfQ-mA-UsS">
-                                        <rect key="frame" x="0.0" y="1237" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1233.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zfQ-mA-UsS" id="U7b-AE-TvB">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-Zw-oed" userLabel="fallbackURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-Zw-oed" userLabel="fallbackURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -781,13 +781,13 @@
                             <tableViewSection headerTitle="$desktop_url" footerTitle="Where to send the user on a desktop or laptop. If not set, this defaults to the Branch-hosted text-me-the-app page." id="mav-4d-wu7" userLabel="$desktop_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="15Y-39-rVu">
-                                        <rect key="frame" x="0.0" y="1389" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1385" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15Y-39-rVu" id="h8a-Jo-3BI">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses text-me-the-app page if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-wl-KRF" userLabel="desktopURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses text-me-the-app page if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-wl-KRF" userLabel="desktopURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -804,13 +804,13 @@
                             <tableViewSection headerTitle="$ios_url" footerTitle="If set, iPhone users who do not have the app installed will be redirected to this URL instead of the App Store" id="bDA-1G-xNs" userLabel="$ios_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xg7-fZ-sky">
-                                        <rect key="frame" x="0.0" y="1541" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1536.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xg7-fZ-sky" id="NhZ-dh-h3x">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xtG-OZ-0tp" userLabel="iosURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xtG-OZ-0tp" userLabel="iosURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -828,13 +828,13 @@
                                 <string key="footerTitle">iPad users who do not have the app installed will be redirected to this URL instead of the App Store. Defaults to $ios_url if not specified.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="btX-iu-MeG">
-                                        <rect key="frame" x="0.0" y="1677" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1672" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="btX-iu-MeG" id="qMO-mh-mfo">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $ios_url if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UV6-Os-JFv" userLabel="ipadURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $ios_url if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UV6-Os-JFv" userLabel="ipadURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -851,13 +851,13 @@
                             <tableViewSection headerTitle="$android_url" footerTitle="If set, Android users who do not have the app installed will be redirected to this URL instead of the Play Store" id="SCe-A0-nai" userLabel="$android_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Qns-Za-x3O">
-                                        <rect key="frame" x="0.0" y="1829" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1823.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qns-Za-x3O" id="NIe-mw-1VA">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-yM-ART" userLabel="androidURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-yM-ART" userLabel="androidURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -874,13 +874,13 @@
                             <tableViewSection headerTitle="$windows_phone_url" footerTitle="If set, Windows phone users who do not have the app installed will be redirected to this URL" id="Mlo-wj-AFO" userLabel="$windows_phone_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="59F-yN-gxT">
-                                        <rect key="frame" x="0.0" y="1965" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1959" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59F-yN-gxT" id="2CZ-hn-TTz">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="W9Y-Kz-ydz" userLabel="windowsPhoneURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="W9Y-Kz-ydz" userLabel="windowsPhoneURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -897,13 +897,13 @@
                             <tableViewSection headerTitle="$blackberry_url" footerTitle="If set, Blackberry users who do not have the app installed will be redirected to this URL" id="O0i-QT-fCA" userLabel="$blackberry_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pMa-C6-b2W">
-                                        <rect key="frame" x="0.0" y="2101" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2094.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pMa-C6-b2W" id="XhU-Ip-UTp">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0L3-oL-gau" userLabel="blackberryURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0L3-oL-gau" userLabel="blackberryURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -920,13 +920,13 @@
                             <tableViewSection headerTitle="$fire_url" footerTitle="If set, Amazon Fire users who do not have the app installed will be redirected to this URL" id="w7n-c0-n0S" userLabel="$fire_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Z3k-dM-uIW">
-                                        <rect key="frame" x="0.0" y="2237" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2230" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z3k-dM-uIW" id="fXr-qw-CzT">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-9n-yTX" userLabel="fireURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-9n-yTX" userLabel="fireURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -943,13 +943,13 @@
                             <tableViewSection headerTitle="$ios_wechat_url" footerTitle="Change the redirect endpoint for WeChat on iOS devices." id="sjT-KP-uMM" userLabel="$ios_wechat_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="WMg-PC-rjl">
-                                        <rect key="frame" x="0.0" y="2373" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2365.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMg-PC-rjl" id="tbh-ps-0ZA">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $ios_url if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-lH-KbQ" userLabel="iosWeChatURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $ios_url if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-lH-KbQ" userLabel="iosWeChatURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -966,13 +966,13 @@
                             <tableViewSection headerTitle="$ios_weibo_url" footerTitle="Change the redirect endpoint for Weibo on iOS devices." id="9Wh-og-Q5D" userLabel="$ios_weibo_url">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="oau-oZ-equ">
-                                        <rect key="frame" x="0.0" y="2509" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2501" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oau-oZ-equ" id="m3u-4y-Lnt">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $ios_url if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-Gb-GHr" userLabel="iosWeiboURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $ios_url if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-Gb-GHr" userLabel="iosWeiboURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -990,13 +990,13 @@
                                 <string key="footerTitle">When a user returns to the browser after the app was successfully opened they will be redirected to this URL. This currently works for iOS only; Android support is coming soon.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PD6-90-h16">
-                                        <rect key="frame" x="0.0" y="2629" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2620.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PD6-90-h16" id="3Pa-m9-yOi">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="axt-rS-OdB" userLabel="afterClickURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="must begin with http:// or https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="axt-rS-OdB" userLabel="afterClickURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1014,7 +1014,7 @@
                                 <string key="footerTitle">This lets you direct the user to the web, even if they have the app installed. When creating the link, add $web_only: true to the deep link data.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ab3-wA-rVV">
-                                        <rect key="frame" x="0.0" y="2797" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2788" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ab3-wA-rVV" id="UxC-Ph-OHb">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1042,13 +1042,13 @@
 Universal Links and Spotlight do not support deep linking via URI paths. We recommend not using $deeplink_path as your only deep link routing method.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="fCK-Qh-CtF">
-                                        <rect key="frame" x="0.0" y="2949" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2939.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fCK-Qh-CtF" id="Bwk-qj-sH3">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="open?link_click_id={Branch link ID}" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-aO-bzl" userLabel="deeplinkPathTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="open?link_click_id={Branch link ID}" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZXD-aO-bzl" userLabel="deeplinkPathTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1066,13 +1066,13 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
                                 <string key="footerTitle">The value of the deep link path that you'd like us to append to your URI Scheme on Android. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". This is primarily for supporting legacy deep linking infrastructure.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="jWJ-o0-iwq">
-                                        <rect key="frame" x="0.0" y="3197" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3187" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWJ-o0-iwq" id="kfw-Yq-NeY">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $deeplink_path if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-G3-TTc" userLabel="androidDeeplinkPathTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $deeplink_path if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-G3-TTc" userLabel="androidDeeplinkPathTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1090,13 +1090,13 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
                                 <string key="footerTitle">The value of the deep link path that you'd like us to append to your URI Scheme on iOS. For example, you could specify "$deeplink_path": "radio/station/456" and we'll open the app with the URI "yourapp://radio/station/456?link_click_id=branch-identifier". This is primarily for supporting legacy deep linking infrastructure.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="q88-TY-fdl">
-                                        <rect key="frame" x="0.0" y="3413" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3402.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q88-TY-fdl" id="wWM-jY-wSi">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $deeplink_path if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="LAh-Yf-YoI" userLabel="iosDeeplinkPathTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses $deeplink_path if none specified" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LAh-Yf-YoI" userLabel="iosDeeplinkPathTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1113,13 +1113,13 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
                             <tableViewSection headerTitle="$match_duration" footerTitle="The attribution window, in seconds, for clicks coming from this link." id="qLw-wc-jH4" userLabel="$match_duration">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="lG2-MY-xYa">
-                                        <rect key="frame" x="0.0" y="3613" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3602" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lG2-MY-xYa" id="gWE-sE-iim">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="7200" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AbC-iA-R9W" userLabel="matchDurationTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="7200" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AbC-iA-R9W" userLabel="matchDurationTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -1137,7 +1137,7 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
                                 <string key="footerTitle">If true, an attempt to open the app will be made, even if Branch has not seen the device before and is therefore unsure whether the user has the app installed or not. If the app is not installed, we fall back to the respective app store or $platform_url key. By default, we only open the app if we've seen a user initiate a session in your app from a Branch link (has been cookied and deep linked by Branch).</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="jku-gt-pm6">
-                                        <rect key="frame" x="0.0" y="3749" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3737.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jku-gt-pm6" id="Iny-NN-Sb7">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1163,13 +1163,13 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
                                 <string key="footerTitle">Control the timeout that the client-side JS waits after trying to open up the app before redirecting to the App Store. Specified in milliseconds.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="AZi-ak-ckt">
-                                        <rect key="frame" x="0.0" y="3981" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3969" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AZi-ak-ckt" id="9X8-eK-Beo">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="750" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-VU-Zzb" userLabel="iosRedirectTimeoutTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="750" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-VU-Zzb" userLabel="iosRedirectTimeoutTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -1187,13 +1187,13 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
                                 <string key="footerTitle">Control the timeout that the clientside JS waits after trying to open up the app before redirecting to the Play Store. Specified in milliseconds.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="9hk-bs-r2Z">
-                                        <rect key="frame" x="0.0" y="4133" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="4120.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hk-bs-r2Z" id="hyA-t0-5YY">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="750" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="048-Ef-qL4" userLabel="androidRedirectTimeoutTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="750" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="048-Ef-qL4" userLabel="androidRedirectTimeoutTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -1213,7 +1213,7 @@ Universal Links and Spotlight do not support deep linking via URI paths. We reco
 Default value: 0 (false)</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Z8G-hj-ozT">
-                                        <rect key="frame" x="0.0" y="4285" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="4272" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z8G-hj-ozT" id="oyh-Zv-C5b">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1241,13 +1241,13 @@ Default value: 0 (false)</string>
 Default value: default_template</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="J3z-Yx-eTT">
-                                        <rect key="frame" x="0.0" y="4469" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="4455.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J3z-Yx-eTT" id="eNJ-3E-4SV">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default_template" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-ID-lnH" userLabel="iosDeepviewTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default_template" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-ID-lnH" userLabel="iosDeepviewTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1267,13 +1267,13 @@ Default value: default_template</string>
 Default value: default_template</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="faI-g8-zgh">
-                                        <rect key="frame" x="0.0" y="4621" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="4607" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="faI-g8-zgh" id="3DS-SY-mWZ">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default_template" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NKL-am-Cdc" userLabel="androidDeepviewTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default_template" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NKL-am-Cdc" userLabel="androidDeepviewTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1290,13 +1290,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$desktop_deepview" footerTitle="The name of the deepview template to use for the desktop." id="Yel-XV-DyC" userLabel="$desktop_deepview">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pBe-Th-LlF">
-                                        <rect key="frame" x="0.0" y="4773" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="4758.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pBe-Th-LlF" id="fiw-fr-V4a">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default_template" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GW9-Xl-Trt" userLabel="desktopDeepviewTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default_template" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GW9-Xl-Trt" userLabel="desktopDeepviewTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -1375,7 +1375,7 @@ Default value: default_template</string>
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sc-CW-TxJ" id="wBY-FX-KDM">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-NF-Drm" userLabel="keyLabel">
@@ -1432,18 +1432,26 @@ Default value: default_template</string>
         <scene sceneID="s8k-qN-lfj">
             <objects>
                 <tableViewController id="IqB-zB-kHb" userLabel="Key-Value Pair Form" customClass="KeyValuePairTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HEt-Fj-G1w">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HEt-Fj-G1w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" id="Ytx-3j-dU9" userLabel="valueTextView">
+                            <rect key="frame" x="0.0" y="64" width="375" height="81"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" identifier="valueTextView" label="valueTextView"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                        </textView>
                         <sections>
-                            <tableViewSection headerTitle="Key" id="EyT-fu-MYc">
+                            <tableViewSection id="EyT-fu-MYc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DCO-jq-QLO">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="145" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DCO-jq-QLO" id="8Kb-n6-na6">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Key" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JdZ-c9-SvZ" userLabel="keyTextField">
@@ -1452,39 +1460,30 @@ Default value: default_template</string>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JdZ-c9-SvZ" secondAttribute="trailing" constant="6" id="KC8-MN-nl4"/>
-                                                <constraint firstItem="JdZ-c9-SvZ" firstAttribute="centerY" secondItem="8Kb-n6-na6" secondAttribute="centerY" id="b24-oQ-d9q"/>
-                                                <constraint firstItem="JdZ-c9-SvZ" firstAttribute="leading" secondItem="8Kb-n6-na6" secondAttribute="leadingMargin" constant="6" id="h7V-QY-a32"/>
+                                                <constraint firstItem="JdZ-c9-SvZ" firstAttribute="leading" secondItem="8Kb-n6-na6" secondAttribute="leadingMargin" constant="6" id="I5n-Ed-Tt1"/>
+                                                <constraint firstItem="JdZ-c9-SvZ" firstAttribute="trailing" secondItem="8Kb-n6-na6" secondAttribute="trailingMargin" constant="6" id="buG-OG-PHJ"/>
+                                                <constraint firstItem="JdZ-c9-SvZ" firstAttribute="centerY" secondItem="8Kb-n6-na6" secondAttribute="centerY" id="fo8-fd-V7O"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Value" id="y9j-xj-SSp">
+                            <tableViewSection id="y9j-xj-SSp">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="88" selectionStyle="none" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="98" id="IG0-J0-CoI" userLabel="TableViewCell">
-                                        <rect key="frame" x="0.0" y="221" width="375" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="88" selectionStyle="none" indentationWidth="10" rowHeight="98" id="IG0-J0-CoI" userLabel="TableViewCell">
+                                        <rect key="frame" x="0.0" y="225" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IG0-J0-CoI" id="7pi-Xt-abx">
-                                            <frame key="frameInset" width="375" height="97"/>
+                                            <frame key="frameInset" width="375" height="97.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-1h-NJp">
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-3j-dU9" userLabel="valueTextView">
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <accessibility key="accessibilityConfiguration" identifier="valueTextView" label="valueTextView"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="81" id="1Hm-he-qrj"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                                        </textView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtr-cd-flr" userLabel="clearButton">
                                                             <accessibility key="accessibilityConfiguration" identifier="clearButton" label="clearButton"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="Q30-ah-zZW"/>
-                                                                <constraint firstAttribute="width" constant="20" id="oqE-FH-ZgV"/>
+                                                                <constraint firstAttribute="height" priority="999" constant="20" id="LAd-il-VTb"/>
+                                                                <constraint firstAttribute="width" priority="999" constant="20" id="nBc-E9-u5P"/>
                                                             </constraints>
                                                             <state key="normal" image="cancel-28.png"/>
                                                             <connections>
@@ -1492,17 +1491,14 @@ Default value: default_template</string>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="Ytx-3j-dU9" secondAttribute="bottom" id="Q4s-vp-XDT"/>
-                                                        <constraint firstItem="Ytx-3j-dU9" firstAttribute="top" secondItem="YPt-1h-NJp" secondAttribute="top" id="tha-7T-4Rc"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="YPt-1h-NJp" firstAttribute="centerY" secondItem="7pi-Xt-abx" secondAttribute="centerY" id="Hgh-fZ-HGi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YPt-1h-NJp" secondAttribute="trailing" id="QdG-HF-ay0"/>
-                                                <constraint firstItem="YPt-1h-NJp" firstAttribute="leading" secondItem="7pi-Xt-abx" secondAttribute="leadingMargin" id="jos-uB-Icy"/>
+                                                <constraint firstItem="YPt-1h-NJp" firstAttribute="bottom" secondItem="7pi-Xt-abx" secondAttribute="bottomMargin" id="1i8-8W-EIL"/>
+                                                <constraint firstItem="YPt-1h-NJp" firstAttribute="leading" secondItem="7pi-Xt-abx" secondAttribute="leadingMargin" id="TWg-mV-c0w"/>
+                                                <constraint firstItem="YPt-1h-NJp" firstAttribute="top" secondItem="7pi-Xt-abx" secondAttribute="topMargin" id="eeD-ag-oU3"/>
+                                                <constraint firstItem="YPt-1h-NJp" firstAttribute="trailing" secondItem="7pi-Xt-abx" secondAttribute="trailingMargin" id="hth-ac-WCy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1537,7 +1533,7 @@ Default value: default_template</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6p-1U-6SH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gEH-LZ-jdo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6050" y="685"/>
+            <point key="canvasLocation" x="6060" y="705"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="csL-je-1Pe">
@@ -1553,7 +1549,7 @@ Default value: default_template</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTo-Rr-sro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5502" y="1101"/>
+            <point key="canvasLocation" x="4935" y="1467"/>
         </scene>
         <!--TextField Form-->
         <scene sceneID="pZU-K5-V7Q">
@@ -1570,7 +1566,7 @@ Default value: default_template</string>
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uvv-6Y-Gnd" id="CYU-kY-iEa">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-p8-wFJ" userLabel="textField">
@@ -1579,9 +1575,9 @@ Default value: default_template</string>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="PT5-p8-wFJ" secondAttribute="trailing" id="3x7-9u-Sr9"/>
-                                                <constraint firstItem="PT5-p8-wFJ" firstAttribute="leading" secondItem="CYU-kY-iEa" secondAttribute="leadingMargin" constant="6" id="CIt-mM-a6Q"/>
-                                                <constraint firstItem="PT5-p8-wFJ" firstAttribute="centerY" secondItem="CYU-kY-iEa" secondAttribute="centerY" id="JQF-iB-uC4"/>
+                                                <constraint firstItem="PT5-p8-wFJ" firstAttribute="leading" secondItem="CYU-kY-iEa" secondAttribute="leadingMargin" constant="6" id="Ag8-7N-DO4"/>
+                                                <constraint firstItem="PT5-p8-wFJ" firstAttribute="trailing" secondItem="CYU-kY-iEa" secondAttribute="trailingMargin" constant="6" id="EhZ-Ul-y75"/>
+                                                <constraint firstItem="PT5-p8-wFJ" firstAttribute="centerY" secondItem="CYU-kY-iEa" secondAttribute="centerY" id="nRO-1b-bk3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1613,7 +1609,7 @@ Default value: default_template</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vS-Ku-U98" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WIF-C2-NOF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2890" y="1973"/>
+            <point key="canvasLocation" x="3242" y="1994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y27-hq-aJF">
@@ -1629,7 +1625,7 @@ Default value: default_template</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erj-EU-s9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2370" y="2389"/>
+            <point key="canvasLocation" x="1838" y="2770"/>
         </scene>
         <!--Array-->
         <scene sceneID="P6z-Bq-T81">
@@ -1644,7 +1640,7 @@ Default value: default_template</string>
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qid-rc-K1H" id="n2h-J3-cnt">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elementLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TII-vu-oAf" userLabel="elementLabel">
@@ -1702,18 +1698,18 @@ Default value: default_template</string>
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4FF-PW-otK" id="guV-GI-En6">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OBJ-4n-FGf">
-                                            <frame key="frameInset" minX="15" minY="5" width="32" height="20"/>
+                                            <frame key="frameInset" minX="15" minY="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lma-wY-lV4">
-                                            <frame key="frameInset" minX="15" minY="25" width="41" height="14"/>
+                                            <frame key="frameInset" minX="15" minY="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1757,19 +1753,18 @@ Default value: default_template</string>
         <scene sceneID="4av-qW-gdO">
             <objects>
                 <tableViewController id="Aqu-O9-8Kl" userLabel="TextView Form" customClass="TextViewFormTableViewController" customModule="TestBed_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bNk-SI-3yX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bNk-SI-3yX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="User ID" id="cD0-jb-3GD" userLabel="Section">
-                                <string key="footerTitle">This User ID (or developer_id) is the application-assigned ID of the user. If not assigned, referrals from links created by the user will show up as "anonymous" in reporting.</string>
+                            <tableViewSection id="cD0-jb-3GD" userLabel="Section">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="88" selectionStyle="none" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="98" id="fkP-XX-NcM" userLabel="TableViewCell">
-                                        <rect key="frame" x="0.0" y="119.5" width="375" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="88" selectionStyle="default" indentationWidth="10" rowHeight="98" id="fkP-XX-NcM" userLabel="TableViewCell">
+                                        <rect key="frame" x="0.0" y="99" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fkP-XX-NcM" id="5OY-9g-dIW">
-                                            <frame key="frameInset" width="375" height="97"/>
+                                            <frame key="frameInset" width="375" height="97.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bBo-K7-Axw">
@@ -1777,9 +1772,6 @@ Default value: default_template</string>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="rpg-0S-e9Y" userLabel="textView">
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="textView" label="textView"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="81" id="tUt-Ev-SUk"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                         </textView>
@@ -1792,17 +1784,18 @@ Default value: default_template</string>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="rpg-0S-e9Y" firstAttribute="bottom" secondItem="bBo-K7-Axw" secondAttribute="bottom" id="0zx-Ob-VI6"/>
-                                                        <constraint firstItem="rpg-0S-e9Y" firstAttribute="top" secondItem="bBo-K7-Axw" secondAttribute="top" id="Jj4-is-pgB"/>
-                                                        <constraint firstItem="rpg-0S-e9Y" firstAttribute="leading" secondItem="bBo-K7-Axw" secondAttribute="leading" id="Oov-jS-3jh"/>
+                                                        <constraint firstItem="rpg-0S-e9Y" firstAttribute="top" secondItem="bBo-K7-Axw" secondAttribute="top" id="PCH-NQ-cl1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rpg-0S-e9Y" secondAttribute="trailing" constant="20" symbolic="YES" id="oXg-fb-l24"/>
+                                                        <constraint firstItem="dxb-kZ-oCy" firstAttribute="top" secondItem="bBo-K7-Axw" secondAttribute="top" constant="31" id="qg4-yp-dDS"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="trailing" secondItem="5OY-9g-dIW" secondAttribute="trailingMargin" id="3ty-HX-Jcc"/>
-                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="centerY" secondItem="5OY-9g-dIW" secondAttribute="centerY" id="HF6-na-ikw"/>
-                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="leading" secondItem="5OY-9g-dIW" secondAttribute="leadingMargin" id="Yn5-j4-ftR"/>
+                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="trailing" secondItem="5OY-9g-dIW" secondAttribute="trailingMargin" id="DRk-wE-wHd"/>
+                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="bottom" secondItem="5OY-9g-dIW" secondAttribute="bottomMargin" id="VNs-IF-rc1"/>
+                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="leading" secondItem="5OY-9g-dIW" secondAttribute="leadingMargin" id="a1B-uD-QNu"/>
+                                                <constraint firstItem="bBo-K7-Axw" firstAttribute="top" secondItem="5OY-9g-dIW" secondAttribute="topMargin" id="vCL-gX-xwo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1828,7 +1821,6 @@ Default value: default_template</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="clearButton" destination="dxb-kZ-oCy" id="Mpr-W2-kEX"/>
                         <outlet property="saveButton" destination="qUx-K8-QwN" id="aOL-Bg-kFP"/>
@@ -1861,8 +1853,7 @@ Default value: default_template</string>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAv-Fr-9Io" userLabel="clearAllValuesButton">
                                                     <state key="normal" title="Clear all values"/>
                                                     <connections>
-                                                        <action selector="clearAllValuesButton:" destination="dok-LR-mvX" eventType="touchUpInside" id="Ppe-NT-Hpk"/>
-                                                        <action selector="clearAllValuesTouchUpInside:" destination="QY6-4D-Gxe" eventType="touchUpInside" id="ZB0-zm-W4I"/>
+                                                        <action selector="clearAllValuesButtonTouchUpInside:" destination="dok-LR-mvX" eventType="touchUpInside" id="dcV-3N-Mit"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1879,7 +1870,7 @@ Default value: default_template</string>
                                 <string key="footerTitle">Can be set to either ContentIndexModePublic or ContentIndexModePrivate. Enabling sets to ContentModePublic and indicates that you’d like this content to be discovered by other apps.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HdR-7Y-3aZ">
-                                        <rect key="frame" x="0.0" y="207" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="206.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdR-7Y-3aZ" id="28v-95-Wam">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1906,7 +1897,7 @@ Default value: default_template</string>
                                 <string key="footerTitle">Keywords for which this content should be discovered by. Just assign an array of strings with the keywords you’d like to use. Currently, this parameter is only used for iOS Spotlight Indexing.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Table View Cell" rowHeight="98" id="KEn-NU-dHo">
-                                        <rect key="frame" x="0.0" y="375" width="375" height="98"/>
+                                        <rect key="frame" x="0.0" y="374" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEn-NU-dHo" id="7Bx-7p-L7Y">
                                             <frame key="frameInset" width="342" height="98"/>
@@ -1932,13 +1923,13 @@ Default value: default_template</string>
                                 <string key="footerTitle">This is the unique identifier for content that will help Branch dedupe across many instances of the same thing. Suitable options: a website with pathing, or a database with identifiers for entities.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qtj-zB-wVH" userLabel="canonicalIdentifier">
-                                        <rect key="frame" x="0.0" y="597" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="595.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qtj-zB-wVH" id="oIq-Zf-gmY">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default value: _" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-l4-IxT" userLabel="canonicalIdentifierTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="default value: _" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-l4-IxT" userLabel="canonicalIdentifierTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -1956,13 +1947,13 @@ Default value: default_template</string>
                                 <string key="footerTitle">Expiration date - the date when the content will not longer be available or valid. Currently, this parameter is only used for iOS Spotlight Indexing.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wk3-3v-8Nc">
-                                        <rect key="frame" x="0.0" y="765" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="763" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wk3-3v-8Nc" id="f7E-Vs-kCz">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-5x-L9G" userLabel="expDateTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-5x-L9G" userLabel="expDateTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -1980,13 +1971,13 @@ Default value: default_template</string>
                                 <string key="footerTitle">This is a label for the type of content present. Apple recommends that you use uniform type identifier as described here: https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ihe-an-8fc">
-                                        <rect key="frame" x="0.0" y="917" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="914.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ihe-an-8fc" id="WC9-ar-LmE">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-gC-klu" userLabel="contentTypeTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-gC-klu" userLabel="contentTypeTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2003,13 +1994,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_title" footerTitle="The name for the piece of content.  This value is scraped by Branch for use in social media." id="sq3-zO-xqj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="z4Z-2P-F2a">
-                                        <rect key="frame" x="0.0" y="1101" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1098" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4Z-2P-F2a" id="ohj-nf-Nh0">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uGB-Cu-2fv" userLabel="ogTitleTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uGB-Cu-2fv" userLabel="ogTitleTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2026,13 +2017,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_description" footerTitle="A description for the content. This value is scraped by Branch for use in social media." id="Oon-pY-bEL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="hI5-Kl-34I">
-                                        <rect key="frame" x="0.0" y="1237" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1233.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hI5-Kl-34I" id="Hgk-Dn-vyF">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zt4-sc-SPv" userLabel="ogDescriptionTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zt4-sc-SPv" userLabel="ogDescriptionTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2049,13 +2040,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_image_url" footerTitle="The image URL for the content.  This value is scraped by Branch for use in social media." id="NdN-hd-1z3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="v3l-lh-Iqb">
-                                        <rect key="frame" x="0.0" y="1373" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1369" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v3l-lh-Iqb" id="jNg-Ez-iwm">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-Ht-sjB" userLabel="ogImageURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-Ht-sjB" userLabel="ogImageURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -2073,13 +2064,13 @@ Default value: default_template</string>
                                 <string key="footerTitle">The image’s width in pixels for social media displays. This value is scraped by Branch for use in social media. If this value is not populated Facebook will not display the image the first time it is shared.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="8Gq-eA-gwq">
-                                        <rect key="frame" x="0.0" y="1509" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1504.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Gq-eA-gwq" id="Z2t-eD-GCx">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Uv-Wth" userLabel="ogImageWidthTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Uv-Wth" userLabel="ogImageWidthTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -2097,13 +2088,13 @@ Default value: default_template</string>
                                 <string key="footerTitle">The image’s height in pixels for social media displays. This value is scraped by Branch for use in social media. If this value is not populated Facebook will not display the image the first time it is shared.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="tm1-TU-0v1">
-                                        <rect key="frame" x="0.0" y="1677" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1672" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tm1-TU-0v1" id="gH6-Qv-vVI">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="spb-nB-qDk" userLabel="ogImageHeightTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="spb-nB-qDk" userLabel="ogImageHeightTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -2120,13 +2111,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_video" footerTitle="A link to a video to be shown in social media displays." id="ATV-3C-8W3" userLabel="$og_video">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ZwW-P7-uAp">
-                                        <rect key="frame" x="0.0" y="1845" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1839.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZwW-P7-uAp" id="yX6-jE-cmW">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-TF-vGk" userLabel="ogVideoTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-TF-vGk" userLabel="ogVideoTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -2143,13 +2134,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_url" footerTitle="The base URL of the link as it will be seen in social media displays." id="LQa-4E-eKe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="EGg-8Y-lBd">
-                                        <rect key="frame" x="0.0" y="1965" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1959" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EGg-8Y-lBd" id="XxH-jj-pZJ">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-pr-4lV" userLabel="ogURLTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-pr-4lV" userLabel="ogURLTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -2166,13 +2157,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_type" footerTitle="The type of custom card format link as it will be seen in social media displays." id="6vH-tT-60h" userLabel="$og_type">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="o0O-hu-q7G">
-                                        <rect key="frame" x="0.0" y="2101" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2094.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0O-hu-q7G" id="0ei-DS-btn">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-G0-1wX" userLabel="ogTypeTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-G0-1wX" userLabel="ogTypeTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2190,13 +2181,13 @@ Default value: default_template</string>
                                 <string key="footerTitle">This is an advanced parameter and its use is not recommended. It sets a custom URL that Branch will redirect social media robots to in order to retrieve all the appropriate tags.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="22X-if-BDx">
-                                        <rect key="frame" x="0.0" y="2237" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2230" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="22X-if-BDx" id="kFB-l8-vTu">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o21-FJ-6uo" userLabel="ogRedirectTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o21-FJ-6uo" userLabel="ogRedirectTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -2213,13 +2204,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$og_app_id" footerTitle="This is rarely used. It sets the OG App ID tag." id="D9M-p9-CMC" userLabel="$og_app_id">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="YEH-oW-sE9">
-                                        <rect key="frame" x="0.0" y="2405" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2397.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEH-oW-sE9" id="Jdf-UG-d0D">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-mZ-QCs" userLabel="ogAppIDTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-mZ-QCs" userLabel="ogAppIDTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2236,13 +2227,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_card" footerTitle="The Twitter card type of the link." id="dbi-W1-XAr" userLabel="$twitter_card">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0hN-9R-gsx">
-                                        <rect key="frame" x="0.0" y="2525" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2517" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0hN-9R-gsx" id="UpX-6L-q4i">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_card" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-5W-Nn4" userLabel="twitterCardTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$twitter_card" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-5W-Nn4" userLabel="twitterCardTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2259,13 +2250,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_title" footerTitle="The title of the Twitter card." id="5sy-5a-Exq" userLabel="$twitter_title">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="9NF-t1-DYv">
-                                        <rect key="frame" x="0.0" y="2645" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2636.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9NF-t1-DYv" id="Sk9-b5-Ei2" userLabel="Table View Cell">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-p3-iKJ" userLabel="twitterTitleTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-p3-iKJ" userLabel="twitterTitleTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2282,13 +2273,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_description" footerTitle="The description of the Twitter card." id="V0g-pL-c4F" userLabel="$twitter_description">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="5JR-cN-Ogd">
-                                        <rect key="frame" x="0.0" y="2765" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2756" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5JR-cN-Ogd" id="wJB-E1-l5t">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-Gc-1zU" userLabel="twitterDescriptionTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-Gc-1zU" userLabel="twitterDescriptionTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2305,13 +2296,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_site" footerTitle="The site for Twitter." id="fad-Ju-p1a" userLabel="$twitter_site">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="2jB-uZ-wkh">
-                                        <rect key="frame" x="0.0" y="2885" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2875.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2jB-uZ-wkh" id="EHd-Y5-90V">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gZy-37-Vgn" userLabel="twitterSiteTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gZy-37-Vgn" userLabel="twitterSiteTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -2328,13 +2319,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_app_country" footerTitle="The app country for the app card." id="4B2-3q-tMX" userLabel="$twitter_app_country">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="r4K-K0-Rca">
-                                        <rect key="frame" x="0.0" y="3005" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="2995" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r4K-K0-Rca" id="m7H-wK-sDB">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-xr-Szq" userLabel="twitterAppCountryTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-xr-Szq" userLabel="twitterAppCountryTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 </textField>
@@ -2351,13 +2342,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_player" footerTitle="The video player’s URL. This defaults to the value of $og_video." id="sRP-Ii-Kex" userLabel="$twitter_player">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="yg7-hw-h36">
-                                        <rect key="frame" x="0.0" y="3125" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3114.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yg7-hw-h36" id="m5z-a5-RRR">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses value of $og_video if not set" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-CB-ScR" userLabel="twitterPlayerTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uses value of $og_video if not set" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uuu-CB-ScR" userLabel="twitterPlayerTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                                 </textField>
@@ -2374,13 +2365,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_player_width" footerTitle="This sets the player’s width in pixels." id="yBl-u2-lnS" userLabel="$twitter_player_width">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qA7-qt-GgE">
-                                        <rect key="frame" x="0.0" y="3261" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3250" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qA7-qt-GgE" id="3lz-tG-mHt">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-V0-cJ3" userLabel="twitterPlayerWidthTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-V0-cJ3" userLabel="twitterPlayerWidthTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -2397,13 +2388,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$twitter_player_height" footerTitle="This sets the player’s height in pixels." id="Hlw-4K-k6N" userLabel="$twitter_player_height">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="u03-gq-u1u">
-                                        <rect key="frame" x="0.0" y="3381" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3369.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u03-gq-u1u" id="cVY-h9-XlJ">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-tp-bEB" userLabel="twitterPlayerHeightTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-tp-bEB" userLabel="twitterPlayerHeightTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
@@ -2420,13 +2411,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$price" footerTitle="Set the price associated with this piece of content." id="shn-PB-wnB" userLabel="$price">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Whe-Tx-4zb">
-                                        <rect key="frame" x="0.0" y="3501" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3489" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Whe-Tx-4zb" id="kWC-cE-kV9">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XOr-cr-eoH" userLabel="priceTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XOr-cr-eoH" userLabel="priceTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                                                 </textField>
@@ -2443,13 +2434,13 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="$currency" footerTitle="The currency in which the price is denominated." id="J2j-6R-1ZJ" userLabel="$currency">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="6YU-fE-c0Y">
-                                        <rect key="frame" x="0.0" y="3621" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="3608.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6YU-fE-c0Y" id="gRN-eK-5ts">
                                             <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uyY-su-MvZ" userLabel="currencyTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no default value" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uyY-su-MvZ" userLabel="currencyTextField">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
@@ -2466,7 +2457,7 @@ Default value: default_template</string>
                             <tableViewSection headerTitle="Custom Data" footerTitle="Custom data elements, in the form of key-value pairs." id="rkH-kT-rLL" userLabel="customData">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="98" id="NZB-yg-vgt">
-                                        <rect key="frame" x="0.0" y="3741" width="375" height="98"/>
+                                        <rect key="frame" x="0.0" y="3728" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NZB-yg-vgt" id="Ach-35-SUG">
                                             <frame key="frameInset" width="342" height="98"/>
@@ -2503,7 +2494,7 @@ Default value: default_template</string>
                     </navigationItem>
                     <connections>
                         <outlet property="canonicalIdentifierTextField" destination="zVx-l4-IxT" id="B9t-2p-yf6"/>
-                        <outlet property="clearAllValuesButton" destination="n3b-rk-boC" id="6BF-Tq-cuq"/>
+                        <outlet property="clearAllValuesButton" destination="aAv-Fr-9Io" id="cG9-Fn-5GK"/>
                         <outlet property="contentTypeTextField" destination="Jc3-gC-klu" id="Ygx-Xk-aro"/>
                         <outlet property="currencyTextField" destination="uyY-su-MvZ" id="vEN-aG-jwZ"/>
                         <outlet property="customDataTextView" destination="GUc-WI-Ry8" id="a77-XP-1kH"/>
@@ -2561,10 +2552,10 @@ Default value: default_template</string>
         <image name="cancel-28.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lul-Hc-eKM"/>
-        <segue reference="fTI-yI-jdX"/>
+        <segue reference="wth-hd-3D7"/>
         <segue reference="7TN-Vi-Tcv"/>
         <segue reference="Qus-RU-z7K"/>
-        <segue reference="wzH-j8-TDu"/>
+        <segue reference="iXd-jk-6h3"/>
+        <segue reference="nbR-gd-qo0"/>
     </inferredMetricsTieBreakers>
 </document>

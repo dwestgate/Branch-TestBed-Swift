@@ -31,7 +31,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
         textView.delegate = self
         textView.keyboardType = keyboardType
         textView.text = incumbantValue
-        setClearButtonVisibility()
+        updateButtonStates()
         textView.becomeFirstResponder()
     }
     
@@ -46,7 +46,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
         textView.textColor = UIColor.lightGray
         textView.becomeFirstResponder()
         textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
-        setClearButtonVisibility()
+        updateButtonStates()
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -80,7 +80,7 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
             textView.text = incumbantValue
             textView.textColor = UIColor.lightGray
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
-            setClearButtonVisibility()
+            updateButtonStates()
             return false
         }
         
@@ -89,29 +89,26 @@ class TextViewFormTableViewController: UITableViewController, UITextViewDelegate
             textView.textColor = UIColor.black
         }
         
-        setClearButtonVisibility()
+        updateButtonStates()
         
         return true
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        setClearButtonVisibility()
+        updateButtonStates()
     }
     
-    func setClearButtonVisibility() {
-        if textView.text == "" {
-            clearButton.isHidden = true
-            saveButton.isEnabled = false
-        } else if textView.textColor != UIColor.lightGray {
-            clearButton.isHidden = false
-            saveButton.isEnabled = true
-        }
-        if textView.text == incumbantValue {
-            saveButton.isEnabled = false
-        } else {
-            saveButton.isEnabled = true
-        }
-        
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        clearButton.isHidden = textView.text == "" ? true : false
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        clearButton.isHidden = true
+    }
+    
+    func updateButtonStates() {
+        clearButton.isHidden = textView.textColor == UIColor.lightGray ? true : false
+        saveButton.isEnabled = textView.text == incumbantValue ? false : true
     }
     
 }
