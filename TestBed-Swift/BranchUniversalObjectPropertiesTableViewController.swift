@@ -47,6 +47,7 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        publiclyIndexableSwitch.addTarget(self, action: #selector(switchhDidChangeState), for: UIControlEvents.valueChanged)
         canonicalIdentifierTextField.delegate = self
         expDateTextField.delegate = self
         contentTypeTextField.delegate = self
@@ -156,6 +157,7 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
                 customDataTextView.text = ""
             }
         }
+        clearAllValuesButton.isEnabled = universalObjectProperties.count > 0 ? true : false
     }
     
     @IBAction func unwindArrayTableViewController(_ segue:UIStoryboardSegue) {
@@ -168,6 +170,7 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
                 keywordsTextView.text = ""
             }
         }
+        clearAllValuesButton.isEnabled = universalObjectProperties.count > 0 ? true : false
     }
     
     //MARK: - Date Picker
@@ -218,51 +221,19 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
         present(alert, animated: true, completion: nil);
     }
     
+    func switchhDidChangeState() {
+        refreshUniversalObjectProperties()
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         refreshUniversalObjectProperties()
     }
     
-    func refreshUniversalObjectProperties() {
-        
-        if publiclyIndexableSwitch.isOn {
-            universalObjectProperties["$publicly_indexable"] = "1" as AnyObject?
-        } else {
-            universalObjectProperties.removeValue(forKey: "$publicly_indexable")
-        }
-        
-        addProperty("$canonical_identifier", value: canonicalIdentifierTextField.text!)
-        addProperty("$exp_date", value: expDateTextField.text!)
-        addProperty("$content_type", value: contentTypeTextField.text!)
-        addProperty("$og_title", value: ogTitleTextField.text!)
-        addProperty("$og_description", value: ogDescriptionTextField.text!)
-        addProperty("$og_image_url", value: ogImageURLTextField.text!)
-        addProperty("$og_image_width", value: ogImageWidthTextField.text!)
-        addProperty("$og_image_height", value: ogImageHeightTextField.text!)
-        addProperty("$og_video", value: ogVideoTextField.text!)
-        addProperty("$og_url", value: ogURLTextField.text!)
-        addProperty("$og_type", value: ogTypeTextField.text!)
-        addProperty("$og_redirect", value: ogRedirectTextField.text!)
-        addProperty("$og_app_id", value: ogAppIDTextField.text!)
-        addProperty("$twitter_card", value: twitterCardTextField.text!)
-        addProperty("$twitter_title", value: twitterTitleTextField.text!)
-        addProperty("$twitter_description", value: twitterDescriptionTextField.text!)
-        addProperty("$twitter_site", value: twitterSiteTextField.text!)
-        addProperty("$twitter_app_country", value: twitterAppCountryTextField.text!)
-        addProperty("$twitter_player", value: twitterPlayerTextField.text!)
-        addProperty("$twitter_player_width", value: twitterPlayerWidthTextField.text!)
-        addProperty("$twitter_player_height", value: twitterPlayerHeightTextField.text!)
-        addProperty("$price", value: priceTextField.text!)
-        addProperty("$currency", value: currencyTextField.text!)
-        
-    }
     
     func refreshControls() {
-        publiclyIndexableSwitch.isOn = false
+        publiclyIndexableSwitch.isOn = true
         if let publiclyIndexable = universalObjectProperties["$publicly_indexable"] as? String {
-            if publiclyIndexable == "1" {
-                publiclyIndexableSwitch.isOn = true
-            } else {
+            if publiclyIndexable != "1" {
                 publiclyIndexableSwitch.isOn = false
             }
         }
@@ -310,6 +281,40 @@ class BranchUniversalObjectPropertiesTableViewController: UITableViewController,
         } else {
             customDataTextView.text = ""
         }
+
+    }
+
+    func refreshUniversalObjectProperties() {
+        
+        if publiclyIndexableSwitch.isOn {
+            universalObjectProperties.removeValue(forKey: "$publicly_indexable")
+        } else {
+            universalObjectProperties["$publicly_indexable"] = "0" as AnyObject?
+        }
+        
+        addProperty("$canonical_identifier", value: canonicalIdentifierTextField.text!)
+        addProperty("$exp_date", value: expDateTextField.text!)
+        addProperty("$content_type", value: contentTypeTextField.text!)
+        addProperty("$og_title", value: ogTitleTextField.text!)
+        addProperty("$og_description", value: ogDescriptionTextField.text!)
+        addProperty("$og_image_url", value: ogImageURLTextField.text!)
+        addProperty("$og_image_width", value: ogImageWidthTextField.text!)
+        addProperty("$og_image_height", value: ogImageHeightTextField.text!)
+        addProperty("$og_video", value: ogVideoTextField.text!)
+        addProperty("$og_url", value: ogURLTextField.text!)
+        addProperty("$og_type", value: ogTypeTextField.text!)
+        addProperty("$og_redirect", value: ogRedirectTextField.text!)
+        addProperty("$og_app_id", value: ogAppIDTextField.text!)
+        addProperty("$twitter_card", value: twitterCardTextField.text!)
+        addProperty("$twitter_title", value: twitterTitleTextField.text!)
+        addProperty("$twitter_description", value: twitterDescriptionTextField.text!)
+        addProperty("$twitter_site", value: twitterSiteTextField.text!)
+        addProperty("$twitter_app_country", value: twitterAppCountryTextField.text!)
+        addProperty("$twitter_player", value: twitterPlayerTextField.text!)
+        addProperty("$twitter_player_width", value: twitterPlayerWidthTextField.text!)
+        addProperty("$twitter_player_height", value: twitterPlayerHeightTextField.text!)
+        addProperty("$price", value: priceTextField.text!)
+        addProperty("$currency", value: currencyTextField.text!)
         
         clearAllValuesButton.isEnabled = universalObjectProperties.count > 0 ? true : false
     }

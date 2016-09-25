@@ -65,12 +65,15 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         iosWeChatURLTextField.delegate = self
         iosWeiboURLTextField.delegate = self
         afterClickURLTextField.delegate = self
+        webOnlySwitch.addTarget(self, action: #selector(switchhDidChangeState), for: UIControlEvents.valueChanged)
         deeplinkPathTextField.delegate = self
         androidDeeplinkPathTextField.delegate = self
         iosDeeplinkPathTextField.delegate = self
         matchDurationTextField.delegate = self
+        alwaysDeeplinkSwitch.addTarget(self, action: #selector(switchhDidChangeState), for: UIControlEvents.valueChanged)
         iosRedirectTimeoutTextField.delegate = self
         androidRedirectTimeoutTextField.delegate = self
+        oneTimeUseSwitch.addTarget(self, action: #selector(switchhDidChangeState), for: UIControlEvents.valueChanged)
         iosDeepviewTextField.delegate = self
         androidDeepviewTextField.delegate = self
         desktopDeepviewTextField.delegate = self
@@ -135,6 +138,11 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
                 tagsTextView.text = ""
             }
         }
+        clearAllValuesButton.isEnabled = linkProperties.count > 0 ? true : false
+    }
+    
+    func switchhDidChangeState() {
+        refreshLinkProperties()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -261,8 +269,6 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         addProperty("$android_deepview", value: androidDeepviewTextField.text!)
         addProperty("$desktop_deepview", value: desktopDeepviewTextField.text!)
         
-        
-        print("linkProperties.count=\(linkProperties.count)")
         clearAllValuesButton.isEnabled = linkProperties.count > 0 ? true : false
     }
     
