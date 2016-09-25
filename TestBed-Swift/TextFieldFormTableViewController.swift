@@ -32,6 +32,7 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
         textField.placeholder = placeholder
         textField.text = incumbantValue
         textField.keyboardType = keyboardType
+        textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
         textField.becomeFirstResponder()
     }
@@ -48,6 +49,11 @@ class TextFieldFormTableViewController: UITableViewController, UITextFieldDelega
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return footer
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        performSegue(withIdentifier: "Save", sender: "save")
+        return false
     }
     
     func textFieldDidChange() {

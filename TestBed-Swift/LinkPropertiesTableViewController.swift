@@ -112,7 +112,7 @@ class LinkPropertiesTableViewController: UITableViewController, UITextFieldDeleg
         
         if segue.identifier! == "ShowTags" {
             let vc = segue.destination as! ArrayTableViewController
-            if let tags = linkProperties["tags"] as? [String] {
+            if let tags = linkProperties["~tags"] as? [String] {
                 vc.array = tags
             }
             vc.viewTitle = "Link Tags"
