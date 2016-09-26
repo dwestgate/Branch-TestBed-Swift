@@ -34,13 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      
                      let nc = self.window!.rootViewController as! UINavigationController
                      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                     let logOutputViewController = storyboard.instantiateViewController(withIdentifier: "LogOutput") as! LogOutputViewController
-                     nc.pushViewController(logOutputViewController, animated: true)
+                     let contentViewController = storyboard.instantiateViewController(withIdentifier: "Content") as! ContentViewController
+                     nc.pushViewController(contentViewController, animated: true)
                      
                      let dict = params as Dictionary
                      let referringLink = dict["~referring_link"]
-                     let logOutput = String(format:"\nReferring link: \(referringLink)\n\nSession Details:\n\(dict.JSONDescription())")
-                     logOutputViewController.logOutput = logOutput
+                     let content = String(format:"\nReferring link: \(referringLink)\n\nSession Details:\n\(dict.JSONDescription())")
+                     contentViewController.content = content
                      
                      }
                      } else {

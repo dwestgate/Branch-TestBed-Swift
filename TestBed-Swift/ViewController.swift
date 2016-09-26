@@ -164,18 +164,16 @@ class ViewController: UITableViewController {
         case (3,1) :
             self.performSegue(withIdentifier: "ShowDictionaryTableView", sender: "CustomEventMetadata")
         case (4,0) :
-            
-            print(Branch.getInstance().getLatestReferringParams().JSONDescription())
             if let params = Branch.getInstance().getLatestReferringParams() {
-                let logOutput = String(format:"LatestReferringParams:\n\n%@", (params.JSONDescription()))
-                self.performSegue(withIdentifier: "ShowLogOutputView", sender: "LatestReferringParams")
-                print("Branch TestBed: LatestReferringParams:\n", logOutput)
+                let content = String(format:"LatestReferringParams:\n\n%@", (params.JSONDescription()))
+                self.performSegue(withIdentifier: "ShowContentView", sender: "LatestReferringParams")
+                print("Branch TestBed: LatestReferringParams:\n", content)
             }
         case (4,1) :
             if let params = Branch.getInstance().getFirstReferringParams() {
-                let logOutput = String(format:"FirstReferringParams:\n\n%@", (params.JSONDescription()))
-                self.performSegue(withIdentifier: "ShowLogOutputView", sender: "FirstReferringParams")
-                print("Branch TestBed: FirstReferringParams:\n", logOutput)
+                let content = String(format:"FirstReferringParams:\n\n%@", (params.JSONDescription()))
+                self.performSegue(withIdentifier: "ShowContentView", sender: "FirstReferringParams")
+                print("Branch TestBed: FirstReferringParams:\n", content)
             }
         default : break
         }
@@ -252,8 +250,13 @@ class ViewController: UITableViewController {
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
             branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         } else {
-            print(universalObjectProperties["$canonical_identifier"])
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
+            var canonicalIdentifier = ""
+            for _ in 1...18 {
+                canonicalIdentifier.append(String(arc4random_uniform(10)))
+            }
+            // TODO: Allow this to be user-configurable
+            branchUniversalObject.automaticallyListOnSpotlight = true
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         }
         
         for key in universalObjectProperties.keys {
@@ -335,19 +338,19 @@ class ViewController: UITableViewController {
     @IBAction func viewFirstReferringParamsButtonTouchUpInside(_ sender: AnyObject) {
         let branch = Branch.getInstance()
         let params = branch?.getFirstReferringParams()
-        let logOutput = String(format:"FirstReferringParams:\n\n%@", (params?.description)!)
+        let content = String(format:"FirstReferringParams:\n\n%@", (params?.description)!)
         
-        self.performSegue(withIdentifier: "ShowLogOutputView", sender: logOutput)
-        print("Branch TestBed: FirstReferringParams:\n", logOutput)
+        self.performSegue(withIdentifier: "ShowContentView", sender: content)
+        print("Branch TestBed: FirstReferringParams:\n", content)
     }
     
     @IBAction func viewLatestReferringParamsButtonTouchUpInside(_ sender: AnyObject) {
         let branch = Branch.getInstance()
         let params = branch?.getFirstReferringParams()
-        let logOutput = String(format:"LatestReferringParams:\n\n%@", (params?.description)!)
+        let content = String(format:"LatestReferringParams:\n\n%@", (params?.description)!)
         
-        self.performSegue(withIdentifier: "ShowLogOutputView", sender: logOutput)
-        print("Branch TestBed: LatestReferringParams:\n", logOutput)
+        self.performSegue(withIdentifier: "ShowContentView", sender: content)
+        print("Branch TestBed: LatestReferringParams:\n", content)
     }
     
     @IBAction func simulateContentAccessButtonTouchUpInside(_ sender: AnyObject) {
@@ -428,7 +431,7 @@ class ViewController: UITableViewController {
             vc.incumbantValue = customEventNameTextField.text!
         case "CustomEventMetadata":
             let vc = segue.destination as! DictionaryTableViewController
-            customEventMetadata = TestData.getCustomEventMetadata()
+            customEventMetadata = DataStore.getCustomEventMetadata()
             vc.dictionary = customEventMetadata
             vc.viewTitle = "Custom Event Metadata"
             vc.keyHeader = "Key"
@@ -439,23 +442,23 @@ class ViewController: UITableViewController {
             vc.keyKeyboardType = UIKeyboardType.default
             vc.valueKeyboardType = UIKeyboardType.default
         case "LatestReferringParams":
-            let vc = (segue.destination as! LogOutputViewController)
+            let vc = (segue.destination as! ContentViewController)
             let branch = Branch.getInstance()
             let dict: Dictionary = (branch?.getLatestReferringParams())!
         
             if let referringLink = dict["~referring_link"] {
-                vc.logOutput = String(format:"\nReferring link: \(referringLink)\n\nSession details:\n\(dict.JSONDescription())")
+                vc.content = String(format:"\nReferring link: \(referringLink)\n\nSession details:\n\(dict.JSONDescription())")
             } else {
-                vc.logOutput = "\nNot a referred session"
+                vc.content = "\nNot a referred session"
             }
         case "FirstReferringParams":
-            let vc = (segue.destination as! LogOutputViewController)
+            let vc = (segue.destination as! ContentViewController)
             let branch = Branch.getInstance()
             let dict: Dictionary = (branch?.getFirstReferringParams())!
             if dict.count > 0 {
-                vc.logOutput = String(format:"\nFirst session details:\n\(dict.JSONDescription())")
+                vc.content = String(format:"\nFirst session details:\n\(dict.JSONDescription())")
             } else {
-                vc.logOutput = "\nApp has not yet been opened via a Branch link"
+                vc.content = "\nApp has not yet been opened via a Branch link"
             }
         default:
             break
@@ -486,7 +489,7 @@ class ViewController: UITableViewController {
                             } else {
                                 print("Branch TestBed: User ID cleared")
                                 self.userIDTextField.text = userID
-                                TestData.setUserID(userID)
+                                DataStore.setUserID(userID)
                                 self.refreshRewardsBalanceOfBucket()
                             }
                         }
@@ -497,7 +500,7 @@ class ViewController: UITableViewController {
                         if (error == nil) {
                             print(String(format: "Branch TestBed: Identity set: %@", userID))
                             self.userIDTextField.text = userID
-                            TestData.setUserID(userID)
+                            DataStore.setUserID(userID)
                             self.refreshRewardsBalanceOfBucket()
                             
                             let defaultContainer = UserDefaults.standard
@@ -516,7 +519,7 @@ class ViewController: UITableViewController {
                     guard self.rewardsBucketTextField.text != rewardsBucket else {
                         return
                     }
-                    TestData.setRewardsBucket(rewardsBucket)
+                    DataStore.setRewardsBucket(rewardsBucket)
                     self.rewardsBucketTextField.text = rewardsBucket
                     self.refreshRewardsBalanceOfBucket()
                     
@@ -527,7 +530,7 @@ class ViewController: UITableViewController {
                     guard self.rewardPointsToRedeemTextField.text != rewardPointsToRedeem else {
                         return
                     }
-                    TestData.setRewardPointsToRedeem(rewardPointsToRedeem)
+                    DataStore.setRewardPointsToRedeem(rewardPointsToRedeem)
                     self.rewardPointsToRedeemTextField.text = rewardPointsToRedeem
                 }
             case "CustomEventName":
@@ -536,7 +539,7 @@ class ViewController: UITableViewController {
                     guard self.customEventNameTextField.text != customEventName else {
                         return
                     }
-                    TestData.setCustomEventName(customEventName)
+                    DataStore.setCustomEventName(customEventName)
                     self.customEventNameTextField.text = customEventName
                 }
             default: break
@@ -549,7 +552,7 @@ class ViewController: UITableViewController {
     @IBAction func unwindDictionaryTableViewController(_ segue:UIStoryboardSegue) {
         if let vc = segue.source as? DictionaryTableViewController {
             customEventMetadata = vc.dictionary
-            TestData.setCustomEventMetadata(customEventMetadata)
+            DataStore.setCustomEventMetadata(customEventMetadata)
             if customEventMetadata.count > 0 {
                 customEventMetadataTextView.text = customEventMetadata.description
             } else {
@@ -561,14 +564,14 @@ class ViewController: UITableViewController {
     @IBAction func unwindLinkPropertiesTableViewController(_ segue:UIStoryboardSegue) {
         if let vc = segue.source as? LinkPropertiesTableViewController {
             linkProperties = vc.linkProperties
-            TestData.setLinkProperties(linkProperties)
+            DataStore.setLinkProperties(linkProperties)
         }
     }
     
     @IBAction func unwindBranchUniversalObjectTableViewController(_ segue:UIStoryboardSegue) {
         if let vc = segue.source as? BranchUniversalObjectPropertiesTableViewController {
             universalObjectProperties = vc.universalObjectProperties
-            TestData.setUniversalObjectProperties(universalObjectProperties)
+            DataStore.setUniversalObjectProperties(universalObjectProperties)
         }
     }
     
@@ -606,8 +609,6 @@ class ViewController: UITableViewController {
         case "$og_description":
             if let description = universalObjectProperties[key] {
                 branchUniversalObject.contentDescription = description as? String
-                // Branch will use "contentDescription" as $og_description, but we'll set it explicitly as well
-                branchUniversalObject.addMetadataKey(key, value: description as! String)
             }
         case "$exp_date":
             let dateFormatter = DateFormatter()
@@ -617,24 +618,16 @@ class ViewController: UITableViewController {
         case "$og_image_url":
             if let imageURL = universalObjectProperties[key] {
                 branchUniversalObject.imageUrl = imageURL as? String
-                // Branch will use "imageURL" as $og_image_url, but we'll set it explicitly as well
-                branchUniversalObject.addMetadataKey(key, value: imageURL as! String)
             }
         case "$keywords":
             branchUniversalObject.keywords = universalObjectProperties[key] as! [AnyObject]
         case "$og_title":
             if let title = universalObjectProperties[key] {
                 branchUniversalObject.title = title as? String
-                // Branch will use "title" as $og_title, but we'll set it explicitly as well
-                branchUniversalObject.addMetadataKey(key, value: title as! String)
             }
-            print(branchUniversalObject.description())
-            print("Done")
-        case "$og_type":
-            if let ogType = universalObjectProperties[key] {
-                branchUniversalObject.type = universalObjectProperties[key] as? String
-                // Branch will use "type" as $og_type, but we'll set it explicitly as well
-                branchUniversalObject.addMetadataKey(key, value: ogType as! String)
+        case "$content_type":
+            if let contentType = universalObjectProperties[key] {
+                branchUniversalObject.type = contentType as? String
             }
         case "$price":
             if let price = universalObjectProperties[key] as? String {
@@ -647,8 +640,6 @@ class ViewController: UITableViewController {
         case "$currency":
             if let currency = universalObjectProperties[key] as? String {
                 branchUniversalObject.currency = currency
-                // if .currency not yet available
-                // branchUniversalObject.addMetadataKey(key, value: currency as! String)
             }
         case "customData":
             if let data = universalObjectProperties[key] as? [String: String] {
@@ -664,19 +655,19 @@ class ViewController: UITableViewController {
     
     func refreshControlValues() {
         // First load the three values required to refresh the rewards balance
-        userIDTextField.text = TestData.getUserID()
-        rewardsBucketTextField.text = TestData.getRewardsBucket()
-        rewardsBalanceOfBucketTextField.text = TestData.getRewardsBalanceOfBucket()
+        userIDTextField.text = DataStore.getUserID()
+        rewardsBucketTextField.text = DataStore.getRewardsBucket()
+        rewardsBalanceOfBucketTextField.text = DataStore.getRewardsBalanceOfBucket()
         
         // Then initiate a refresh of the rewards balance
         refreshRewardsBalanceOfBucket()
         
         // Now get about populating the other controls
-        linkProperties = TestData.getLinkProperties()
-        universalObjectProperties = TestData.getUniversalObjectProperties()
-        rewardPointsToRedeemTextField.text = TestData.getRewardPointsToRedeem()
-        customEventNameTextField.text = TestData.getCustomEventName()
-        customEventMetadata = TestData.getCustomEventMetadata()
+        linkProperties = DataStore.getLinkProperties()
+        universalObjectProperties = DataStore.getUniversalObjectProperties()
+        rewardPointsToRedeemTextField.text = DataStore.getRewardPointsToRedeem()
+        customEventNameTextField.text = DataStore.getCustomEventName()
+        customEventMetadata = DataStore.getCustomEventMetadata()
         if (customEventMetadata.count > 0) {
             customEventMetadataTextView.text = customEventMetadata.description
         } else {
