@@ -11,45 +11,60 @@ class ContentViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var contentTextViewHeightConstraint: NSLayoutConstraint!
     
-    var content: String!
-
+    var contentType: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        content = ""
+        var content = ""
         
-        
-        if let universalObject = Branch.getInstance().getLatestReferringBranchUniversalObject() {
-            content = String(format:"\nLatestReferringBranchUniversalObject:\n\n%@", universalObject)
-            print("Branch TestBed: nLatestReferringBranchUniversalObject:\n", content)
+        if contentType == "Content" {
             
-            if let imageURL = URL(string: universalObject.imageUrl!) {
-                imageView.loadImageFromUrl(url: imageURL)
-                print("ImageURL=\(imageURL)")
+            if let universalObject = Branch.getInstance().getLatestReferringBranchUniversalObject() {
+                content = String(format:"\nLatestReferringBranchUniversalObject:\n\n%@", universalObject)
+                print("Branch TestBed: nLatestReferringBranchUniversalObject:\n", content)
+                
+                if (universalObject.imageUrl != nil) {
+                    if let imageURL = URL(string: universalObject.imageUrl!) {
+                        imageView.isHidden = false
+                        imageView.loadImageFromUrl(url: imageURL)
+                        print("ImageURL=\(imageURL)")
+                    }
+                }
+                
+                universalObject.automaticallyListOnSpotlight = true
+                universalObject.userCompletedAction(BNCRegisterViewEvent)
             }
-            
-            universalObject.userCompletedAction(BNCRegisterViewEvent)
-        }
-        if let latestReferringParams = Branch.getInstance().getLatestReferringParams() {
-            content = String(format:"%@\n\nLatestReferringParams:\n\n%@", self.content, latestReferringParams.JSONDescription())
-            print("Branch TestBed: LatestBranchUniversalObject:\n", content)
+        } else if contentType == "LatestReferringParams" {
+            if let latestReferringParams = Branch.getInstance().getLatestReferringParams() {
+                content = String(format:"\nLatestReferringParams:\n\n%@", latestReferringParams.JSONDescription())
+                print("Branch TestBed: LatestReferringParams:\n", content)
+            }
+        } else if contentType == "FirstReferringParams" {
+            if let firstReferringParams = Branch.getInstance().getFirstReferringParams() {
+                content = String(format:"\nFirstReferringParams:\n\n%@", content, firstReferringParams.JSONDescription())
+                print("Branch TestBed: FirstReferringParams:\n", content)
+            }
+        } else {
+            content = "\nNo data available"
         }
         
-        // setting scrollEnabled to false prevents a clipping bug
-        contentTextView.isScrollEnabled = false
         contentTextView.text = content
-    }
+        print(content)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // re-enabling scrollEnabled after view is painted
-        contentTextView.isScrollEnabled = true
-    }
 
+        self.contentTextView.sizeToFit()
+        var frame: CGRect = self.contentTextView.frame
+        frame.size.height = self.contentTextView.contentSize.height
+        self.contentTextView.frame = frame
+        
+        super.viewDidAppear(animated)
+
+    }
     
 }

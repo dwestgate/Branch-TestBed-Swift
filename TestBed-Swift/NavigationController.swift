@@ -26,8 +26,8 @@ class NavigationController: UINavigationController, BranchDeepLinkingController 
         self.pushViewController(vc, animated: true)
         
         let dict = params as Dictionary
-        if let referringLink = dict["~referring_link"] {
-            vc.content = String(format:"\nReferring link: \(referringLink)\n\nSession Details:\n\(dict.JSONDescription())")
+        if dict["~referring_link"] != nil {
+            vc.contentType = "Content"
         }
     }
 }

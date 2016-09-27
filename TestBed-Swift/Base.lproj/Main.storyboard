@@ -22,10 +22,10 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-fV-91f">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-4R-JeV" userLabel="imageView">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-4R-JeV" userLabel="imageView">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="EJH-ZP-nTb"/>
-                                                    <constraint firstAttribute="height" constant="200" id="v5c-Ya-jen"/>
+                                                    <constraint firstAttribute="height" constant="200" id="EJH-ZP-nTb"/>
+                                                    <constraint firstAttribute="width" constant="200" id="v5c-Ya-jen"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-hx-zKl" userLabel="contentTextView">
@@ -37,7 +37,6 @@
                                         <constraints>
                                             <constraint firstItem="lhb-hx-zKl" firstAttribute="leading" secondItem="7xe-fV-91f" secondAttribute="leading" id="5BW-de-bzD"/>
                                             <constraint firstItem="lhb-hx-zKl" firstAttribute="trailing" secondItem="7xe-fV-91f" secondAttribute="trailing" id="QxA-UZ-Wc7"/>
-                                            <constraint firstItem="Whe-4R-JeV" firstAttribute="top" secondItem="7xe-fV-91f" secondAttribute="top" constant="6" id="Wqs-W4-r7T"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -46,7 +45,6 @@
                                     <constraint firstItem="7xe-fV-91f" firstAttribute="trailing" secondItem="6Rz-hr-Ez0" secondAttribute="trailing" id="Nks-Bb-CiM"/>
                                     <constraint firstItem="7xe-fV-91f" firstAttribute="bottom" secondItem="6Rz-hr-Ez0" secondAttribute="bottom" id="bcy-Zi-ESm"/>
                                     <constraint firstItem="7xe-fV-91f" firstAttribute="centerX" secondItem="6Rz-hr-Ez0" secondAttribute="centerX" id="ena-di-pd0"/>
-                                    <constraint firstItem="7xe-fV-91f" firstAttribute="centerY" secondItem="6Rz-hr-Ez0" secondAttribute="centerY" id="fTB-f5-thO"/>
                                     <constraint firstItem="7xe-fV-91f" firstAttribute="leading" secondItem="6Rz-hr-Ez0" secondAttribute="leading" id="iW7-XO-cgw"/>
                                 </constraints>
                             </scrollView>
@@ -2582,8 +2580,8 @@ Default value: default_template</string>
         <image name="cancel-28.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wth-hd-3D7"/>
-        <segue reference="UT0-7m-xoG"/>
+        <segue reference="fTI-yI-jdX"/>
+        <segue reference="7TN-Vi-Tcv"/>
         <segue reference="X7W-cf-8rz"/>
         <segue reference="iXd-jk-6h3"/>
         <segue reference="nbR-gd-qo0"/>

@@ -27,7 +27,6 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
-
 class ViewController: UITableViewController {
     
     @IBOutlet weak var actionButton: UIBarButtonItem!
@@ -254,8 +253,6 @@ class ViewController: UITableViewController {
             for _ in 1...18 {
                 canonicalIdentifier.append(String(arc4random_uniform(10)))
             }
-            // TODO: Allow this to be user-configurable
-            branchUniversalObject.automaticallyListOnSpotlight = true
             branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         }
         
@@ -443,22 +440,20 @@ class ViewController: UITableViewController {
             vc.valueKeyboardType = UIKeyboardType.default
         case "LatestReferringParams":
             let vc = (segue.destination as! ContentViewController)
-            let branch = Branch.getInstance()
-            let dict: Dictionary = (branch?.getLatestReferringParams())!
+            let dict: Dictionary = Branch.getInstance().getLatestReferringParams()
         
-            if let referringLink = dict["~referring_link"] {
-                vc.content = String(format:"\nReferring link: \(referringLink)\n\nSession details:\n\(dict.JSONDescription())")
+            if dict["~referring_link"] != nil {
+                vc.contentType = "LatestReferringParams"
             } else {
-                vc.content = "\nNot a referred session"
+                vc.contentType = "\nNot a referred session"
             }
         case "FirstReferringParams":
             let vc = (segue.destination as! ContentViewController)
-            let branch = Branch.getInstance()
-            let dict: Dictionary = (branch?.getFirstReferringParams())!
+            let dict: Dictionary = Branch.getInstance().getFirstReferringParams()
             if dict.count > 0 {
-                vc.content = String(format:"\nFirst session details:\n\(dict.JSONDescription())")
+                vc.contentType = "FirstReferringParams"
             } else {
-                vc.content = "\nApp has not yet been opened via a Branch link"
+                vc.contentType = "\nApp has not yet been opened via a Branch link"
             }
         default:
             break
