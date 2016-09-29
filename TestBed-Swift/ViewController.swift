@@ -195,7 +195,7 @@ class ViewController: UITableViewController {
         for key in universalObjectProperties.keys {
             setBranchUniversalObjectProperty(key)
         }
-        
+
         branchUniversalObject.showShareSheet(with: branchLinkProperties, andShareText: shareText, from: self, anchor: actionButton) { (activityType, completed) in
             if (completed) {
                 print(String(format: "Branch TestBed: Completed sharing to %@", activityType!))
