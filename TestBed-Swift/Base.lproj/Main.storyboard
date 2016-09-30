@@ -24,7 +24,7 @@
                                         <subviews>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-4R-JeV" userLabel="imageView">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="EJH-ZP-nTb"/>
+                                                    <constraint firstAttribute="height" priority="999" constant="200" id="EJH-ZP-nTb"/>
                                                     <constraint firstAttribute="width" constant="200" id="v5c-Ya-jen"/>
                                                 </constraints>
                                             </imageView>
@@ -2581,7 +2581,7 @@ Default value: default_template</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fTI-yI-jdX"/>
-        <segue reference="7TN-Vi-Tcv"/>
+        <segue reference="UT0-7m-xoG"/>
         <segue reference="X7W-cf-8rz"/>
         <segue reference="iXd-jk-6h3"/>
         <segue reference="nbR-gd-qo0"/>

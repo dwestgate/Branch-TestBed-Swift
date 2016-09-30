@@ -98,8 +98,7 @@ class ViewController: UITableViewController {
     }
     
     func applicationDidBecomeActive() {
-        loadLinkPropertiesButton.isEnabled = false
-        loadObjectPropertiesButton.isEnabled = false
+        refreshEnabledButtons()
     }
     
     func refreshEnabledButtons() {
@@ -107,8 +106,6 @@ class ViewController: UITableViewController {
         
         if let clickedBranchLink = Branch.getInstance().getLatestReferringParams()["+clicked_branch_link"] as! Bool? {
             enableButtons = clickedBranchLink
-            
-            print(Branch.getInstance().getLatestReferringParams().JSONDescription())
         }
         if enableButtons == true {
             loadLinkPropertiesButton.isEnabled = true
@@ -184,12 +181,14 @@ class ViewController: UITableViewController {
             setBranchLinkProperty(key)
         }
         
-        print(universalObjectProperties["$canonical_identifier"])
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
             branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         } else {
-            print(universalObjectProperties["$canonical_identifier"])
-            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: "_")
+            var canonicalIdentifier = ""
+            for _ in 1...18 {
+                canonicalIdentifier.append(String(arc4random_uniform(10)))
+            }
+            branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         }
         
         for key in universalObjectProperties.keys {
@@ -216,7 +215,6 @@ class ViewController: UITableViewController {
                 linkProperties[key] = value as AnyObject?
             }
         }
-        
         self.showAlert("Link Properties Loadded", withDescription: "")
     }
     
@@ -245,7 +243,6 @@ class ViewController: UITableViewController {
             setBranchLinkProperty(key)
         }
         
-        print(universalObjectProperties["$canonical_identifier"])
         if let canonicalIdentifier = universalObjectProperties["$canonical_identifier"] as? String {
             branchUniversalObject = BranchUniversalObject.init(canonicalIdentifier: canonicalIdentifier)
         } else {
