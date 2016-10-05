@@ -335,29 +335,6 @@ class ViewController: UITableViewController {
         }
     }
     
-    @IBAction func viewFirstReferringParamsButtonTouchUpInside(_ sender: AnyObject) {
-        let branch = Branch.getInstance()
-        let params = branch?.getFirstReferringParams()
-        let content = String(format:"FirstReferringParams:\n\n%@", (params?.description)!)
-        
-        self.performSegue(withIdentifier: "ShowContentView", sender: content)
-        print("Branch TestBed: FirstReferringParams:\n", content)
-    }
-    
-    @IBAction func viewLatestReferringParamsButtonTouchUpInside(_ sender: AnyObject) {
-        let branch = Branch.getInstance()
-        let params = branch?.getFirstReferringParams()
-        let content = String(format:"LatestReferringParams:\n\n%@", (params?.description)!)
-        
-        self.performSegue(withIdentifier: "ShowContentView", sender: content)
-        print("Branch TestBed: LatestReferringParams:\n", content)
-    }
-    
-    @IBAction func simulateContentAccessButtonTouchUpInside(_ sender: AnyObject) {
-        self.branchUniversalObject.registerView()
-        self.showAlert("Content Access Registered", withDescription: "")
-    }
-    
     @IBAction func pendingSetDebugEnabledButtonValueChanged(_ sender: AnyObject) {
         DataStore.setPendingPendingSetDebugEnabled(self.pendingSetDebugEnabledSwitch.isOn)
     }

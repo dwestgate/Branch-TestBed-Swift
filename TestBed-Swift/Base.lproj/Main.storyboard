@@ -488,35 +488,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="yo4-y0-dNM">
-                                        <rect key="frame" x="0.0" y="1045.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yo4-y0-dNM" id="Fyv-9Y-995">
-                                            <frame key="frameInset" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTS-u4-TnJ" userLabel="simulateContentAccessButton">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <state key="normal" title="Simulate Content Access"/>
-                                                    <connections>
-                                                        <action selector="simulateContentAccessButtonTouchUpInside:" destination="3bi-5k-7qj" eventType="touchUpInside" id="IKG-PT-WL5"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="WTS-u4-TnJ" firstAttribute="centerY" secondItem="Fyv-9Y-995" secondAttribute="centerY" id="28h-Cf-Hi7"/>
-                                                <constraint firstItem="WTS-u4-TnJ" firstAttribute="leading" secondItem="Fyv-9Y-995" secondAttribute="leadingMargin" constant="6" id="9IL-kp-EGK"/>
-                                                <constraint firstItem="WTS-u4-TnJ" firstAttribute="trailing" secondItem="Fyv-9Y-995" secondAttribute="trailingMargin" id="hfG-ht-6bC"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Session Data" id="wTB-pX-vJF" userLabel="Session Data">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="2bg-hb-tyv">
-                                        <rect key="frame" x="0.0" y="1145.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1101.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bg-hb-tyv" id="ZZW-75-6KI">
                                             <frame key="frameInset" width="342" height="43.5"/>
@@ -537,7 +514,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="lGg-oI-a6C">
-                                        <rect key="frame" x="0.0" y="1189.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1145.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGg-oI-a6C" id="e5n-P8-PRj">
                                             <frame key="frameInset" width="342" height="43.5"/>
@@ -562,10 +539,10 @@
                             <tableViewSection headerTitle="Active Startup Options" footerTitle="These are the startup options that the application is currently using." id="0TG-eo-h1f" userLabel="Active Startup Options">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="r0n-Xp-wMV">
-                                        <rect key="frame" x="0.0" y="1297" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1253" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r0n-Xp-wMV" id="bZi-ev-ens">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Branch Key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-PD-5pa" userLabel="activeBranchKeyTextField">
@@ -583,10 +560,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="AYK-ty-BGD">
-                                        <rect key="frame" x="0.0" y="1341" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1297" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AYK-ty-BGD" id="jkD-jr-gTL">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setDebug Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNm-4D-Ldz" userLabel="activeSetDebugEnabledLabel">
@@ -608,10 +585,10 @@
                             <tableViewSection headerTitle="Pending Startup Options" footerTitle="These are the startup options that will be aplied when the app is next launched." id="eJq-ig-o16" userLabel="Pending Startup Opions">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="TableViewCell" id="17n-BE-k8Q">
-                                        <rect key="frame" x="0.0" y="1476.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1432.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="17n-BE-k8Q" id="Kpp-bt-Olk">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Branch Key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-pm-CNP" userLabel="pendingBranchKeyTextField">
@@ -628,10 +605,10 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="LLY-sm-ax6">
-                                        <rect key="frame" x="0.0" y="1520.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1476.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LLY-sm-ax6" id="5Zg-Rm-cAc">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setDebug Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpH-f3-hRP" userLabel="pendingSetDebugEnabledLabel">
