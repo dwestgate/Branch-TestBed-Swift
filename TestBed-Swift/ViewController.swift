@@ -40,6 +40,10 @@ class ViewController: UITableViewController {
     @IBOutlet weak var rewardPointsToRedeemTextField: UITextField!
     @IBOutlet weak var customEventNameTextField: UITextField!
     @IBOutlet weak var customEventMetadataTextView: UITextView!
+    @IBOutlet weak var activeBranchKeyTextField: UITextField!
+    @IBOutlet weak var activeSetDebugEnabledSwitch: UISwitch!
+    @IBOutlet weak var pendingBranchKeyTextField: UITextField!
+    @IBOutlet weak var pendingSetDebugEnabledSwitch: UISwitch!
     
     var linkProperties = [String: AnyObject]()
     var universalObjectProperties = [String: AnyObject]()
@@ -171,6 +175,8 @@ class ViewController: UITableViewController {
                 self.performSegue(withIdentifier: "ShowContentView", sender: "FirstReferringParams")
                 print("Branch TestBed: FirstReferringParams:\n", content)
             }
+        case (6,0) :
+            self.performSegue(withIdentifier: "ShowTextViewFormNavigationBar", sender: "pendingBranchKey")
         default : break
         }
     }
@@ -352,6 +358,11 @@ class ViewController: UITableViewController {
         self.showAlert("Content Access Registered", withDescription: "")
     }
     
+    @IBAction func pendingSetDebugEnabledButtonValueChanged(_ sender: AnyObject) {
+        DataStore.setPendingPendingSetDebugEnabled(self.pendingSetDebugEnabledSwitch.isOn)
+    }
+    
+    
     func textFieldDidChange(_ sender:UITextField) {
         sender.resignFirstResponder()
     }
@@ -452,6 +463,15 @@ class ViewController: UITableViewController {
             } else {
                 vc.contentType = "\nApp has not yet been opened via a Branch link"
             }
+        case "pendingBranchKey":
+            let nc = segue.destination as! UINavigationController
+            let vc = nc.topViewController as! TextViewFormTableViewController
+            vc.sender = sender as! String
+            vc.viewTitle = "Branch Key"
+            vc.header = "Branch Key"
+            vc.footer = "This Branch key will be used the next time the application is closed (not merely backgrounded) and re-opened."
+            vc.keyboardType = UIKeyboardType.alphabet
+            vc.incumbantValue = DataStore.getPendingBranchKey()!
         default:
             break
         }
@@ -533,6 +553,14 @@ class ViewController: UITableViewController {
                     }
                     DataStore.setCustomEventName(customEventName)
                     self.customEventNameTextField.text = customEventName
+                }
+            case "pendingBranchKey":
+                if let pendingBranchKey = vc.textView.text {
+                    guard self.pendingBranchKeyTextField.text != pendingBranchKey else {
+                        return
+                    }
+                    DataStore.setPendingBranchKey(pendingBranchKey)
+                    self.pendingBranchKeyTextField.text = pendingBranchKey
                 }
             default: break
             }
@@ -665,6 +693,10 @@ class ViewController: UITableViewController {
         } else {
             customEventMetadataTextView.text = ""
         }
+        activeBranchKeyTextField.text = DataStore.getActiveBranchKey()
+        activeSetDebugEnabledSwitch.isOn = DataStore.getActiveSetDebugEnabled()!
+        pendingBranchKeyTextField.text = DataStore.getPendingBranchKey()
+        pendingSetDebugEnabledSwitch.isOn = DataStore.getPendingSetDebugEnabled()!
     }
     
     func showAlert(_ alertTitle: String, withDescription message: String) {
