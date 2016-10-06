@@ -35,7 +35,7 @@ class ContentViewController: UIViewController {
                     }
                 }
                 
-                if (universalObject.canonicalUrl != nil) {
+                if universalObject.canonicalIdentifier != "" {
                     universalObject.automaticallyListOnSpotlight = true
                     universalObject.userCompletedAction(BNCRegisterViewEvent)
                 }

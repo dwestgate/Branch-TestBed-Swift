@@ -94,8 +94,6 @@ class ViewController: UITableViewController {
                                        name: Notification.Name("BranchCallbackCompleted"),
                                        object: nil)
         
-
-        
         linkTextField.text = ""
         refreshControlValues()
         refreshEnabledButtons()
@@ -674,6 +672,10 @@ class ViewController: UITableViewController {
         activeSetDebugEnabledSwitch.isOn = DataStore.getActiveSetDebugEnabled()!
         pendingBranchKeyTextField.text = DataStore.getPendingBranchKey()
         pendingSetDebugEnabledSwitch.isOn = DataStore.getPendingSetDebugEnabled()!
+        
+        if activeBranchKeyTextField.text == "" {
+            showAlert("Initialization Failure", withDescription: "Close and re-open app to initialize Branch")
+        }
     }
     
     func showAlert(_ alertTitle: String, withDescription message: String) {

@@ -68,11 +68,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                 } else {
                     print("Branch TestBed: Initialization failed\n%@", error!.localizedDescription)
-                    DataStore.setPendingBranchKey("")
                 }
                 let notificationName = Notification.Name("BranchCallbackCompleted")
                 NotificationCenter.default.post(name: notificationName, object: nil)
             })
+        } else {
+            print("Branch TestBed: Invalid Key\n")
+            DataStore.setActiveBranchKey("")
+            DataStore.setPendingBranchKey("")
         }
         return true
     }
